@@ -1,16 +1,29 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `nempolitik.dk`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@simse`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://46.101.129.79:1337`,
+        queryLimit: 10000, // Default to 100
+        contentTypes: [`politician`, `political-parties`],
+        loginData: {
+          identifier: "netlify",
+          password: "tow_haib6THIW7ko",
+        },
       },
     },
     `gatsby-transformer-sharp`,

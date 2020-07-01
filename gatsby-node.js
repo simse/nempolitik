@@ -3,5 +3,27 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const path = require(`path`)
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allStrapiPoliticalParties {
+        nodes {
+          slug
+        }
+      }
+    }
+  `)
+
+  result.data.allStrapiPoliticalParties.nodes.forEach(party => {
+    createPage({
+        path: "parti/" + party.slug,
+        component: path.resolve("./src/templates/party.js"),
+        context: {
+            slug: party.slug
+        }
+    })
+  })
+}
