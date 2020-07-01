@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://46.101.129.79:1337`,
+        apiURL: `https://editor.nempolitik.dk`,
         queryLimit: 10000, // Default to 100
         contentTypes: [`politician`, `political-parties`],
         loginData: {
