@@ -19,9 +19,6 @@ const Navbar = ({ siteTitle }) => (
             <Link to="/partier">Partier</Link>
           </li>
           <li>
-            <Link to="/kommuner">Kommuner</Link>
-          </li>
-          <li>
             <Link to="/politikere">Politikere</Link>
           </li>
         </ul>

@@ -10,7 +10,9 @@ import style from "../style/pages/politicians.module.scss"
 const PoliticiansPage = ({data}) => (
   <Layout>
     <SEO title="Politikere" />
-    <h1>Politikere</h1>
+    <h1 style={{
+      marginTop: 35
+    }}>Politikere</h1>
     <p style={{
       marginBottom: 40
     }}>Alle politikere i Danmark.</p>
@@ -38,7 +40,6 @@ query {
       first_name
       last_name
       middle_name
-      Birthday
       photo_credit
       slug
       prefers_middle_name_shown

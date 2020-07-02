@@ -9,7 +9,9 @@ import PoliticalPartyCard from "../page-components/political-party-card"
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Partier" />
-    <h1>Partier</h1>
+    <h1 style={{
+      marginTop: 35
+    }}>Partier</h1>
     <p style={{
       marginBottom: 40
     }}>Alle partier i Danmark, plus nogle fra Grønland og Færøerne.</p>
