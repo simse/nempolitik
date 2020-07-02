@@ -12,7 +12,7 @@ const IndexPage = ({data}) => (
     <h1>Partier</h1>
     <p style={{
       marginBottom: 40
-    }}>Alle partier i det danske rigsfællesskab: Danmark, Grønland og Færøerne.</p>
+    }}>Alle partier i Danmark, plus nogle fra Grønland og Færøerne.</p>
     
     <Row>
     {data.allStrapiPoliticalParties.nodes.map(value => (

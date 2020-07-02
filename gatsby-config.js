@@ -19,7 +19,7 @@ module.exports = {
       options: {
         apiURL: `https://editor.nempolitik.dk`,
         queryLimit: 10000, // Default to 100
-        contentTypes: [`politician`, `political-parties`],
+        contentTypes: [`politician`, `political-parties`, `political-entities`],
         loginData: {
           identifier: "netlify",
           password: "tow_haib6THIW7ko",

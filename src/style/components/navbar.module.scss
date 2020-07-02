@@ -44,6 +44,14 @@
             a {
                 padding: 18px 14px;
                 display: block;
+                text-decoration: none;
+                font-weight: 700;
+                color: #000;
+                transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms color;
+
+                &:hover {
+                    color: #0d6efd;
+                }
             }
         }
     }
