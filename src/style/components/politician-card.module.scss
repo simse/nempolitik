@@ -15,7 +15,6 @@
         0 12.4px 24.2px -8px rgba(0, 0, 0, 0.024),
         0 22px 43px -8px rgba(0, 0, 0, 0.03);
 
-    border-top: 5px solid #111;
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms box-shadow, cubic-bezier(0.175, 0.885, 0.32, 1.275) 350ms transform;
 
     &:hover {
@@ -34,6 +33,12 @@
         transform: translateY(-2px);
     }
 
+    .inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
     h2 {
         text-align: center;
         font-size: 1.2rem;
@@ -44,11 +49,37 @@
         text-decoration: inherit;
         padding: 20px;
         display: block;
+        height: 100%;
+        box-sizing: border-box;
     }
 
     .role {
         text-align: center;
         opacity: 0.7;
-        //padding: 0 2px;
+        margin-bottom: 25px;
+    }
+
+    .partyTag {
+        background: #222;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 20px;
+        margin-top: auto;
+        display: flex;
+
+        &.dark {
+            img {
+                filter: invert(100%);
+            }
+        }
+
+        span {
+            margin-left: 10px;
+
+            &.dark {
+                color: #111;
+                font-weight: 500;
+            }
+        }
     }
 }

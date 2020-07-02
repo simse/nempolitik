@@ -1,10 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Row, Col } from 'react-grid-system'
+import Equalizer from "react-equalizer"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PoliticianCard from "../page-components/politician-card"
+import style from "../style/pages/politicians.module.scss"
 
 const PoliticiansPage = ({data}) => (
   <Layout>
@@ -14,17 +15,15 @@ const PoliticiansPage = ({data}) => (
       marginBottom: 40
     }}>Alle politikere i Danmark.</p>
 
-    <Row>
-    {data.allStrapiPolitician.nodes.map(value => (
-      <Col sm={12} md={6} lg={4} xl={3}>
+    <Equalizer byRow={true} className={style.row}>
+      {data.allStrapiPolitician.nodes.map(value => (
         <PoliticianCard
           politician={value}
           politicalEntities={data.allStrapiPoliticalEntities.nodes}
           key={value.id}
         />
-      </Col>
-    ))}
-    </Row>
+      ))}
+    </Equalizer>
   </Layout>
 )
 
@@ -46,6 +45,22 @@ query {
       political_party {
         color
         symbol
+        name
+        dark_text
+        logo {
+        childImageSharp {
+          fixed(
+            width: 24,
+            height: 24,
+            quality: 100,
+            duotone: {
+              highlight: "#ffffff",
+              shadow: "#ffffff"
+            }) {
+            ...GatsbyImageSharpFixed_withWebp
+          }
+        }
+      }
       }
       political_memberships {
         political_membership_type
