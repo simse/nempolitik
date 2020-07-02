@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 import style from "../style/components/politician-card.module.scss"
+import PartyTag from "../components/party-tag"
 import {politicianName, politicianRole} from "../util"
 
 const PoliticianCard = ({ politician, politicalEntities }) => (
@@ -23,19 +24,7 @@ const PoliticianCard = ({ politician, politicalEntities }) => (
         <h2>{ politicianName(politician) }</h2>
         <p className={style.role}>{ politicianRole(politician, politicalEntities) }</p>
 
-        <div
-          className={`${style.partyTag} ${politician.political_party.dark_text ? style.dark : ""}`}
-          style={{
-            background: politician.political_party.color,
-            color: politician.political_party.text_color
-          }}>
-          <Img
-            fixed={politician.political_party.logo.childImageSharp.fixed}
-            alt={politician.political_party.name + "'s logo"} />
-
-
-          <span className={`${politician.political_party.dark_text ? style.dark : ""}`}>{ politician.political_party.name }</span>
-        </div>
+        <PartyTag party={politician.political_party} />
       </div>
     </Link>
   </div>

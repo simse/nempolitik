@@ -1,15 +1,122 @@
-.header {
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+}
+
+.card {
+    box-shadow:
+        0 0.3px 0.7px -8px rgba(0, 0, 0, 0.006),
+        0 0.8px 1.5px -8px rgba(0, 0, 0, 0.009),
+        0 1.3px 2.5px -8px rgba(0, 0, 0, 0.011),
+        0 1.9px 3.7px -8px rgba(0, 0, 0, 0.013),
+        0 2.8px 5.4px -8px rgba(0, 0, 0, 0.015),
+        0 3.9px 7.6px -8px rgba(0, 0, 0, 0.017),
+        0 5.5px 10.8px -8px rgba(0, 0, 0, 0.019),
+        0 8px 15.7px -8px rgba(0, 0, 0, 0.021),
+        0 12.4px 24.2px -8px rgba(0, 0, 0, 0.024),
+        0 22px 43px -8px rgba(0, 0, 0, 0.03);
+    background: #fff;
+    padding: 24px 0;
+    border-radius: 12px;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms box-shadow;
+    margin-bottom: 20px;
+
+    &:hover {
+        box-shadow:
+            0 0.3px 0.7px -8px rgba(0, 0, 0, 0.011),
+            0 0.8px 1.5px -8px rgba(0, 0, 0, 0.016),
+            0 1.3px 2.5px -8px rgba(0, 0, 0, 0.019),
+            0 1.9px 3.7px -8px rgba(0, 0, 0, 0.022),
+            0 2.8px 5.4px -8px rgba(0, 0, 0, 0.025),
+            0 3.9px 7.6px -8px rgba(0, 0, 0, 0.028),
+            0 5.5px 10.8px -8px rgba(0, 0, 0, 0.031),
+            0 8px 15.7px -8px rgba(0, 0, 0, 0.034),
+            0 12.4px 24.2px -8px rgba(0, 0, 0, 0.039),
+            0 22px 43px -8px rgba(0, 0, 0, 0.05);
+    }
+
+    h2.card-title {
+        font-size: 1.1rem;
+    }
+}
+
+.name {
+    padding: 24px 26px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
 
     h1 {
-        margin-top: 30px;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+    }
+
+    .text {
+        margin: auto 0 auto 25px;
     }
 
     .role {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         opacity: 0.7;
     }
+}
+
+.education {
+    padding-bottom: 0;
+
+    h2 {
+        padding: 0 26px;
+    }
+
+    p.empty {
+        padding: 26px;
+        opacity: 0.8;
+    }
+
+    .entry {
+        padding: 15px 26px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        span {
+            opacity: 0.7;
+        }
+
+        p {
+            margin: 10px 0;
+            font-weight: 500;
+        }
+    }
+}
+
+.party {
+    //color: #fff;
+
+    &.dark {
+        color: #111;
+        font-weight: 500;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            margin-top: 20px;
+            font-size: 1.3rem;
+        }
+    }
+
+    
 }

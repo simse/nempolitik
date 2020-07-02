@@ -27,7 +27,7 @@ export const politicianRole = (politician, politicalEntities) => {
     if (membership_description.importance > highest_importance) {
       role = membership_description.name
 
-      if (political_entity.type !== "cabinet") {
+      if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
         role += " i " + political_entity.name
       }
 
@@ -36,4 +36,21 @@ export const politicianRole = (politician, politicalEntities) => {
   })
 
   return role
+}
+
+
+export const getPoliticianExperienceOfType = (politician, type) => {
+    let experiences = []
+
+    if (!politician.experiences) {
+        return experiences
+    }
+
+    politician.experiences.forEach(experience => {
+        if (experience.type === type) {
+            experiences.push(experience)
+        }
+    })
+
+    return experiences.reverse()
 }

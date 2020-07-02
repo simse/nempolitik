@@ -58,28 +58,4 @@
         opacity: 0.7;
         margin-bottom: 25px;
     }
-
-    .partyTag {
-        background: #222;
-        color: #fff;
-        padding: 8px 14px;
-        border-radius: 20px;
-        margin-top: auto;
-        display: flex;
-
-        &.dark {
-            img {
-                filter: invert(100%);
-            }
-        }
-
-        span {
-            margin-left: 10px;
-
-            &.dark {
-                color: #111;
-                font-weight: 500;
-            }
-        }
-    }
 }

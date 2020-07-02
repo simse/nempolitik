@@ -47,20 +47,13 @@ query {
         symbol
         name
         dark_text
-        logo {
-        childImageSharp {
-          fixed(
-            width: 24,
-            height: 24,
-            quality: 100,
-            duotone: {
-              highlight: "#ffffff",
-              shadow: "#ffffff"
-            }) {
-            ...GatsbyImageSharpFixed_withWebp
+        monochrome_logo {
+          childImageSharp {
+            fixed(width: 24, height: 24, quality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
           }
         }
-      }
       }
       political_memberships {
         political_membership_type
