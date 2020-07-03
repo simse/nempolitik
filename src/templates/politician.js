@@ -26,6 +26,8 @@ const politicianExperience = (educations, emptyMessage) => {
 
       if (experience.from === experience.to) {
         range = experience.to
+      } else if (!experience.to) {
+        range = experience.from + " — "
       } else {
         range = experience.from + " — " + experience.to
       }
@@ -61,13 +63,27 @@ const parseBirthday = birthday => {
 const politicalGroupCards = (politician, political_entities, political_entity_groups) => {
   // Find groups this politician is member of
   if (politician.political_memberships.length === 0) {
-    return "Denne politiker er ikke en del af nogle byråd, regionråd eller regeringer."
+    return (
+      <div className={`${style.card} ${style.noMembership}`}>
+        Denne politiker er ikke en del af nogle byråd, regionråd eller regeringer.
+      </div>
+    )
   }
 
   let cards = {}
 
   // Check every political membership
   politician.political_memberships.forEach(membership => {
+    // Determine if political membership has ended
+    if (membership.to) {
+      let date = moment(membership.to)
+      let currentDate = moment.now()
+
+      if (date < currentDate) {
+        return
+      }
+    }
+
     let political_entity = political_entities.find(entity => {
       return entity.strapiId === membership.political_entity
     })
@@ -106,14 +122,12 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
     // Check if chairman
     if (politician.strapiId === group.chairman) {
       roles.push("Formand for " + group.name)
-    }
-
     // Check if vice chairman
-    if (politician.strapiId === group.vice_chairman) {
+    } else if (politician.strapiId === group.vice_chairman) {
       roles.push("Næstformand for " + group.name)
+    } else {
+      roles.push("Medlem af " + group.name)
     }
-
-    roles.push("Medlem af " + group.name)
 
     if (political_entity.strapiId in cards) {
       cards[political_entity.strapiId].roles = cards[political_entity.strapiId].roles.concat(roles)
@@ -171,6 +185,9 @@ export default function PoliticianPage({ data }) {
               fixed={politician.photo.childImageSharp.fixed}
               imgStyle={{
                 borderRadius: 200,
+              }}
+              style={{
+                minWidth: 150
               }}
             />
 
@@ -257,6 +274,8 @@ export const query = graphql`
       political_memberships {
         political_membership_type
         political_entity
+        from
+        to
       }
       political_entity_groups {
         political_entity

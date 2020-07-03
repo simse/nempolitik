@@ -59,6 +59,8 @@ query {
       political_memberships {
         political_membership_type
         political_entity
+        from
+        to
       }
       photo {
         childImageSharp {

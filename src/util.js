@@ -1,3 +1,5 @@
+import moment from "moment"
+
 // Formats politician name taking middle name preference into account
 export const politicianName = politician => {
   let name = politician.first_name
@@ -12,6 +14,7 @@ export const politicianName = politician => {
 export const politicianRole = (politician, politicalEntities) => {
   let role = ""
   let highest_importance = 0
+  let past = false
 
   politician.political_memberships.forEach(membership => {
     let political_entity = politicalEntities.find(entity => {
@@ -24,9 +27,28 @@ export const politicianRole = (politician, politicalEntities) => {
       }
     )
 
-    if (membership_description.importance > highest_importance) {
-      role = membership_description.name
+    // Check if membership has ended
+    if (membership.to) {
+      let date = moment(membership.to)
+      let currentDate = moment.now()
 
+      if (date < currentDate) {
+        past = true
+        membership_description.importance = 1
+      }
+    }
+
+    // Find political membership with highest importance
+    if (membership_description.importance > highest_importance) {
+      // If political membership is in the past, show it if nothing is more relevant
+      if (past) {
+        role = "Tidligere " + membership_description.name.charAt(0).toLowerCase() + membership_description.name.slice(1)
+      } else {
+        role = membership_description.name
+      }
+
+      
+      // Cabinet and parliament positions are self-explanatory since there is only one relevant of each
       if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
         role += " i " + political_entity.name
       }

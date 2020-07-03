@@ -47,4 +47,28 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     })
   })
+
+  // Register all municipalities
+  const entities = await graphql(`
+    query {
+      allStrapiPoliticalEntities {
+        nodes {
+          slug
+          type
+        }
+      }
+    }
+  `)
+
+  entities.data.allStrapiPoliticalEntities.nodes.forEach(entity => {
+    if (entity.type === "municipality") {
+      createPage({
+        path: "kommune/" + entity.slug,
+        component: path.resolve("./src/templates/municipality.js"),
+        context: {
+            slug: entity.slug
+        }
+    })
+    }
+  })
 }

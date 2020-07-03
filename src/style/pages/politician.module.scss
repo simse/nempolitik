@@ -3,6 +3,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 20px;
     margin-top: 35px;
+
+    @media(max-width: 1200px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media(max-width: 760px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card {
@@ -22,6 +30,7 @@
     border-radius: 12px;
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms box-shadow;
     margin-bottom: 20px;
+    z-index: 100;
 
     &:hover {
         box-shadow:
@@ -40,12 +49,16 @@
     h2.card-title {
         font-size: 1.1rem;
     }
+
+    &.no-membership {
+        padding: 26px;
+    }
 }
 
 .name {
     padding: 24px 26px;
     display: flex;
-    min-width: 400px;
+    //min-width: 400px;
 
     h1 {
         font-size: 1.5rem;
@@ -100,7 +113,7 @@
     }
 
     .entry {
-        padding: 15px 26px;
+        padding: 20px 26px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms;
 
@@ -121,7 +134,7 @@
         }
 
         p {
-            margin: 10px 0;
+            margin: 10px 0 0 0;
             font-weight: 500;
         }
     }
