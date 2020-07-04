@@ -74,6 +74,9 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
 
   // Check every political membership
   politician.political_memberships.forEach(membership => {
+    // Check if card has already been created
+    if (membership.political_entity in cards) return
+
     // Determine if political membership has ended
     if (membership.to) {
       let date = moment(membership.to)
@@ -88,26 +91,14 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
       return entity.strapiId === membership.political_entity
     })
 
-    let political_membership_type = political_entity.political_membership_types.find(type => {
-      return type.id === membership.political_membership_type
-    })
+    let title = politicianRole(politician, political_entities, political_entity.strapiId)
 
-    let role = political_membership_type.name
-
-
-    if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
-      role = political_membership_type.name + " i " + political_entity.name
-    }
-
-    // check if entity has already been added
-    if (political_entity.strapiId in cards) {
-      cards[political_entity.strapiId].roles.push(role)
-    } else {
-      cards[political_entity.strapiId] = {
-        name: political_entity.name,
-        logo: political_entity.logo,
-        roles: [role]
-      }
+    cards[political_entity.strapiId] = {
+      name: political_entity.name,
+      logo: political_entity.logo,
+      title: title,
+      group_name: political_entity.political_group_name,
+      roles: []
     }
   })
 
@@ -121,32 +112,44 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
 
     // Check if chairman
     if (politician.strapiId === group.chairman) {
-      roles.push("Formand for " + group.name)
+      roles.push({
+        title: "Formand for " + group.name,
+        importance: 20
+      })
     // Check if vice chairman
     } else if (politician.strapiId === group.vice_chairman) {
-      roles.push("Næstformand for " + group.name)
+      roles.push({
+        title: "Næstformand for " + group.name,
+        importance: 10
+      })
     } else {
-      roles.push("Medlem af " + group.name)
+      roles.push({
+        title: "Medlem af " + group.name,
+        importance: 1
+      })
     }
 
     if (political_entity.strapiId in cards) {
       cards[political_entity.strapiId].roles = cards[political_entity.strapiId].roles.concat(roles)
-    } else {
-      cards[political_entity.strapiId] = {
-        name: political_entity.name,
-        logo: political_entity.logo,
-        roles: roles
-      }
     }
   })
 
   // Generate card output
   return Object.values(cards).map(card => {
-    let roles = card.roles.map(role => (
-      <div className={style.role} key={role}>
-        {role}
+    // Sort roles array by importance (to show chairman and vice chairman first)
+    let sortedRoles = card.roles
+    sortedRoles.sort((a,b) => (a.importance < b.importance) ? 1 : ((b.importance < a.importance) ? -1 : 0))
+
+    let roles = sortedRoles.map(role => (
+      <div className={style.role} key={role.title}>
+        {role.title}
       </div>
     ))
+
+    let groupTitle = ""
+    if (card.roles.length > 0) {
+      groupTitle = <h3 className={style.groupName}>{ card.group_name }</h3>
+    }
 
     return (
       <div className={`${style.card} ${style.politicalGroup}`} key={card.name}>
@@ -155,9 +158,11 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
 
 
           <h2 className={style.groupTitle}>{card.name}</h2>
+          <p className={style.role}>{ card.title }</p>
         </div>
         
         <div className={style.roles}>
+          {groupTitle}
           {roles}
         </div>
       </div>
@@ -302,6 +307,7 @@ export const query = graphql`
         color
         dark_text
         name
+        slug
       }
     }
     allStrapiPoliticalEntities {
@@ -309,6 +315,7 @@ export const query = graphql`
         strapiId
         name
         type
+        political_group_name
         political_membership_types {
           name
           importance

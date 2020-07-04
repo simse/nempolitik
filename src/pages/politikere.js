@@ -48,6 +48,7 @@ query {
         symbol
         name
         dark_text
+        slug
         monochrome_logo {
           childImageSharp {
             fixed(width: 24, height: 24, quality: 100) {

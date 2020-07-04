@@ -11,12 +11,17 @@ export const politicianName = politician => {
 }
 
 // Finds most important politician role (prime minister takes precedence over being a member of parliament)
-export const politicianRole = (politician, politicalEntities) => {
+export const politicianRole = (politician, politicalEntities, entityFilter = null) => {
   let role = ""
   let highest_importance = 0
   let past = false
 
   politician.political_memberships.forEach(membership => {
+    // Ignore membership if entityFilter is set
+    if (entityFilter) {
+      if (membership.political_entity !== entityFilter) return
+    }
+
     let political_entity = politicalEntities.find(entity => {
       return entity.strapiId === membership.political_entity
     })
