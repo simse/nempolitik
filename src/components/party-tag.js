@@ -14,7 +14,7 @@ const PartyTag = ({ partyId }) => {
             color
             monochrome_logo {
               childImageSharp {
-                fixed(height: 24) {
+                fixed(width: 24) {
                   ...GatsbyImageSharpFixed_withWebp_tracedSVG
                 }
               }
@@ -27,10 +27,7 @@ const PartyTag = ({ partyId }) => {
     `
   ).allStrapiPoliticalParties.nodes
 
-  console.log(partyId)
-
   const party = allParties.find(search => {
-    console.log(search)
     return search.strapiId === partyId
   })
 
@@ -44,6 +41,9 @@ const PartyTag = ({ partyId }) => {
       <Img
         fixed={party.monochrome_logo.childImageSharp.fixed}
         alt={party.name + "'s logo"}
+        style={{
+          minWidth: 24
+        }}
       />
 
       <span className={`${party.dark_text ? style.dark : ""}`}>
