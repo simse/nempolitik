@@ -174,6 +174,8 @@ export default function PoliticianPage({ data }) {
   const politician = data.strapiPolitician
   const party = politician.political_party
 
+  console.log(party)
+
   let role = ""
   try {
     role = politicianRole(politician, data.allStrapiPoliticalEntities.nodes)
@@ -199,7 +201,7 @@ export default function PoliticianPage({ data }) {
             <div className={style.text}>
               <h1>{politicianName(politician)}</h1>
               <p className={style.role}>{role}</p>
-              <PartyTag party={politician.political_party} />
+              <PartyTag partyId={party.id} />
             </div>
           </div>
 
@@ -290,13 +292,7 @@ export const query = graphql`
         chairman
       }
       political_party {
-        monochrome_logo {
-          childImageSharp {
-            fixed(width: 24, height: 24, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
-            }
-          }
-        }
+        id
         logo {
           childImageSharp {
             fixed(width: 75, quality: 100) {

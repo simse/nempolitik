@@ -49,13 +49,7 @@ query {
         name
         dark_text
         slug
-        monochrome_logo {
-          childImageSharp {
-            fixed(width: 24, height: 24, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
-        }
+        id
       }
       political_memberships {
         political_membership_type

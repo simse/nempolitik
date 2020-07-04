@@ -24,7 +24,7 @@ const PoliticianCard = ({ politician, politicalEntities }) => (
         <h2>{ politicianName(politician) }</h2>
         <p className={style.role}>{ politicianRole(politician, politicalEntities) }</p>
 
-        <PartyTag party={politician.political_party} />
+        <PartyTag partyId={politician.political_party.id} />
       </div>
     </Link>
   </div>
