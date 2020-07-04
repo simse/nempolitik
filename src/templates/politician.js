@@ -55,7 +55,7 @@ const parseBirthday = birthday => {
   }
 
   moment.locale("da")
-  let birthdayString = moment(birthday).format('LL');
+  let birthdayString = moment(birthDate).format('LL');
 
   return birthdayString + ` (${age} år)`
 }
@@ -173,8 +173,6 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
 export default function PoliticianPage({ data }) {
   const politician = data.strapiPolitician
   const party = politician.political_party
-
-  console.log(party)
 
   let role = ""
   try {
