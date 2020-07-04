@@ -24,6 +24,7 @@
     "react-equalizer": "^1.3.0",
     "react-grid-system": "^7.0.3",
     "react-helmet": "^6.1.0",
+    "strapi-exporter": "^1.1.0",
     "typeface-inter": "^3.12.0"
   },
   "devDependencies": {

@@ -17,13 +17,13 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://editor.nempolitik.dk`,
+        apiURL: `https://api.nempolitik.dk`,
         queryLimit: 100000,
         contentTypes: [`politician`, `political-parties`, `political-entities`, `political-entity-groups`],
-        loginData: {
+        /*loginData: {
           identifier: "netlify",
           password: "tow_haib6THIW7ko",
-        },
+        },*/
       },
     },
     `gatsby-transformer-sharp`,
