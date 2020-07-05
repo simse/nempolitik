@@ -8,4 +8,10 @@ email: smj@nyborg.dk
 birthday: 1994-07-13T17:34:40.085Z
 birth_place: ""
 party: Socialdemokratiet
+experience:
+  - place: Nyborg Gymnasium
+    title: Studentereksamen
+    from: "2011"
+    to: "2014"
+    type: education
 ---
