@@ -5,7 +5,12 @@ module.exports = {
     author: `@simse`,
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
@@ -15,20 +20,29 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    /*{
-      resolve: `gatsby-source-strapi`,
+    {
+      resolve: `gatsby-source-filesystem`,
       options: {
-        apiURL: `https://api.nempolitik.dk`,
-        queryLimit: 100000,
-        contentTypes: [`politician`, `political-parties`, `political-entities`, `political-entity-groups`],
-        /*loginData: {
-          identifier: "netlify",
-          password: "tow_haib6THIW7ko",
-        },
+        path: `${__dirname}/static/images`,
       },
-    },*/
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/content`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+        resolve: 'gatsby-plugin-sharp',
+        options: {
+            useMozJpeg: false,
+            stripMetadata: true,
+            defaultQuality: 100,
+        },
+  },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

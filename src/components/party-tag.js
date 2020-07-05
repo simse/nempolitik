@@ -4,32 +4,36 @@ import Img from "gatsby-image"
 
 import style from "../style/components/party-tag.module.scss"
 
-const PartyTag = ({ partyId }) => {
+const PartyTag = ({ partyName }) => {
   const allParties = useStaticQuery(
     graphql`
       query {
-        allStrapiPoliticalParties {
+        allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(parties)/"}}) {
           nodes {
-            dark_text
-            color
-            monochrome_logo {
-              childImageSharp {
-                fixed(height: 24) {
-                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            frontmatter {
+              name
+              color
+              dark_text
+              monochrome_logo {
+                childImageSharp {
+                  fixed(height: 24) {
+                    ...GatsbyImageSharpFixed_withWebp_tracedSVG
+                  }
                 }
               }
             }
-            name
-            strapiId
+            fields {
+              slug
+            }
           }
         }
       }
     `
-  ).allStrapiPoliticalParties.nodes
+  ).allMarkdownRemark.nodes
 
   const party = allParties.find(search => {
-    return search.strapiId === partyId
-  })
+    return search.name === partyName
+  }).frontmatter
 
   return (
     <div

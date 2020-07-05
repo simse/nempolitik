@@ -1,5 +1,4 @@
 ---
-id: 1
 name: "Socialdemokratiet"
 political_leaning: -15
 symbol: "A"

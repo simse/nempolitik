@@ -1,4 +1,4 @@
-import React from "react"
+/*import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import moment from "moment"
@@ -336,3 +336,4 @@ export const query = graphql`
     }
   }
 `
+*/

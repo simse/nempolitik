@@ -1,33 +1,64 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import style from "../style/components/politician-card.module.scss"
 import PartyTag from "../components/party-tag"
-import {politicianName, politicianRole} from "../util"
+import {politicianRole} from "../util"
 
-const PoliticianCard = ({ politician, politicalEntities }) => (
-  <div className={style.politicianCard}>
-    <Link to={"/politiker/" + politician.slug}>
-      <div className={style.inner}>
-        <Img
-          fixed={politician.photo.childImageSharp.fixed}
-          alt={"Billede af " + politicianName(politician)}
-          style={{
-            margin: "0 auto 18px auto",
-            display: "block"
-          }}
-          imgStyle={{
-            borderRadius: "100px"
-          }} />
+const PoliticianCard = ({ politician }) => (
+  <StaticQuery
+      query={graphql`
+        query {
+          allPoliticalEntities: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(political_entities)/"}}) {
+            nodes {
+              frontmatter {
+                name
+              }
+            }
+          }
+          allPoliticalEntityMembershipTypes: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(political_entity_membership_types)/"}}) {
+            nodes {
+              frontmatter {
+                name
+                importance
+              }
+            }
+          }
+          allPoliticalEntityMemberships: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(political_entity_memberships)/"}}) {
+            nodes {
+              frontmatter {
+                name
+                importance
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <div className={style.politicianCard}>
+          <Link to={"/politiker/" + politician.fields.slug}>
+            <div className={style.inner}>
+              <Img
+                fixed={politician.frontmatter.photo.childImageSharp.fixed}
+                alt={"Billede af " + politician.name}
+                style={{
+                  margin: "0 auto 18px auto",
+                  display: "block"
+                }}
+                imgStyle={{
+                  borderRadius: "100px"
+                }} />
 
-        <h2>{ politicianName(politician) }</h2>
-        <p className={style.role}>{ politicianRole(politician, politicalEntities) }</p>
+              <h2>{ politician.frontmatter.name }</h2>
+              <p className={style.role}>{ /*politicianRole(politician, politicalEntities)*/ }</p>
 
-        <PartyTag partyId={politician.political_party.id} />
-      </div>
-    </Link>
-  </div>
+              <PartyTag partyId={politician.frontmatter.party} />
+            </div>
+          </Link>
+        </div>
+      )}
+    />
 )
 
 export default PoliticianCard

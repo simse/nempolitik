@@ -2,7 +2,47 @@
  * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
- *//*
+ */
+
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+const { createFilePath } = require(`gatsby-source-filesystem`)
+const slugify = require('slugify')
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  // enabled Gatsby Image
+  fmImagesToRelative(node);
+
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    let slug = createFilePath({ node, getNode, basePath: `pages` })
+
+    if (
+      node.fileAbsolutePath.includes("politicians") ||
+      node.fileAbsolutePath.includes("parties")
+    ) {
+      slug = slugify(node.frontmatter.name, {
+        lower: true,
+        strict: true
+      })
+
+      createNodeField({
+        node,
+        name: `slug`,
+        value: slug,
+      })
+    } 
+  }
+}
+
+
+
+
+
+
+
+
+
+ /*
 const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions }) => {

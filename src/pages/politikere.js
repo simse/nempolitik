@@ -1,4 +1,4 @@
-/*import React from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Equalizer from "react-equalizer"
 
@@ -18,10 +18,10 @@ const PoliticiansPage = ({data}) => (
     }}>Alle politikere i Danmark.</p>
 
     <Equalizer byRow={true} className={style.row}>
-      {data.allStrapiPolitician.nodes.map(value => (
+      {data.allMarkdownRemark.nodes.map(value => (
         <PoliticianCard
           politician={value}
-          politicalEntities={data.allStrapiPoliticalEntities.nodes}
+          /*politicalEntities={data.allStrapiPoliticalEntities.nodes}*/
           key={value.id}
         />
       ))}
@@ -34,49 +34,23 @@ export default PoliticiansPage
 
 export const query = graphql`
 query {
-  allStrapiPolitician {
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(politician)/"}}) {
     nodes {
-      id
-      first_name
-      last_name
-      middle_name
-      photo_credit
-      slug
-      prefers_middle_name_shown
-      political_party {
-        color
-        symbol
+      frontmatter {
         name
-        dark_text
-        slug
-        id
-      }
-      political_memberships {
-        political_membership_type
-        political_entity
-        from
-        to
-      }
-      photo {
-        childImageSharp {
-          fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
+        party
+        photo {
+          childImageSharp {
+            fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
           }
         }
       }
-    }
-  }
-  allStrapiPoliticalEntities {
-    nodes {
-      strapiId
-      name
-      type
-      political_membership_types {
-        name
-        importance
-        id
+      fields {
+        slug
       }
     }
   }
 }
-`*/
+`
