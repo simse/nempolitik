@@ -1,11 +1,3 @@
-import React from "react"
-
-export const Page = () => (
-  <h1>
-  hello
-  </h1>
-)
-
 /*import React from "react"
 import { graphql } from "gatsby"
 import { Row, Col } from 'react-grid-system'

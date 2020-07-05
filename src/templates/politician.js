@@ -98,8 +98,6 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
 
     let title = politicianRole(politician, political_entities, political_memberships, political_membership_types, political_entity.id)
 
-    console.log(political_entity)
-
     cards[political_entity.id] = {
       name: political_entity.name,
       logo: political_entity.logo,
