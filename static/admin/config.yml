@@ -1,0 +1,43 @@
+backend:
+    name: github
+    repo: simse/nempolitik
+
+media_folder: "static/images"
+public_folder: "/images"
+
+
+collections:
+
+    - name: "party"
+      label: "Party"
+      folder: "content/parties"
+      create: true
+      slug: "{{slug}}"
+      fields:
+        - {label: "ID", name: "id", widget: "integer"}
+        - {label: "Name", name: "name", widget: "string"}
+        - {label: "Symbol", name: "symbol", widget: "string"}
+        - {label: "Headquarters", name: "headquarters", widget: "string"}
+        - {label: "Political Leaning", name: "political_leaning", widget: "string"}
+        - {label: "Color", name: "color", widget: "string"}
+        - {label: "Dark Text", name: "dark_text", widget: "boolean"}
+        - {label: "Logo", name: "logo", widget: "image"}
+        - {label: "Monochrome Logo", name: "monochrome_logo", widget: "image"}
+
+    - name: "politician" # Used in routes, e.g., /admin/collections/blog
+      label: "Politician" # Used in the UI
+      folder: "content/politicians" # The path to the folder where the documents are stored
+      create: true # Allow users to create new documents in this collection
+      slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+      fields: # The fields for each document, usually in front matter
+        # - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+        - {label: "First name", name: "first_name", widget: "string"}
+        - {label: "Middle name", name: "middle_name", widget: "string"}
+        - {label: "Last name", name: "last_name", widget: "string"}
+        - {label: "Photo", name: "photo", widget: "image"}
+        - {label: "Photo Credit", name: "photo_credit", widget: "string"}
+        - {label: "Phone number", name: "phone_number", widget: "string"}
+        - {label: "Email", name: "email", widget: "string"}
+        - {label: "Birthday", name: "birthday", widget: "date"}
+        - {label: "Birth Place", name: "birth_place", widget: "string"}
+        - {label: "Party Affiliation", name: "party", widget: "relation", collection: "party", searchFields: ["name"], valueField: "id"}

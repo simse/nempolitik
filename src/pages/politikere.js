@@ -1,4 +1,4 @@
-import React from "react"
+/*import React from "react"
 import { graphql } from "gatsby"
 import Equalizer from "react-equalizer"
 
@@ -79,4 +79,4 @@ query {
     }
   }
 }
-`
+`*/

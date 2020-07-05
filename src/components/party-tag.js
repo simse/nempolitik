@@ -14,7 +14,7 @@ const PartyTag = ({ partyId }) => {
             color
             monochrome_logo {
               childImageSharp {
-                fixed(width: 24) {
+                fixed(height: 24) {
                   ...GatsbyImageSharpFixed_withWebp_tracedSVG
                 }
               }

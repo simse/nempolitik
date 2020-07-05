@@ -1,4 +1,4 @@
-import React from "react"
+/*import React from "react"
 import { graphql } from "gatsby"
 import { Row, Col } from 'react-grid-system'
 
@@ -56,4 +56,4 @@ query AllPoliticalParties {
     }
   }
 }
-`
+`*/

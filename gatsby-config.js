@@ -5,6 +5,7 @@ module.exports = {
     author: `@simse`,
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
@@ -14,7 +15,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
+    /*{
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `https://api.nempolitik.dk`,
@@ -23,9 +24,9 @@ module.exports = {
         /*loginData: {
           identifier: "netlify",
           password: "tow_haib6THIW7ko",
-        },*/
+        },
       },
-    },
+    },*/
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
