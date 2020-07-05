@@ -1,4 +1,4 @@
 import CMS from "netlify-cms-app"
-import idWidget from 'netlify-cms-widget-simple-uuid';
-
-CMS.registerWidget('id', idWidget.Control, idWidget.Preview);
+import { UuidControl, UuidPreview } from 'netlify-cms-widget-uuid'
+ 
+CMS.registerWidget('uuid', UuidControl, UuidPreview)

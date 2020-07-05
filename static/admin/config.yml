@@ -13,7 +13,7 @@ collections:
       create: true
       slug: "{{name}}-{{symbol}}"
       fields:
-        - {label: "ID", name: "id", widget: "id"}
+        - {label: "ID", name: "id", widget: "uuid"}
         - {label: "Name", name: "name", widget: "string"}
         - {label: "Symbol", name: "symbol", widget: "string"}
         - {label: "Headquarters", name: "headquarters", widget: "string"}
@@ -30,6 +30,7 @@ collections:
       create: true
       slug: "{{name}}"
       fields:
+        - {label: "ID", name: "id", widget: "uuid"}
         - {label: "Type", name: "type", widget: "select", options: ["parliament", "cabinet"]}
         - {label: "Name", name: "name", widget: "string"}
         - {label: "Logo", name: "logo", widget: "image"}
@@ -40,6 +41,7 @@ collections:
       create: true
       slug: "{{name}}"
       fields:
+        - {label: "ID", name: "id", widget: "uuid"}
         - {label: "Name", name: "name", widget: "string"}
         - {label: "Importance", name: "importance", widget: "number"}
         - {label: "Political Entities", name: "political_entities", widget: "relation", collection: "political_entity", searchFields: ["name"], valueField: "name", displayFields: ["name"], multiple: true}
@@ -51,6 +53,7 @@ collections:
       slug: "{{political_entity}}-{{political_entity_membership_type}}-{{politician}}"
       identifier_field: politician
       fields:
+        - {label: "ID", name: "id", widget: "uuid"}
         - {label: "From", name: "from", widget: "date"}
         - {label: "To", name: "to", widget: "date", required: false, default: ""}
         - {label: "Political Entity", name: "political_entity", widget: "relation", collection: "political_entity", searchFields: ["name"], valueField: "name", displayFields: ["name"]}
@@ -63,7 +66,7 @@ collections:
       create: true # Allow users to create new documents in this collection
       slug: "{{first_name}}-{{last_name}}-{{birthday}}" # Filename template, e.g., YYYY-MM-DD-title.md
       fields: # The fields for each document, usually in front matter
-        # - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+        - {label: "ID", name: "id", widget: "uuid"}
         - {label: "Name", name: "name", widget: "string"}
         - {label: "Photo", name: "photo", widget: "image"}
         - {label: "Photo Credit", name: "photo_credit", widget: "string"}

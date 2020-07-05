@@ -1037,7 +1037,7 @@
     "@emotion/utils" "0.11.3"
     "@emotion/weak-memoize" "0.2.5"
 
-"@emotion/core@^10.0.9":
+"@emotion/core@^10.0.17", "@emotion/core@^10.0.9":
   version "10.0.28"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.28.tgz#bb65af7262a234593a9e952c041d0f1c9b9bef3d"
   integrity sha512-pH8UueKYO5jgg0Iq+AmCLxBsvuGtvlmiDCOuv8fGNYn3cowFpLN98L8zO56U0H1PjDIyAlXymgL3Wu7u7v6hbA==
@@ -10994,6 +10994,15 @@ netlify-cms-widget-text@^2.3.0:
   integrity sha512-uAGC9l4zzIGbVgLBGf7X47VKYC0kjKNuqDpplvg8pQ6pZAY70tlV4DxmxAQSOL0mKZS9a45MVNlaiiuj8fAmaA==
   dependencies:
     react-textarea-autosize "^7.1.0"
+
+netlify-cms-widget-uuid@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-uuid/-/netlify-cms-widget-uuid-0.0.9.tgz#55b482db839f7b11c35cb4df3617807723655e38"
+  integrity sha512-+hKbbvLkrk9uJr4Xf1sCG1MyPXouaiC8cVfuAlKAv9w9rnzH1OsByVYx6pgg38oZoC0xGtj8kbBzP6uzlagGTA==
+  dependencies:
+    "@emotion/core" "^10.0.17"
+    prop-types "^15.6.1"
+    uuid "^3.3.3"
 
 netlify-identity-widget@^1.6.0:
   version "1.7.0"

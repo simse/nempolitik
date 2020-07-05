@@ -23,6 +23,7 @@
     "moment": "^2.27.0",
     "netlify-cms-app": "^2.12.16",
     "netlify-cms-widget-simple-uuid": "^0.0.2",
+    "netlify-cms-widget-uuid": "^0.0.9",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
