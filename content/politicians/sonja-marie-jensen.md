@@ -9,5 +9,4 @@ email: smj@nyborg.dk
 birthday: 1994-07-13T17:34:40.085Z
 birth_place: s
 party: 1
-experience: s
 ---
