@@ -35,6 +35,19 @@ collections:
         - {label: "Name", name: "name", widget: "string"}
         - {label: "Logo", name: "logo", widget: "image"}
 
+    - name: "political_entity_group"
+      label: "Political Entity Group"
+      folder: "content/political_entity_groups"
+      create: true
+      slug: "{{name}}"
+      fields:
+        - {label: "ID", name: "id", widget: "uuid"}
+        - {label: "Name", name: "name", widget: "string"}
+        - {label: "Political Entities", name: "political_entities", widget: "relation", collection: "political_entity", searchFields: ["name"], valueField: "id", displayFields: ["name"], multiple: false}
+        - {label: "Chairman", name: "chairman", widget: "relation", collection: "politician", searchFields: ["name"], valueField: "id", displayFields: ["name"]}
+        - {label: "Vice Chairman", name: "vice_chairman", widget: "relation", collection: "politician", searchFields: ["name"], valueField: "id", displayFields: ["name"], required: false}
+        - {label: "Members", name: "politicians", widget: "relation", collection: "politician", searchFields: ["name"], valueField: "id", displayFields: ["name"], multiple: true}
+
     - name: "political_entity_membership_type"
       label: "Political Entity Membership Type"
       folder: "content/political_entity_membership_types"

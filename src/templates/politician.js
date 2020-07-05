@@ -9,10 +9,11 @@ import Layout from "../components/layout"
 
 import style from "../style/pages/politician.module.scss"
 import {
-  politicianRole,
-  getPoliticianExperienceOfType,
+  getPoliticianExperienceOfType, 
 } from "../util.js"
 import PartyTag from "../components/party-tag"
+import PoliticianRole from "../page-components/politician-role"
+
 
 const politicianExperience = (educations, emptyMessage) => {
   if (educations.length === 0) {
@@ -26,7 +27,7 @@ const politicianExperience = (educations, emptyMessage) => {
       if (experience.from === experience.to) {
         range = experience.to
       } else if (!experience.to) {
-        range = experience.from + " — "
+        range = experience.from
       } else {
         range = experience.from + " — " + experience.to
       }
@@ -96,7 +97,7 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
       return entity.id === membership.political_entity
     })
 
-    let title = politicianRole(politician, political_entities, political_memberships, political_membership_types, political_entity.id)
+    let title = <PoliticianRole politicianId={politician.id} />
 
     cards[political_entity.id] = {
       name: political_entity.name,
@@ -163,7 +164,9 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
 
 
           <h2 className={style.groupTitle}>{card.name}</h2>
-          <p className={style.role}>{ card.title }</p>
+          <p className={style.role}>
+            <PoliticianRole politicianId={politician.id} />
+          </p>
         </div>
         
         <div className={style.roles}>
@@ -180,11 +183,6 @@ export default function PoliticianPage({ data }) {
   const party = data.allPoliticalParties.nodes.find(search => {
     return search.id === politician.party
   })
-
-  let role = ""
-  try {
-    role = politicianRole(politician, data.allPoliticalEntities.nodes, data.allPoliticalEntityMemberships.nodes, data.allPoliticalEntityMembershipTypes.nodes)
-  } catch (err) {}
 
   return (
     <Layout>
@@ -205,7 +203,7 @@ export default function PoliticianPage({ data }) {
 
             <div className={style.text}>
               <h1>{politician.name}</h1>
-              <p className={style.role}>{role}</p>
+              <p className={style.role}><PoliticianRole politicianId={politician.id} /></p>
               <PartyTag partyId={party.id} />
             </div>
           </div>
