@@ -61,7 +61,7 @@ const parseBirthday = birthday => {
 }
 
 
-const politicalGroupCards = (politician, political_memberships, political_entities, political_membership_types/*, political_entity_groups*/) => {
+const politicalGroupCards = (politician, political_memberships, political_entities, political_entity_groups) => {
   // Find relevant memberships
   let memberships = political_memberships.filter(membership => {
     return membership.politician === politician.id
@@ -107,23 +107,28 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
       roles: []
     }
   })
-/*
+
   // Check every political group (child political entity)
-  politician.political_entity_groups.forEach(group => {
+  political_entity_groups.forEach(group => {
+    // Ignore if politician is not a member
+    if (!group.politicians.includes(politician.id)) {
+      return
+    }
+
     let political_entity = political_entities.find(entity => {
-      return entity.strapiId === group.political_entity
+      return entity.id === group.political_entities
     })
 
     let roles = []
 
     // Check if chairman
-    if (politician.strapiId === group.chairman) {
+    if (politician.id === group.chairman) {
       roles.push({
         title: "Formand for " + group.name,
         importance: 20
       })
     // Check if vice chairman
-    } else if (politician.strapiId === group.vice_chairman) {
+    } else if (politician.id === group.vice_chairman) {
       roles.push({
         title: "Næstformand for " + group.name,
         importance: 10
@@ -135,10 +140,10 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
       })
     }
 
-    if (political_entity.strapiId in cards) {
-      cards[political_entity.strapiId].roles = cards[political_entity.strapiId].roles.concat(roles)
+    if (political_entity.id in cards) {
+      cards[political_entity.id].roles = cards[political_entity.id].roles.concat(roles)
     }
-  })*/
+  })
 
   // Generate card output
   return Object.values(cards).map(card => {
@@ -255,7 +260,7 @@ export default function PoliticianPage({ data }) {
               politician,
               data.allPoliticalEntityMemberships.nodes,
               data.allPoliticalEntities.nodes,
-              data.allPoliticalEntityMembershipTypes.nodes
+              data.allPoliticalEntityGroups.nodes
             )
           }
         </div>
@@ -266,7 +271,7 @@ export default function PoliticianPage({ data }) {
 
 export const query = graphql`
   query($slug: String!) {
-    politician: markdown(slug: {eq: $slug}) {
+    politician: politician(slug: {eq: $slug}) {
       id
       birthday
       name
@@ -287,7 +292,7 @@ export const query = graphql`
         type
       }
     }
-    allPoliticalParties: allMarkdown(filter: {type: {eq: "political_party"}}) {
+    allPoliticalParties: allPoliticalParty {
       nodes {
         name
         id
@@ -300,11 +305,11 @@ export const query = graphql`
         }
       }
     }
-    allPoliticalEntities: allMarkdown(filter: {type: {eq: "political_entity"}}) {
+    allPoliticalEntities: allPoliticalEntity {
       nodes {
         name
         id
-        entity_type
+        type
         logo {
           childImageSharp {
             fixed(width: 80, quality: 100) {
@@ -314,7 +319,7 @@ export const query = graphql`
         }
       }
     }
-    allPoliticalEntityMembershipTypes: allMarkdown(filter: {type: {eq: "political_entity_membership_type"}}) {
+    allPoliticalEntityMembershipTypes: allPoliticalEntityMembershipType {
       nodes {
         name
         importance
@@ -322,13 +327,21 @@ export const query = graphql`
         id
       }
     }
-    allPoliticalEntityMemberships: allMarkdown(filter: {type: {eq: "political_membership"}}) {
+    allPoliticalEntityMemberships: allPoliticalMembership {
       nodes {
         from
         to
         political_entity
         political_entity_membership_type
         politician
+      }
+    }
+    allPoliticalEntityGroups: allPoliticalEntityGroup {
+      nodes {
+        chairman
+        politicians
+        political_entities
+        name
       }
     }
   }

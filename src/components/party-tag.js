@@ -8,7 +8,7 @@ const PartyTag = ({ partyId }) => {
   const allParties = useStaticQuery(
     graphql`
       query {
-        allParties: allMarkdown(filter: {type: {eq: "political_party"}}) {
+        allParties: allPoliticalParty {
           nodes {
             id
             name

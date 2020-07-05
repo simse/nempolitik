@@ -1,4 +1,4 @@
-/*import React from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import { Row, Col } from 'react-grid-system'
 
@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PoliticalPartyCard from "../page-components/political-party-card"
 
-const IndexPage = ({data}) => (
+const PartiesPage = ({data}) => (
   <Layout>
     <SEO title="Partier" />
     <h1 style={{
@@ -17,7 +17,7 @@ const IndexPage = ({data}) => (
     }}>Alle partier i Danmark, plus nogle fra Grønland og Færøerne.</p>
     
     <Row>
-    {data.allStrapiPoliticalParties.nodes.map(value => (
+    {data.allPoliticalParties.nodes.map(value => (
       <Col sm={12} md={6} lg={4}>
         <PoliticalPartyCard politicalParty={value} key={value.id} />
       </Col>
@@ -31,17 +31,17 @@ const IndexPage = ({data}) => (
   </Layout>
 )
 
-export default IndexPage
+export default PartiesPage
 
 
 export const query = graphql`
-query AllPoliticalParties {
-  allStrapiPoliticalParties {
+query {
+  allPoliticalParties: allPoliticalParty {
     nodes {
+      id
       color
       established
       headquarters
-      id
       name
       political_leaning
       slug
@@ -56,4 +56,4 @@ query AllPoliticalParties {
     }
   }
 }
-`*/
+`

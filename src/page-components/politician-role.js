@@ -7,13 +7,11 @@ export default function PoliticianRole({politicianId, entityFilter}) {
   const { allPoliticalEntities, allPoliticalEntityMembershipTypes, allPoliticalEntityMemberships } = useStaticQuery(
     graphql`
       query {
-        allPoliticalEntities: allMarkdown(
-          filter: { type: { eq: "political_entity" } }
-        ) {
+        allPoliticalEntities: allPoliticalEntity {
           nodes {
             name
             id
-            entity_type
+            type
             logo {
               childImageSharp {
                 fixed(width: 80, quality: 100) {
@@ -23,9 +21,7 @@ export default function PoliticianRole({politicianId, entityFilter}) {
             }
           }
         }
-        allPoliticalEntityMembershipTypes: allMarkdown(
-          filter: { type: { eq: "political_entity_membership_type" } }
-        ) {
+        allPoliticalEntityMembershipTypes: allPoliticalEntityMembershipType {
           nodes {
             name
             importance
@@ -33,9 +29,7 @@ export default function PoliticianRole({politicianId, entityFilter}) {
             id
           }
         }
-        allPoliticalEntityMemberships: allMarkdown(
-          filter: { type: { eq: "political_membership" } }
-        ) {
+        allPoliticalEntityMemberships: allPoliticalMembership {
           nodes {
             from
             to
@@ -97,7 +91,7 @@ export default function PoliticianRole({politicianId, entityFilter}) {
 
       
       // Cabinet and parliament positions are self-explanatory since there is only one relevant of each
-      if (political_entity.entity_type !== "cabinet" && political_entity.entity_type !== "parliament") {
+      if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
         role += " i " + political_entity.name
       }
 

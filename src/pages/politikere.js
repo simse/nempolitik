@@ -34,7 +34,7 @@ export default PoliticiansPage
 
 export const query = graphql`
 query {
-  allPoliticians: allMarkdown(filter: {type: {eq: "politician"}}) {
+  allPoliticians: allPolitician {
     nodes {
       id
       name

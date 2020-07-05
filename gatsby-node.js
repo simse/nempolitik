@@ -18,7 +18,6 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
     const content = await loadNodeContent(node)
     const parsedFile = matter(content)
     const id = parsedFile.data.id
-    const type = "markdown"
 
     let data = parsedFile.data
 
@@ -47,36 +46,38 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
       )
     }
 
-    if (data.type) {
-      data.entity_type = data.type
-    }
+    let type = "entry"
 
     // Indicate type
     if (node.relativePath.startsWith("parties/")) {
-      data.type = "political_party"
+      type = "politicalParty"
     }
 
     if (node.relativePath.startsWith("political_entities/")) {
-      data.type = "political_entity"
+      type = "politicalEntity"
+    }
+
+    if (node.relativePath.startsWith("political_entity_groups/")) {
+      type = "politicalEntityGroup"
     }
 
     if (node.relativePath.startsWith("political_entity_membership_types/")) {
-      data.type = "political_entity_membership_type"
+      type = "politicalEntityMembershipType"
     }
 
     if (node.relativePath.startsWith("political_entity_memberships/")) {
-      data.type = "political_membership"
+      type = "politicalMembership"
     }
 
     if (node.relativePath.startsWith("politicians/")) {
-      data.type = "politician"
+      type = "politician"
     }
 
     // Generate slug
     if (
-      data.type === "political_party" ||
-      data.type === "political_entity" ||
-      data.type === "politician" 
+      type === "politicalParty" ||
+      type === "politicalEntity" ||
+      type === "politician" 
     ) {
       data.slug = slugify(data.name, {
         lower: true,
@@ -134,7 +135,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // Register all politician pages
   const politicians = await graphql(`
     query {
-      allPoliticians: allMarkdown(filter: {type: {eq: "politician"}}) {
+      allPoliticians: allPolitician {
         nodes {
           slug
         }
