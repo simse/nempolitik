@@ -4,36 +4,33 @@ import Img from "gatsby-image"
 
 import style from "../style/components/party-tag.module.scss"
 
-const PartyTag = ({ partyName }) => {
+const PartyTag = ({ partyId }) => {
   const allParties = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(parties)/"}}) {
+        allParties: allMarkdown(filter: {type: {eq: "political_party"}}) {
           nodes {
-            frontmatter {
-              name
-              color
-              dark_text
-              monochrome_logo {
-                childImageSharp {
-                  fixed(height: 24) {
-                    ...GatsbyImageSharpFixed_withWebp_tracedSVG
-                  }
+            id
+            name
+            slug
+            color
+            dark_text
+            monochrome_logo {
+              childImageSharp {
+                fixed(height: 24) {
+                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
                 }
               }
-            }
-            fields {
-              slug
             }
           }
         }
       }
     `
-  ).allMarkdownRemark.nodes
+  ).allParties.nodes
 
   const party = allParties.find(search => {
-    return search.name === partyName
-  }).frontmatter
+    return search.id === partyId
+  })
 
   return (
     <div

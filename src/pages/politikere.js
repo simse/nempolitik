@@ -18,7 +18,7 @@ const PoliticiansPage = ({data}) => (
     }}>Alle politikere i Danmark.</p>
 
     <Equalizer byRow={true} className={style.row}>
-      {data.allMarkdownRemark.nodes.map(value => (
+      {data.allPoliticians.nodes.map(value => (
         <PoliticianCard
           politician={value}
           /*politicalEntities={data.allStrapiPoliticalEntities.nodes}*/
@@ -34,22 +34,19 @@ export default PoliticiansPage
 
 export const query = graphql`
 query {
-  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(politician)/"}}) {
+  allPoliticians: allMarkdown(filter: {type: {eq: "politician"}}) {
     nodes {
-      frontmatter {
-        name
-        party
-        photo {
+      id
+      name
+      slug
+      party
+      photo {
           childImageSharp {
             fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
               ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
-      }
-      fields {
-        slug
-      }
     }
   }
 }

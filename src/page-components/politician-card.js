@@ -10,37 +10,38 @@ const PoliticianCard = ({ politician }) => (
   <StaticQuery
       query={graphql`
         query {
-          allPoliticalEntities: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(political_entities)/"}}) {
+          allPoliticalEntities: allMarkdown(filter: {type: {eq: "political_entity"}}) {
             nodes {
-              frontmatter {
-                name
-              }
+              name
+              id
+              type
             }
           }
-          allPoliticalEntityMembershipTypes: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(political_entity_membership_types)/"}}) {
+          allPoliticalEntityMembershipTypes: allMarkdown(filter: {type: {eq: "political_entity_membership_type"}}) {
             nodes {
-              frontmatter {
-                name
-                importance
-              }
+              name
+              importance
+              political_entities
+              id
             }
           }
-          allPoliticalEntityMemberships: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(political_entity_memberships)/"}}) {
+          allPoliticalEntityMemberships: allMarkdown(filter: {type: {eq: "political_membership"}}) {
             nodes {
-              frontmatter {
-                name
-                importance
-              }
+              from
+              to
+              political_entity
+              political_entity_membership_type
+              politician
             }
           }
         }
       `}
       render={data => (
         <div className={style.politicianCard}>
-          <Link to={"/politiker/" + politician.fields.slug}>
+          <Link to={"/politiker/" + politician.slug}>
             <div className={style.inner}>
               <Img
-                fixed={politician.frontmatter.photo.childImageSharp.fixed}
+                fixed={politician.photo.childImageSharp.fixed}
                 alt={"Billede af " + politician.name}
                 style={{
                   margin: "0 auto 18px auto",
@@ -50,10 +51,10 @@ const PoliticianCard = ({ politician }) => (
                   borderRadius: "100px"
                 }} />
 
-              <h2>{ politician.frontmatter.name }</h2>
-              <p className={style.role}>{ /*politicianRole(politician, politicalEntities)*/ }</p>
+              <h2>{ politician.name }</h2>
+              <p className={style.role}>{ politicianRole(politician, data.allPoliticalEntities.nodes, data.allPoliticalEntityMemberships.nodes, data.allPoliticalEntityMembershipTypes.nodes) }</p>
 
-              <PartyTag partyId={politician.frontmatter.party} />
+              <PartyTag partyId={politician.party} />
             </div>
           </Link>
         </div>
