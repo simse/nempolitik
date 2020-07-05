@@ -57,7 +57,7 @@ export const politicianRole = (politician, politicalEntities, politicalEntityMem
 
       
       // Cabinet and parliament positions are self-explanatory since there is only one relevant of each
-      if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
+      if (political_entity.entity_type !== "cabinet" && political_entity.entity_type !== "parliament") {
         role += " i " + political_entity.name
       }
 
@@ -72,11 +72,11 @@ export const politicianRole = (politician, politicalEntities, politicalEntityMem
 export const getPoliticianExperienceOfType = (politician, type) => {
     let experiences = []
 
-    if (!politician.experiences) {
+    if (!politician.experience) {
         return experiences
     }
 
-    politician.experiences.forEach(experience => {
+    politician.experience.forEach(experience => {
         if (experience.type === type) {
             experiences.push(experience)
         }

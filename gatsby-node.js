@@ -22,7 +22,7 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
 
     let data = parsedFile.data
 
-    console.log(data)
+    // console.log(data)
 
     
     // Fix image paths
@@ -45,6 +45,10 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
         path.dirname(node.absolutePath),
         path.join(__dirname, data.monochrome_logo)
       )
+    }
+
+    if (data.type) {
+      data.entity_type = data.type
     }
 
     // Indicate type

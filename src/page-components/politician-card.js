@@ -14,7 +14,7 @@ const PoliticianCard = ({ politician }) => (
             nodes {
               name
               id
-              type
+              entity_type
             }
           }
           allPoliticalEntityMembershipTypes: allMarkdown(filter: {type: {eq: "political_entity_membership_type"}}) {

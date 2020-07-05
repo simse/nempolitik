@@ -1,4 +1,4 @@
-/*import React from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import moment from "moment"
@@ -9,7 +9,6 @@ import Layout from "../components/layout"
 
 import style from "../style/pages/politician.module.scss"
 import {
-  politicianName,
   politicianRole,
   getPoliticianExperienceOfType,
 } from "../util.js"
@@ -60,9 +59,15 @@ const parseBirthday = birthday => {
   return birthdayString + ` (${age} år)`
 }
 
-const politicalGroupCards = (politician, political_entities, political_entity_groups) => {
+
+const politicalGroupCards = (politician, political_memberships, political_entities, political_membership_types/*, political_entity_groups*/) => {
+  // Find relevant memberships
+  let memberships = political_memberships.filter(membership => {
+    return membership.politician === politician.id
+  })
+
   // Find groups this politician is member of
-  if (politician.political_memberships.length === 0) {
+  if (memberships.length === 0) {
     return (
       <div className={`${style.card} ${style.noMembership}`}>
         Denne politiker er ikke en del af nogle byråd, regionråd eller regeringer.
@@ -73,7 +78,7 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
   let cards = {}
 
   // Check every political membership
-  politician.political_memberships.forEach(membership => {
+  memberships.forEach(membership => {
     // Check if card has already been created
     if (membership.political_entity in cards) return
 
@@ -88,12 +93,14 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
     }
 
     let political_entity = political_entities.find(entity => {
-      return entity.strapiId === membership.political_entity
+      return entity.id === membership.political_entity
     })
 
-    let title = politicianRole(politician, political_entities, political_entity.strapiId)
+    let title = politicianRole(politician, political_entities, political_memberships, political_membership_types, political_entity.id)
 
-    cards[political_entity.strapiId] = {
+    console.log(political_entity)
+
+    cards[political_entity.id] = {
       name: political_entity.name,
       logo: political_entity.logo,
       title: title,
@@ -101,7 +108,7 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
       roles: []
     }
   })
-
+/*
   // Check every political group (child political entity)
   politician.political_entity_groups.forEach(group => {
     let political_entity = political_entities.find(entity => {
@@ -132,7 +139,7 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
     if (political_entity.strapiId in cards) {
       cards[political_entity.strapiId].roles = cards[political_entity.strapiId].roles.concat(roles)
     }
-  })
+  })*/
 
   // Generate card output
   return Object.values(cards).map(card => {
@@ -171,17 +178,19 @@ const politicalGroupCards = (politician, political_entities, political_entity_gr
 }
 
 export default function PoliticianPage({ data }) {
-  const politician = data.strapiPolitician
-  const party = politician.political_party
+  const politician = data.politician
+  const party = data.allPoliticalParties.nodes.find(search => {
+    return search.id === politician.party
+  })
 
   let role = ""
   try {
-    role = politicianRole(politician, data.allStrapiPoliticalEntities.nodes)
+    role = politicianRole(politician, data.allPoliticalEntities.nodes, data.allPoliticalEntityMemberships.nodes, data.allPoliticalEntityMembershipTypes.nodes)
   } catch (err) {}
 
   return (
     <Layout>
-      <SEO title={politicianName(politician)} />
+      <SEO title={politician.name} />
 
       <div className={style.grid}>
         <div className={style.column}>
@@ -197,14 +206,14 @@ export default function PoliticianPage({ data }) {
             />
 
             <div className={style.text}>
-              <h1>{politicianName(politician)}</h1>
+              <h1>{politician.name}</h1>
               <p className={style.role}>{role}</p>
               <PartyTag partyId={party.id} />
             </div>
           </div>
 
           <div className={`${style.about} ${style.card}`}>
-            <h2 className={style.cardTitle}>Om {politician.first_name}</h2>
+            <h2 className={style.cardTitle}>Om {politician.name}</h2>
 
             <div className={style.facts}>
               <div className={style.fact}>
@@ -245,7 +254,14 @@ export default function PoliticianPage({ data }) {
         </div>
 
         <div className={style.column}>
-          {politicalGroupCards(politician, data.allStrapiPoliticalEntities.nodes, data.allStrapiPoliticalEntityGroups.nodes)}
+          {
+            politicalGroupCards(
+              politician,
+              data.allPoliticalEntityMemberships.nodes,
+              data.allPoliticalEntities.nodes,
+              data.allPoliticalEntityMembershipTypes.nodes
+            )
+          }
         </div>
       </div>
     </Layout>
@@ -254,14 +270,12 @@ export default function PoliticianPage({ data }) {
 
 export const query = graphql`
   query($slug: String!) {
-    strapiPolitician(slug: { eq: $slug }) {
-      strapiId
-      first_name
-      last_name
-      middle_name
-      photo_credit
-      prefers_middle_name_shown
+    politician: markdown(slug: {eq: $slug}) {
+      id
       birthday
+      name
+      photo_credit
+      party
       photo {
         childImageSharp {
           fixed(width: 150, height: 150, cropFocus: NORTH, quality: 100) {
@@ -269,71 +283,57 @@ export const query = graphql`
           }
         }
       }
-      experiences {
+      experience {
+        from
         place
-        to
-        from
-        type
         title
+        to
+        type
       }
-      political_memberships {
-        political_membership_type
-        political_entity
+    }
+    allPoliticalParties: allMarkdown(filter: {type: {eq: "political_party"}}) {
+      nodes {
+        name
+        id
+        logo {
+          childImageSharp {
+            fixed(width: 80, quality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
+      }
+    }
+    allPoliticalEntities: allMarkdown(filter: {type: {eq: "political_entity"}}) {
+      nodes {
+        name
+        id
+        entity_type
+        logo {
+          childImageSharp {
+            fixed(width: 80, quality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
+      }
+    }
+    allPoliticalEntityMembershipTypes: allMarkdown(filter: {type: {eq: "political_entity_membership_type"}}) {
+      nodes {
+        name
+        importance
+        political_entities
+        id
+      }
+    }
+    allPoliticalEntityMemberships: allMarkdown(filter: {type: {eq: "political_membership"}}) {
+      nodes {
         from
         to
-      }
-      political_entity_groups {
         political_entity
-        vice_chairman
-        name
-        id
-        chairman
-      }
-      political_party {
-        id
-        logo {
-          childImageSharp {
-            fixed(width: 75, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
-            }
-          }
-        }
-        color
-        dark_text
-        name
-        slug
-      }
-    }
-    allStrapiPoliticalEntities {
-      nodes {
-        strapiId
-        name
-        type
-        political_group_name
-        political_membership_types {
-          name
-          importance
-          id
-        }
-        logo {
-          childImageSharp {
-            fixed(height: 80, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    }
-    allStrapiPoliticalEntityGroups {
-      nodes {
-        name
-        strapiId
-        id
-        political_entity {
-          id
-        }
+        political_entity_membership_type
+        politician
       }
     }
   }
 `
-*/
