@@ -1,14 +1,14 @@
 ---
-id: 1
-name: "Socialdemokratiet"
+dismantled: null
+id: f07a876a-64af-4f30-8056-e28ec39a7ca3
+name: Socialdemokratiet
+symbol: A
+headquarters: Christiansborg, 1240 København K, Danmark
 political_leaning: -15
-symbol: "A"
-logo: /static/images/social_democrats_logo.png
-monochrome_logo: /static/images/social_democrats_logo_white.png
-dark_text: false
 color: "#cd1431"
-headquarters: "Christiansborg, 1240 København K, Danmark"
+logo: /static/images/social_democrats_logo.png
+slug: socialdemokratiet
+dark_text: false
+monochrome_logo: /static/images/social_democrats_logo_white.png
 established: 1870
-dismantled: 
-slug: "socialdemokratiet"
 ---
