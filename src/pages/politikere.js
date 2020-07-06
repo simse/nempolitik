@@ -21,7 +21,6 @@ const PoliticiansPage = ({data}) => (
       {data.allPoliticians.nodes.map(value => (
         <PoliticianCard
           politician={value}
-          /*politicalEntities={data.allStrapiPoliticalEntities.nodes}*/
           key={value.id}
         />
       ))}
