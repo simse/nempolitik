@@ -7,6 +7,7 @@ import 'moment/locale/da'
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
+import { BsGiftFill } from "react-icons/bs"
 import style from "../style/pages/politician.module.scss"
 import {
   getPoliticianExperienceOfType, 

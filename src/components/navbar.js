@@ -2,6 +2,8 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import { BsPersonFill, BsFillShieldFill } from "react-icons/bs"
+
 import style from "../style/components/navbar.module.scss"
 
 const Navbar = ({ siteTitle }) => (
@@ -16,10 +18,10 @@ const Navbar = ({ siteTitle }) => (
       <div className={style.items}>
         <ul>
           <li>
-            <Link to="/partier">Partier</Link>
+            <Link to="/partier"><BsFillShieldFill size={"1.1em"} style={{marginBottom: 2, marginRight: 5}} /> Partier</Link>
           </li>
           <li>
-            <Link to="/politikere">Politikere</Link>
+            <Link to="/politikere"><BsPersonFill size={"1.3em"} style={{marginBottom: 2, marginRight: 4}} /> Politikere</Link>
           </li>
         </ul>
       </div>
