@@ -1,13 +1,13 @@
 ---
-id: "88e08f86-24f8-4138-9d67-6b9a6b82c2f8"
-name: "Alex Vanopslagh"
-birthday: 
-birth_place: 
-party: "e95a0fc5-ef00-4901-88cc-2d946a62287b"
-photo_credit: "Fotograf: Steen Brogaard, Ophavsret: Folketinget"
+id: 88e08f86-24f8-4138-9d67-6b9a6b82c2f8
+name: Alex Vanopslagh
 photo: /static/images/alex-vanopslagh.jpg
-email: "alex.vanopslagh@ft.dk"
+photo_credit: "Fotograf: Steen Brogaard, Ophavsret: Folketinget"
 phone_number: "+4561625666"
+email: alex.vanopslagh@ft.dk
+birthday: 1991-10-16T23:00:00.000Z
+birth_place: Épernay, Frankrig
+party: e95a0fc5-ef00-4901-88cc-2d946a62287b
 experience:
   - place: GRACE Public Affairs
     to: "2019"
@@ -49,7 +49,7 @@ experience:
     from: "2008"
     title: Ekspedient
     type: work
-  - place: 
+  - place: null
     to: ""
     from: "2005"
     title: Fejedreng hos logistikfirma
