@@ -39,13 +39,17 @@ const PartyTag = ({ partyId }) => {
         background: party.color
       }}
     >
-      <Img
-        fixed={party.monochrome_logo.childImageSharp.fixed}
-        alt={party.name + "'s logo"}
-        style={{
-          minWidth: 24
-        }}
-      />
+      <div
+      style={{
+        minWidth: 24,
+        height: 24
+      }}>
+        <Img
+          fixed={party.monochrome_logo.childImageSharp.fixed}
+          alt={party.name + "'s logo"}
+        />
+      </div>
+      
 
       <span className={`${party.dark_text ? style.dark : ""}`}>
         {party.name}
