@@ -6,6 +6,6 @@ headquarters: Planeten Jorden
 political_leaning: 0
 color: "#222222"
 dark_text: false
-logo: /static/images/dansk_folkeparti_logo.png
-monochrome_logo: /static/images/dansk_folkeparti_logo_white.png
+logo: /static/images/løsgængere.png
+monochrome_logo: /static/images/løsgænger_white.png
 ---
