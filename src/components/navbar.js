@@ -1,12 +1,11 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
-import { BsPersonFill, BsFillShieldFill } from "react-icons/bs"
+import { BsPersonFill, BsChatDotsFill } from "react-icons/bs"
 
 import style from "../style/components/navbar.module.scss"
 
-const Navbar = ({ siteTitle }) => (
+const Navbar = () => (
   <header className={style.navbar}>
     <div className={style.inner}>
       <div className={style.logo}>
@@ -18,7 +17,7 @@ const Navbar = ({ siteTitle }) => (
       <div className={style.items}>
         <ul>
           <li>
-            <Link to="/partier"><BsFillShieldFill size={"1.1em"} style={{marginBottom: 2, marginRight: 5}} /> Partier</Link>
+            <Link to="/partier"><BsChatDotsFill size={"1.1em"} style={{marginBottom: 2, marginRight: 5}} /> Partier</Link>
           </li>
           <li>
             <Link to="/politikere"><BsPersonFill size={"1.3em"} style={{marginBottom: 2, marginRight: 4}} /> Politikere</Link>
@@ -28,13 +27,5 @@ const Navbar = ({ siteTitle }) => (
     </div>
   </header>
 )
-
-Navbar.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Navbar.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Navbar
