@@ -1,0 +1,15 @@
+---
+chairman: 00cc64e9-ca7f-4062-96e9-3e86aea6c596
+id: 79cb1e77-94ef-4160-8651-35f16611666d
+name: Sundheds- og Forebyggelsesudvalget
+political_entities: c38f015c-5e66-4b3c-8433-d96f41564921
+politicians:
+- 00cc64e9-ca7f-4062-96e9-3e86aea6c596
+- b9520187-bd45-408b-841e-e54297db9245
+- 8fa93fc5-148b-418f-adf9-634e78e3b542
+- 997d4e86-de3c-40c3-9f87-29f31ab206d6
+- 5c087750-07b6-45ae-a381-533f423095d2
+- 688b319a-faa2-4bc4-b436-f606666b0b01
+- 7a078838-da22-461b-acf8-63d05fd70136
+vice_chairman: b9520187-bd45-408b-841e-e54297db9245
+---
