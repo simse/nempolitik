@@ -18,6 +18,10 @@ const PoliticiansPage = ({data, pageContext}) => {
   let startIndex = (currentPage - 1) * politiciansPerPage
   let endIndex = currentPage * politiciansPerPage
 
+  if (endIndex > politicians.length) {
+    endIndex = politicians.length
+  }
+
   let previousUrl = "/politikere"
   if (currentPage - 1 > 1) {
     previousUrl += "/side-" + (currentPage - 1)
@@ -59,7 +63,7 @@ const PoliticiansPage = ({data, pageContext}) => {
         ))}
       </Equalizer>
 
-      <p>Viser {startIndex+1}-{endIndex} ud af {politicians.length} politikere</p>
+      <p className={style.range}>Viser {startIndex+1}-{endIndex} ud af {politicians.length} politikere</p>
 
       <div className={style.pagination}>
         <div className={style.inner}>
