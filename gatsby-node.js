@@ -157,6 +157,21 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  // Create all politicians page with pagination
+  const politiciansPerPage = 48
+  const numPages = Math.ceil(politicians.data.allPoliticians.nodes.length / politiciansPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/politikere` : `/politikere/side-${i + 1}`,
+      component: path.resolve("./src/templates/politikere.js"),
+      context: {
+        currentPage: i,
+        perPage: politiciansPerPage
+      }
+    });
+  });
+
   // Register all municipalities
   /*const entities = await graphql(`
     query {

@@ -12,7 +12,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Navbar from "./navbar"
 
 // Styles
-import "typeface-inter"
 import "../style/util/reset.css"
 import "../style/global.scss"
 

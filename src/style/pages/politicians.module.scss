@@ -15,5 +15,47 @@
         grid-template-columns: 100%;
         grid-column-gap: 0%;
     }
+}
 
+.pagination {
+    width: 100%;
+    padding: 40px 0 80px 0;
+    display: flex;
+    justify-content: center;
+    color: #222;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .inner {
+        display: flex;
+        max-width: 600px;
+    }
+
+    .nav-button,
+    .page-button {
+        &.active a {
+            color: #0060ff;
+            font-weight: 700;
+        }
+
+        a {
+            font-weight: 500;
+            padding: 12px;
+            display: block;
+            transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms color;
+
+            &:hover {
+                color: #0060ff;
+            }
+        }
+    }
+
+    .page-button {
+        a {
+            padding: 16px 12px 12px 12px;
+        }
+    }
 }
