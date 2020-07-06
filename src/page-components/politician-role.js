@@ -54,6 +54,8 @@ export default function PoliticianRole({politicianId, entityFilter}) {
     // Ignore membership if wrong politician
     if (politicianId !== membership.politician) return
 
+    //console.log(entityFilter)
+
     // Ignore membership if entityFilter is set
     if (entityFilter) {
       if (membership.political_entity !== entityFilter) return

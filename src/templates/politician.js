@@ -97,7 +97,8 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
       return entity.id === membership.political_entity
     })
 
-    let title = <PoliticianRole politicianId={politician.id} />
+    let title = <PoliticianRole politicianId={politician.id} entityFilter={political_entity.id} />
+
 
     cards[political_entity.id] = {
       name: political_entity.name,
@@ -170,7 +171,7 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
 
           <h2 className={style.groupTitle}>{card.name}</h2>
           <p className={style.role}>
-            <PoliticianRole politicianId={politician.id} />
+            {card.title}
           </p>
         </div>
         
