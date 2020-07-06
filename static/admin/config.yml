@@ -93,7 +93,7 @@ collections:
           widget: list
           required: false
           fields:
-            - {label: "Place", name: "place", widget: string}
+            - {label: "Place", name: "place", widget: string, required: false}
             - {label: "Title", name: "title", widget: string}
             - {label: "from", name: "from", widget: string}
             - {label: "to", name: "to", widget: string, required: false}

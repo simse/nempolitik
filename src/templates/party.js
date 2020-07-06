@@ -1,4 +1,4 @@
-/*import React from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 import style from "../style/pages/political-party.module.scss"
 
 export default function PoliticalPartyPage({ data }) {
-  const party = data.strapiPoliticalParties
+  const party = data.politicalParty
 
   return (
     <Layout>
@@ -26,14 +26,14 @@ export default function PoliticalPartyPage({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
-    strapiPoliticalParties(slug: { eq: $slug }) {
+  query($id: String!) {
+    politicalParty(id: {eq: $id}) {
       color
       established
       headquarters
-      name
       political_leaning
       symbol
+      name
       logo {
         childImageSharp {
           fixed(width: 70, quality: 100) {
@@ -44,4 +44,3 @@ export const query = graphql`
     }
   }
 `
-*/

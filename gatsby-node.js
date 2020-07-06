@@ -112,25 +112,26 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  /*const politicalParties = await graphql(`
+  const politicalParties = await graphql(`
     query {
-      allStrapiPoliticalParties {
+      allPoliticalParties: allPoliticalParty {
         nodes {
+          id
           slug
         }
       }
     }
   `)
 
-  politicalParties.data.allStrapiPoliticalParties.nodes.forEach(party => {
+  politicalParties.data.allPoliticalParties.nodes.forEach(party => {
     createPage({
         path: "parti/" + party.slug,
         component: path.resolve("./src/templates/party.js"),
         context: {
-            slug: party.slug
+            id: party.id
         }
     })
-  })*/
+  })
 
   // Register all politician pages
   const politicians = await graphql(`

@@ -1,3 +1,5 @@
+const { isNil } = require('lodash')
+
 module.exports = {
   siteMetadata: {
     title: `nempolitik.dk`,
@@ -33,15 +35,40 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
+
+    {
+      resolve: "gatsby-plugin-lunr",
+      options: {
+        // ISO 639-1 language codes. See https://lunrjs.com/guides/language_support.html for details
+        languages: [{
+          name: "en",
+          filterNodes: node => !isNil(node)
+        }],
+        // Fields to index. If store === true value will be stored in index file.
+        // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
+        fields: [
+          { name: "name", store: true, attributes: { boost: 20 } },
+          { name: "id", store: true }
+        ],
+        // How to resolve each field's value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields' values
+          politician: {
+            name: node => node.name,
+            id: node => node.id,
+          },
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     {
-        resolve: 'gatsby-plugin-sharp',
-        options: {
-            useMozJpeg: false,
-            stripMetadata: true,
-            defaultQuality: 100,
-        },
-  },
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 100,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
