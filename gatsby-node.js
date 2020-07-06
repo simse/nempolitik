@@ -139,6 +139,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allPoliticians: allPolitician {
         nodes {
           slug
+          id
         }
       }
     }
@@ -150,7 +151,8 @@ exports.createPages = async ({ graphql, actions }) => {
         path: "politiker/" + politician.slug,
         component: path.resolve("./src/templates/politician.js"),
         context: {
-            slug: politician.slug
+            slug: politician.slug,
+            politicianId: politician.id
         }
     })
   })

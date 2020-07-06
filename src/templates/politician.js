@@ -270,7 +270,7 @@ export default function PoliticianPage({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $politicianId: String!) {
     politician: politician(slug: {eq: $slug}) {
       id
       birthday
@@ -327,7 +327,7 @@ export const query = graphql`
         id
       }
     }
-    allPoliticalEntityMemberships: allPoliticalMembership {
+    allPoliticalEntityMemberships: allPoliticalMembership(filter: {politician: {glob: $politicianId}}) {
       nodes {
         from
         to
