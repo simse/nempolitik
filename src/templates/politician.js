@@ -104,7 +104,7 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
       name: political_entity.name,
       logo: political_entity.logo,
       title: title,
-      group_name: political_entity.political_group_name,
+      group_name: political_entity.group_name,
       roles: []
     }
   })
@@ -311,6 +311,7 @@ export const query = graphql`
         name
         id
         type
+        group_name
         logo {
           childImageSharp {
             fixed(width: 80, quality: 100) {
@@ -340,6 +341,7 @@ export const query = graphql`
     allPoliticalEntityGroups: allPoliticalEntityGroup {
       nodes {
         chairman
+        vice_chairman
         politicians
         political_entities
         name

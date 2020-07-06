@@ -33,6 +33,7 @@ collections:
         - {label: "ID", name: "id", widget: "uuid"}
         - {label: "Type", name: "type", widget: "select", options: ["parliament", "cabinet"]}
         - {label: "Name", name: "name", widget: "string"}
+        - {label: "Group Name", name: "group_name", widget: "string", required: false}
         - {label: "Logo", name: "logo", widget: "image"}
 
     - name: "political_entity_group"
