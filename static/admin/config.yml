@@ -17,7 +17,7 @@ collections:
         - {label: "Name", name: "name", widget: "string"}
         - {label: "Symbol", name: "symbol", widget: "string"}
         - {label: "Headquarters", name: "headquarters", widget: "string"}
-        - {label: "Political Leaning", name: "political_leaning", widget: "string"}
+        - {label: "Political Leaning", name: "political_leaning", widget: "number"}
         - {label: "Color", name: "color", widget: "string"}
         - {label: "Dark Text", name: "dark_text", widget: "boolean"}
         - {label: "Logo", name: "logo", widget: "image"}

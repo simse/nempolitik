@@ -55,38 +55,15 @@ def parse_politician(POLITICIAN_URL):
     # Find name
     name = parsed_page.select("h1.biography-page-title")[0].text.split(" (")[0]
 
-    first_name = ""
-    middle_name = ""
-    last_name = ""
-
-    name_parts = name.split(" ")
-    if len(name_parts) == 2:
-        first_name = name_parts[0]
-        last_name = name_parts[1]
-
-    if len(name_parts) > 2:
-        first_name = name_parts[0]
-        last_name = name_parts[-1]
-
-        del name_parts[0]
-        del name_parts[-1]
-
-        middle_name = " ".join(name_parts)
-
-    print(first_name)
-    print(middle_name)
-    print(last_name)
-
-
     # Find party
     party_letter = parsed_page.select("h1.biography-page-title")[0].text.split(" (")[1].replace(")", "")
     party_map = {
-        "S": 1,
-        "RV": 4,
-        "KF": 5,
-        "SF": 7,
+        "S": "f07a876a-64af-4f30-8056-e28ec39a7ca3",
+        "RV": "a58e77a0-5ef8-45c0-a5bd-aa8300a5b1b2",
+        "KF": "8899a215-1be5-46f2-bd49-2f239f560371",
+        "SF": "6a9351c1-778d-4987-82f7-0aa285cfb1be",
         "LA": 8,
-        "DF": 3,
+        "DF": "0776c166-d669-4f47-a0eb-8c1918766401",
         "V": 2,
         "EL": 9,
         "ALT": 10,
