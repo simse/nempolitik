@@ -4,4 +4,5 @@ type: municipality
 name: Nyborg Kommune
 group_name: Udvalg
 logo: /static/images/nyborg_kommune_coa.png
+banner: /static/images/adobestock_83379857.jpeg
 ---
