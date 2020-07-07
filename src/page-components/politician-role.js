@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import moment from "moment"
 import 'moment/locale/da'
 
-export default function PoliticianRole({politicianId, entityFilter}) {
-  const { allPoliticalEntities, allPoliticalEntityMembershipTypes, allPoliticalEntityMemberships } = useStaticQuery(
+export default function PoliticianRole({politicianId, entityFilter, entityGroupFilter}) {
+  const { allPoliticalEntities, allPoliticalEntityMembershipTypes, allPoliticalEntityMemberships, allPoliticalEntityGroups } = useStaticQuery(
     graphql`
       query {
         allPoliticalEntities: allPoliticalEntity {
@@ -38,6 +38,14 @@ export default function PoliticianRole({politicianId, entityFilter}) {
             politician
           }
         }
+        allPoliticalEntityGroups: allPoliticalEntityGroup {
+          nodes {
+            id
+            name
+            chairman
+            vice_chairman
+          }
+        }
       }
     `
   )
@@ -45,61 +53,80 @@ export default function PoliticianRole({politicianId, entityFilter}) {
   let politicalEntities = allPoliticalEntities.nodes
   let politicalEntityMembershipTypes = allPoliticalEntityMembershipTypes.nodes
   let politicalEntityMemberships = allPoliticalEntityMemberships.nodes
+  let politicalEntityGroups = allPoliticalEntityGroups.nodes
 
   let role = ""
   let highest_importance = 0
   let past = false
 
-  politicalEntityMemberships.forEach(membership => {
-    // Ignore membership if wrong politician
-    if (politicianId !== membership.politician) return
 
-    //console.log(entityFilter)
-
-    // Ignore membership if entityFilter is set
-    if (entityFilter) {
-      if (membership.political_entity !== entityFilter) return
-    }
-
-    let political_entity = politicalEntities.find(entity => {
-      return entity.id === membership.political_entity
+  if (entityGroupFilter) {
+    let group = politicalEntityGroups.find(g => {
+      return g.id === entityGroupFilter
     })
 
-    let membership_description = politicalEntityMembershipTypes.find(
-      membership_type => {
-        return membership_type.id === membership.political_entity_membership_type
-      }
-    )
-
-    // Check if membership has ended
-    if (membership.to) {
-      let date = moment(membership.to)
-      let currentDate = moment.now()
-
-      if (date < currentDate) {
-        past = true
-        membership_description.importance = 1
-      }
+    if (group.chairman === politicianId) {
+      role = "Formand for " + group.name
+    } else if (group.vice_chairman === politicianId) {
+      role = "Næstformand for " + group.name
+    } else {
+      role = "Medlem af " + group.name
     }
-
-    // Find political membership with highest importance
-    if (membership_description.importance > highest_importance) {
-      // If political membership is in the past, show it if nothing is more relevant
-      if (past) {
-        role = "Tidligere " + membership_description.name.charAt(0).toLowerCase() + membership_description.name.slice(1)
-      } else {
-        role = membership_description.name
+  } else {
+    politicalEntityMemberships.forEach(membership => {
+      // Ignore membership if wrong politician
+      if (politicianId !== membership.politician) return
+  
+      //console.log(entityFilter)
+  
+      // Ignore membership if entityFilter is set
+      if (entityFilter) {
+        if (membership.political_entity !== entityFilter) return
       }
-
-      
-      // Cabinet and parliament positions are self-explanatory since there is only one relevant of each
-      if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
-        role += " i " + political_entity.name
+  
+      let political_entity = politicalEntities.find(entity => {
+        return entity.id === membership.political_entity
+      })
+  
+      let membership_description = politicalEntityMembershipTypes.find(
+        membership_type => {
+          return membership_type.id === membership.political_entity_membership_type
+        }
+      )
+  
+      // Check if membership has ended
+      if (membership.to) {
+        let date = moment(membership.to)
+        let currentDate = moment.now()
+  
+        if (date < currentDate) {
+          past = true
+          membership_description.importance = 1
+        }
       }
+  
+      // Find political membership with highest importance
+      if (membership_description.importance > highest_importance) {
+        // If political membership is in the past, show it if nothing is more relevant
+        if (past) {
+          role = "Tidligere " + membership_description.name.charAt(0).toLowerCase() + membership_description.name.slice(1)
+        } else {
+          role = membership_description.name
+        }
+  
+        
+        // Cabinet and parliament positions are self-explanatory since there is only one relevant of each
+        if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
+          role += " i " + political_entity.name
+        }
+  
+        highest_importance = membership_description.importance
+      }
+    })
+  }
 
-      highest_importance = membership_description.importance
-    }
-  })
+
+  
 
     return (
       <>{role}</>

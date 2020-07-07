@@ -6,7 +6,7 @@ import style from "../style/components/politician-card.module.scss"
 import PartyTag from "../components/party-tag"
 import PoliticianRole from "../page-components/politician-role"
 
-const PoliticianCard = ({ politicianId }) => {
+const PoliticianCard = ({ politicianId, entityGroupFilter }) => {
   const { allPoliticians } = useStaticQuery(
     graphql`
       query {
@@ -52,7 +52,7 @@ const PoliticianCard = ({ politicianId }) => {
 
           <h2>{politician.name}</h2>
           <p className={style.role}>
-            <PoliticianRole politicianId={politician.id} />
+            <PoliticianRole politicianId={politician.id} entityGroupFilter={entityGroupFilter} />
           </p>
 
           <PartyTag partyId={politician.party} />
