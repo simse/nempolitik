@@ -55,6 +55,14 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
 
     if (node.relativePath.startsWith("political_entities/")) {
       type = "politicalEntity"
+
+      if (data.type === "cabinet") {
+        data.urlPrefix = "regering/"
+      } else if (data.type === "municipality") {
+        data.urlPrefix = "kommune/"
+      } else {
+        data.urlPrefix = ""
+      }
     }
 
     if (node.relativePath.startsWith("political_entity_groups/")) {
@@ -77,6 +85,7 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
     if (
       type === "politicalParty" ||
       type === "politicalEntity" ||
+      type === "politicalEntityGroup" ||
       type === "politician" 
     ) {
       data.slug = slugify(data.name, {
@@ -97,8 +106,6 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
         type,
       },
     }
-
-    // fmImagesToRelative(markdownNode);
 
     const { createNode, createParentChildLink } = actions
 
@@ -172,27 +179,50 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  // Register all municipalities
-  /*const entities = await graphql(`
+  // Register all political entity groups
+  const entities = await graphql(`
     query {
-      allStrapiPoliticalEntities {
+      allPoliticalEntity {
         nodes {
+          id
           slug
-          type
+          urlPrefix
         }
       }
     }
   `)
 
-  entities.data.allStrapiPoliticalEntities.nodes.forEach(entity => {
-    if (entity.type === "municipality") {
-      createPage({
-        path: "kommune/" + entity.slug,
-        component: path.resolve("./src/templates/municipality.js"),
-        context: {
-            slug: entity.slug
+  const entity_groups = await graphql(`
+    query {
+      allPoliticalEntityGroup {
+        nodes {
+          id
+          name
+          political_entities
         }
-    })
+      }
     }
-  })*/
+  `)
+
+  entity_groups.data.allPoliticalEntityGroup.nodes.forEach(group => {
+    let entity = entities.data.allPoliticalEntity.nodes.find(e => {
+      return e.id === group.political_entities
+    })
+
+    let url = entity.urlPrefix + entity.slug + "/udvalg/" + slugify(group.name,  {
+      lower: true,
+      strict: true
+    })
+
+
+    createPage({
+      path: url,
+      component: path.resolve("./src/templates/entity_group.js"),
+      context: {
+        groupId: group.id,
+        entityId: entity.id
+      }
+    })
+  })
+
 }

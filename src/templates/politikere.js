@@ -57,7 +57,7 @@ const PoliticiansPage = ({data, pageContext}) => {
       <Equalizer byRow={true} className={style.row}>
         {shownPoliticians.map(value => (
           <PoliticianCard
-            politician={value}
+            politicianId={value.id}
             key={value.id}
           />
         ))}
@@ -113,16 +113,6 @@ query {
   allPoliticians: allPolitician {
     nodes {
       id
-      name
-      slug
-      party
-      photo {
-          childImageSharp {
-            fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
-        }
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import moment from "moment"
 import 'moment/locale/da'
@@ -32,8 +32,10 @@ const politicianExperience = (educations, emptyMessage) => {
         range = experience.from + " — " + experience.to
       }
 
+      let key = experience.title + experience.place
+
       return (
-        <div className={style.entry} key={experience.title}>
+        <div className={style.entry} key={key}>
           <h3>{experience.title}</h3>
           <span>{experience.place}</span>
           <p>{range}</p>
@@ -122,21 +124,36 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
 
     let roles = []
 
+    let url = "/" +  political_entity.urlPrefix + political_entity.slug + "/udvalg/" + group.slug
+
+
+
+    // console.log(url)
+
     // Check if chairman
     if (politician.id === group.chairman) {
       roles.push({
-        title: "Formand for " + group.name,
+        id: group.name,
+        title: (
+          <>Formand for <Link to={url}>{group.name}</Link></>
+        ),
         importance: 20
       })
     // Check if vice chairman
     } else if (politician.id === group.vice_chairman) {
       roles.push({
-        title: "Næstformand for " + group.name,
+        id: group.name,
+        title: (
+          <>Næstformand for <Link to={url}>{group.name}</Link></>
+        ),
         importance: 10
       })
     } else {
       roles.push({
-        title: "Medlem af " + group.name,
+        id: group.name,
+        title: (
+          <>Medlem af <Link to={url}>{group.name}</Link></>
+        ),
         importance: 1
       })
     }
@@ -153,7 +170,7 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
     sortedRoles.sort((a,b) => (a.importance < b.importance) ? 1 : ((b.importance < a.importance) ? -1 : 0))
 
     let roles = sortedRoles.map(role => (
-      <div className={style.role} key={role.title}>
+      <div className={style.role} key={role.id}>
         {role.title}
       </div>
     ))
@@ -299,7 +316,7 @@ export const query = graphql`
         id
         logo {
           childImageSharp {
-            fixed(width: 80, quality: 100) {
+            fixed(height: 80, quality: 100) {
               ...GatsbyImageSharpFixed_withWebp
             }
           }
@@ -312,6 +329,8 @@ export const query = graphql`
         id
         type
         group_name
+        slug
+        urlPrefix
         logo {
           childImageSharp {
             fixed(width: 80, quality: 100) {
@@ -345,6 +364,7 @@ export const query = graphql`
         politicians
         political_entities
         name
+        slug
       }
     }
   }

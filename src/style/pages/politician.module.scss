@@ -44,10 +44,26 @@
             0 8px 15.7px -8px rgba(0, 0, 0, 0.034),
             0 12.4px 24.2px -8px rgba(0, 0, 0, 0.039),
             0 22px 43px -8px rgba(0, 0, 0, 0.05);
+
+        a {
+            color: #197aff;
+            border-color: #d1e5ff;
+        }
     }
 
     h2.card-title {
         font-size: 1.1rem;
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+        transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            border-color: #95c2ff;
+        }
     }
 
     &.no-membership {
