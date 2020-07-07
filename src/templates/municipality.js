@@ -1,4 +1,4 @@
-/*import React from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 import style from "../style/pages/municipality.module.scss"
 
 export default function MunicipalityPage({ data }) {
-  const entity = data.strapiPoliticalEntities
+  const entity = data.politicalEntity
 
   return (
     <Layout>
@@ -17,6 +17,8 @@ export default function MunicipalityPage({ data }) {
         <Img fixed={entity.logo.childImageSharp.fixed} />
 
         <h2>{ entity.name }</h2>
+
+        dfd
       </div>
 
     </Layout>
@@ -24,15 +26,10 @@ export default function MunicipalityPage({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
-    strapiPoliticalEntities(slug: {eq: $slug}) {
-      address
-      email
-      established
-      id
+  query($id: String!) {
+    politicalEntity(id: {eq: $id}) {
       name
-      phone_number
-      phone_number_calling_code
+      group_name
       logo {
         childImageSharp {
           fixed(height: 100, quality: 100) {
@@ -43,4 +40,3 @@ export const query = graphql`
     }
   }
 `
-*/

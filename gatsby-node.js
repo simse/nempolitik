@@ -4,13 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
-const { createFilePath } = require(`gatsby-source-filesystem`)
-
 // Third-party dependencies
 const slugify = require('slugify')
 const matter = require('gray-matter')
-const path = require(`path`);
+const path = require(`path`)
+
+//let parties = {}
+//let politicians = []
 
 
 exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDigest }) => {
@@ -43,6 +43,13 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
       data.monochrome_logo = path.relative(
         path.dirname(node.absolutePath),
         path.join(__dirname, data.monochrome_logo)
+      )
+    }
+
+    if (data.banner) {
+      data.banner = path.relative(
+        path.dirname(node.absolutePath),
+        path.join(__dirname, data.banner)
       )
     }
 
@@ -79,6 +86,11 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
 
     if (node.relativePath.startsWith("politicians/")) {
       type = "politician"
+
+      /*// Add foreign key relationship
+      let partyId = data.party
+      data.party = null
+      data.party___NODE = partyId*/
     }
 
     // Generate slug
@@ -93,8 +105,6 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
         strict: true
       })
     }
-    
-    
 
     const markdownNode = {
       ...data,
@@ -111,9 +121,69 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
 
     createNode(markdownNode)
     createParentChildLink({ parent: node, child: markdownNode })
+
+    // console.log(parties.length)
   }
 }
 
+// Establish graphql relationships
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type politician implements Node {
+      id: ID!
+      party: politicalParty @link(from: "party" by: "id")
+      memberships: [politicalMembership] @link(from: "id" by: "politician")
+    }
+    
+    type politicalMembership implements Node {
+      id: ID!
+      political_entity: politicalEntity @link(from: "political_entity" by: "id")
+      political_entity_membership_type: politicalEntityMembershipType @link(from: "political_entity_membership_type" by: "id")
+      
+    }
+
+    type politicalEntity implements Node {
+      id: ID!
+      groups: [politicalEntityGroup] @link(from: "id" by: "political_entities")
+    }
+
+    type politicalEntityGroup implements Node {
+      id: ID!
+      political_entity: politicalEntity @link(from: "political_entities" by: "id")
+      politicians: [politician] @link(from: "politicians" by: "id")
+    }
+    `)
+
+
+  const typeDefs = [
+    "type politician implements Node",
+    schema.buildObjectType({
+      name: "politician",
+      fields: {
+        group_memberships: {
+          type: "[politicalEntityGroup]",
+          resolve: (source, args, context, info) => {
+            // If you were linking by ID, you could use `getNodeById` to
+            // find the correct author:
+            // return context.nodeModel.getNodeById({
+            //   id: source.author,
+            //   type: "AuthorJson",
+            // })
+            // But since the example is using the author email as foreign key,
+            // you can use `runQuery`, or get all author nodes
+            // with `getAllNodes` and manually find the linked author
+            // node:
+            return context.nodeModel
+              .getAllNodes({ type: "politicalEntityGroup" })
+              .filter(group => group.politicians.includes(source.id))
+          },
+        },
+      },
+    }),
+  ]
+  createTypes(typeDefs)
+}
 
 
 
@@ -187,42 +257,43 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           slug
           urlPrefix
+          type
+          groups {
+            slug
+            id
+          }
         }
       }
     }
   `)
 
-  const entity_groups = await graphql(`
-    query {
-      allPoliticalEntityGroup {
-        nodes {
-          id
-          name
-          political_entities
+
+  entities.data.allPoliticalEntity.nodes.forEach(entity => {
+    if (entity.type === "municipality") {
+      createPage({
+        path: "/" + entity.urlPrefix + entity.slug,
+        component: path.resolve("./src/templates/municipality.js"),
+        context: {
+          id: entity.id
         }
-      }
+      })
     }
-  `)
 
-  entity_groups.data.allPoliticalEntityGroup.nodes.forEach(group => {
-    let entity = entities.data.allPoliticalEntity.nodes.find(e => {
-      return e.id === group.political_entities
-    })
-
-    let url = entity.urlPrefix + entity.slug + "/udvalg/" + slugify(group.name,  {
-      lower: true,
-      strict: true
-    })
-
-
-    createPage({
-      path: url,
-      component: path.resolve("./src/templates/entity_group.js"),
-      context: {
-        groupId: group.id,
-        entityId: entity.id
-      }
-    })
+    // Create entity groups
+    if (entity.groups) {
+      entity.groups.forEach(group => {
+        let url = entity.urlPrefix + entity.slug + "/udvalg/" + group.slug
+    
+    
+        createPage({
+          path: url,
+          component: path.resolve("./src/templates/entity_group.js"),
+          context: {
+            groupId: group.id,
+            entityId: entity.id
+          }
+        })
+      })
+    }
   })
-
 }

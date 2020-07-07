@@ -15,16 +15,16 @@ export default function PoliticalPartyPage({ data, pageContext }) {
 
   members.sort((firstMember, secondMember) => {
     // Put chairman first
-    if (firstMember === group.chairman) {
+    if (firstMember.id === group.chairman) {
       return -1
-    } else if (secondMember === group.chairman) {
+    } else if (secondMember.id === group.chairman) {
       return 1
     }
 
     // Put vice chairman second
-    if (secondMember !== group.chairman && firstMember === group.vice_chairman) {
+    if (secondMember.id !== group.chairman && firstMember.id === group.vice_chairman) {
       return -1
-    } else if (firstMember !== group.chairman && secondMember === group.vice_chairman) {
+    } else if (firstMember.id !== group.chairman && secondMember.id === group.vice_chairman) {
       return 1
     }
 
@@ -51,7 +51,7 @@ export default function PoliticalPartyPage({ data, pageContext }) {
 
         <div className={style.cards}>
         {members.map(member => (
-          <PoliticianCard politicianId={member} entityGroupFilter={pageContext.groupId} key={member} />
+          <PoliticianCard politician={member} entityGroupFilter={pageContext.groupId} key={member} />
         ))}
         </div>
       </div>
@@ -65,8 +65,39 @@ export const query = graphql`
     politicalEntityGroup(id: {eq: $groupId}) {
       chairman
       name
-      politicians
       vice_chairman
+      politicians {
+        id
+        name
+        slug
+        photo {
+          childImageSharp {
+            fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
+        group_memberships {
+          chairman
+          vice_chairman
+          id
+          name
+        }
+        party {
+          id
+          name
+          slug
+          color
+          dark_text
+          monochrome_logo {
+            childImageSharp {
+              fixed(height: 24) {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              }
+            }
+          }
+        }
+      }
     }
     politicalEntity(id: {eq: $entityId}) {
       name

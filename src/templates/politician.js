@@ -63,14 +63,9 @@ const parseBirthday = birthday => {
 }
 
 
-const politicalGroupCards = (politician, political_memberships, political_entities, political_entity_groups) => {
-  // Find relevant memberships
-  let memberships = political_memberships.filter(membership => {
-    return membership.politician === politician.id
-  })
-
+const politicalGroupCards = (politician) => {
   // Find groups this politician is member of
-  if (memberships.length === 0) {
+  if (politician.memberships.length === 0) {
     return (
       <div className={`${style.card} ${style.noMembership}`}>
         Denne politiker er ikke en del af nogle byråd, regionråd eller regeringer.
@@ -81,9 +76,9 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
   let cards = {}
 
   // Check every political membership
-  memberships.forEach(membership => {
+  politician.memberships.forEach(membership => {
     // Check if card has already been created
-    if (membership.political_entity in cards) return
+    if (membership.political_entity.id in cards) return
 
     // Determine if political membership has ended
     if (membership.to) {
@@ -95,12 +90,8 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
       }
     }
 
-    let political_entity = political_entities.find(entity => {
-      return entity.id === membership.political_entity
-    })
-
-    let title = <PoliticianRole politicianId={politician.id} entityFilter={political_entity.id} />
-
+    let political_entity = membership.political_entity
+    let title = <PoliticianRole politician={politician} entityFilter={political_entity.id} />
 
     cards[political_entity.id] = {
       name: political_entity.name,
@@ -112,23 +103,13 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
   })
 
   // Check every political group (child political entity)
-  political_entity_groups.forEach(group => {
-    // Ignore if politician is not a member
-    if (!group.politicians.includes(politician.id)) {
-      return
-    }
-
-    let political_entity = political_entities.find(entity => {
-      return entity.id === group.political_entities
-    })
+  politician.group_memberships.forEach(group => {
+    let political_entity = group.political_entity
 
     let roles = []
 
     let url = "/" +  political_entity.urlPrefix + political_entity.slug + "/udvalg/" + group.slug
 
-
-
-    // console.log(url)
 
     // Check if chairman
     if (politician.id === group.chairman) {
@@ -203,9 +184,7 @@ const politicalGroupCards = (politician, political_memberships, political_entiti
 
 export default function PoliticianPage({ data }) {
   const politician = data.politician
-  const party = data.allPoliticalParties.nodes.find(search => {
-    return search.id === politician.party
-  })
+  const party = politician.party
 
   return (
     <Layout>
@@ -226,8 +205,8 @@ export default function PoliticianPage({ data }) {
 
             <div className={style.text}>
               <h1>{politician.name}</h1>
-              <p className={style.role}><PoliticianRole politicianId={politician.id} /></p>
-              <PartyTag partyId={party.id} />
+              <p className={style.role}><PoliticianRole politician={politician} /></p>
+              <PartyTag party={party} />
             </div>
           </div>
 
@@ -275,10 +254,7 @@ export default function PoliticianPage({ data }) {
         <div className={style.column}>
           {
             politicalGroupCards(
-              politician,
-              data.allPoliticalEntityMemberships.nodes,
-              data.allPoliticalEntities.nodes,
-              data.allPoliticalEntityGroups.nodes
+              politician
             )
           }
         </div>
@@ -288,13 +264,33 @@ export default function PoliticianPage({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!, $politicianId: String!) {
+  query($slug: String!) {
     politician: politician(slug: {eq: $slug}) {
       id
       birthday
       name
       photo_credit
-      party
+      party {
+        id
+        name
+        slug
+        color
+        dark_text
+        monochrome_logo {
+          childImageSharp {
+            fixed(height: 24) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
+        logo {
+          childImageSharp {
+            fixed(height: 60) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
+      }
       photo {
         childImageSharp {
           fixed(width: 150, height: 150, cropFocus: NORTH, quality: 100) {
@@ -309,62 +305,39 @@ export const query = graphql`
         to
         type
       }
-    }
-    allPoliticalParties: allPoliticalParty {
-      nodes {
-        name
-        id
-        logo {
-          childImageSharp {
-            fixed(height: 80, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
-        }
-      }
-    }
-    allPoliticalEntities: allPoliticalEntity {
-      nodes {
-        name
-        id
-        type
-        group_name
-        slug
-        urlPrefix
-        logo {
-          childImageSharp {
-            fixed(width: 80, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
-        }
-      }
-    }
-    allPoliticalEntityMembershipTypes: allPoliticalEntityMembershipType {
-      nodes {
-        name
-        importance
-        political_entities
-        id
-      }
-    }
-    allPoliticalEntityMemberships: allPoliticalMembership(filter: {politician: {glob: $politicianId}}) {
-      nodes {
+      memberships {
         from
         to
-        political_entity
-        political_entity_membership_type
-        politician
+        political_entity {
+          name
+          id
+          group_name
+          type
+          logo {
+            childImageSharp {
+              fixed(height: 60) {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              }
+            }
+          }
+        }
+        political_entity_membership_type {
+          id
+          name
+          importance
+        }
       }
-    }
-    allPoliticalEntityGroups: allPoliticalEntityGroup {
-      nodes {
-        chairman
-        vice_chairman
-        politicians
-        political_entities
+      group_memberships {
         name
+        vice_chairman
+        chairman
         slug
+        political_entity {
+          slug
+          urlPrefix
+          id
+          type
+        }
       }
     }
   }

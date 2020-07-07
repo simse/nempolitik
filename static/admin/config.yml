@@ -35,6 +35,7 @@ collections:
         - {label: "Name", name: "name", widget: "string"}
         - {label: "Group Name", name: "group_name", widget: "string", required: false}
         - {label: "Logo", name: "logo", widget: "image"}
+        - {label: "Banner Picture", name: "banner", widget: "image"}
 
     - name: "political_entity_group"
       label: "Political Entity Group"

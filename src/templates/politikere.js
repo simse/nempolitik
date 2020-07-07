@@ -57,7 +57,7 @@ const PoliticiansPage = ({data, pageContext}) => {
       <Equalizer byRow={true} className={style.row}>
         {shownPoliticians.map(value => (
           <PoliticianCard
-            politicianId={value.id}
+            politician={value}
             key={value.id}
           />
         ))}
@@ -113,6 +113,44 @@ query {
   allPoliticians: allPolitician {
     nodes {
       id
+      name
+      slug
+      photo {
+        childImageSharp {
+          fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
+            ...GatsbyImageSharpFixed_withWebp
+          }
+        }
+      }
+      party {
+        id
+        name
+        slug
+        color
+        dark_text
+        monochrome_logo {
+          childImageSharp {
+            fixed(height: 24) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+      memberships {
+        from
+        to
+        political_entity {
+          name
+          id
+          group_name
+          type
+        }
+        political_entity_membership_type {
+          id
+          name
+          importance
+        }
+      }
     }
   }
 }

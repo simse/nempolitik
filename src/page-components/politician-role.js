@@ -1,98 +1,34 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import moment from "moment"
-import 'moment/locale/da'
 
-export default function PoliticianRole({politicianId, entityFilter, entityGroupFilter}) {
-  const { allPoliticalEntities, allPoliticalEntityMembershipTypes, allPoliticalEntityMemberships, allPoliticalEntityGroups } = useStaticQuery(
-    graphql`
-      query {
-        allPoliticalEntities: allPoliticalEntity {
-          nodes {
-            name
-            id
-            type
-            logo {
-              childImageSharp {
-                fixed(width: 80, quality: 100) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
-              }
-            }
-          }
-        }
-        allPoliticalEntityMembershipTypes: allPoliticalEntityMembershipType {
-          nodes {
-            name
-            importance
-            political_entities
-            id
-          }
-        }
-        allPoliticalEntityMemberships: allPoliticalMembership {
-          nodes {
-            from
-            to
-            political_entity
-            political_entity_membership_type
-            politician
-          }
-        }
-        allPoliticalEntityGroups: allPoliticalEntityGroup {
-          nodes {
-            id
-            name
-            chairman
-            vice_chairman
-          }
-        }
-      }
-    `
-  )
-
-  let politicalEntities = allPoliticalEntities.nodes
-  let politicalEntityMembershipTypes = allPoliticalEntityMembershipTypes.nodes
-  let politicalEntityMemberships = allPoliticalEntityMemberships.nodes
-  let politicalEntityGroups = allPoliticalEntityGroups.nodes
-
+export default function PoliticianRole({politician, entityFilter, entityGroupFilter}) {
   let role = ""
   let highest_importance = 0
   let past = false
 
 
   if (entityGroupFilter) {
-    let group = politicalEntityGroups.find(g => {
+    let group = politician.group_memberships.find(g => {
       return g.id === entityGroupFilter
     })
 
-    if (group.chairman === politicianId) {
+    if (group.chairman === politician.id) {
       role = "Formand for " + group.name
-    } else if (group.vice_chairman === politicianId) {
+    } else if (group.vice_chairman === politician.id) {
       role = "Næstformand for " + group.name
     } else {
       role = "Medlem af " + group.name
     }
   } else {
-    politicalEntityMemberships.forEach(membership => {
-      // Ignore membership if wrong politician
-      if (politicianId !== membership.politician) return
-  
-      //console.log(entityFilter)
-  
+    politician.memberships.forEach(membership => {
       // Ignore membership if entityFilter is set
       if (entityFilter) {
-        if (membership.political_entity !== entityFilter) return
+        if (membership.political_entity.id !== entityFilter) return
       }
   
-      let political_entity = politicalEntities.find(entity => {
-        return entity.id === membership.political_entity
-      })
+      let political_entity = membership.political_entity
   
-      let membership_description = politicalEntityMembershipTypes.find(
-        membership_type => {
-          return membership_type.id === membership.political_entity_membership_type
-        }
-      )
+      let membership_description = membership.political_entity_membership_type
   
       // Check if membership has ended
       if (membership.to) {
@@ -113,7 +49,6 @@ export default function PoliticianRole({politicianId, entityFilter, entityGroupF
         } else {
           role = membership_description.name
         }
-  
         
         // Cabinet and parliament positions are self-explanatory since there is only one relevant of each
         if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
