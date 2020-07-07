@@ -22,21 +22,86 @@
         0 12.4px 24.2px -8px rgba(0, 0, 0, 0.024),
         0 22px 43px -8px rgba(0, 0, 0, 0.03);
 
+
+    @media(max-width: 650px) {
+        .inner {
+            flex-direction: column;
+            margin: 0;
+
+            .items {
+                margin: 0;
+                // max-height: 0;
+                overflow: hidden;
+                width: 100%;
+                // transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+
+                &.opened {
+                    max-height: 500px;
+                }
+
+                &.closed {
+                    max-height: 0px !important;
+                }
+
+                ul {
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 100%;
+                    text-align: center;
+
+                    li {
+                        width: 100%;
+                        border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+                        a {
+                            padding: 24px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .logo {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            .mobile-button {
+                display: block !important;
+                padding: 20px;
+                font-weight: 700;
+
+                &:first-child {
+                    padding: 20px 34px 20px 20px;
+                }
+            }
+
+            .wrapper {
+                margin: 20px 0 0 0 !important;
+            }
+        }
+    }
+
+
     .inner {
         display: flex;
         align-items: center;
         max-width: 1400px;
         margin: 0 auto;
+        z-index: 20;
     }
 
     .logo {
-        h1 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin: 0;
+        .mobile-button {
+            display: none;
+        }
+
+        .wrapper {
+            height: 100%;
+            vertical-align: middle;
 
             @media(max-width: 1440px) {
-                padding-left: 20px;
+                margin-left: 20px;
             }
         }
 
@@ -48,6 +113,7 @@
 
     .items {
         margin-left: auto;
+        transition: max-height 400ms ease-in-out;
 
         ul {
             margin: 0;
@@ -67,5 +133,21 @@
                 }
             }
         }
+    }
+}
+
+.overlay {
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    transition: ease-out 200ms background;
+    pointer-events: none;
+
+    &.closed {
+        background: rgba(0, 0, 0, 0);
     }
 }
