@@ -16,7 +16,8 @@ html { font-family: "Inter", "system-ui", sans-serif, "Apple Color Emoji", "Sego
 }
 
 *::before,
-*::after {
+*::after,
+* {
   box-sizing: border-box;
 }
 

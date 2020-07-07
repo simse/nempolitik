@@ -11,10 +11,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Navbar from "./navbar"
 
-// Styles
-import "../style/util/reset.css"
-import "../style/global.scss"
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

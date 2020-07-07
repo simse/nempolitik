@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+// Styles
+import "./src/style/util/reset.css"
+import "./src/style/global.scss"
