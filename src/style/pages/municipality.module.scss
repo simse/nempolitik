@@ -1,7 +1,90 @@
+.row {
+    display: grid;
+    grid-template-columns: repeat(50, 23.5%);
+    grid-column-gap: 2%;
+    
+    transition: ease-in-out 500ms transform;
+
+    @media(max-width: 1240px) {
+        grid-template-columns: repeat(50, 32%);
+        grid-column-gap: 2%;
+    }
+
+    @media(max-width: 980px) {
+        grid-template-columns: repeat(50, 49%);
+        grid-column-gap: 2%;
+    }
+
+    @media(max-width: 790px) {
+        grid-template-columns: repeat(50, 100%);
+        grid-column-gap: 2%;
+    }
+}
+
+.slider {
+    width: 100%;
+    overflow-x: hidden;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 100px calc(100% - 200px) 100px;
+
+    @media(max-width: 1500px) {
+        grid-template-columns: 80px calc(100% - 160px) 80px;
+    }
+
+    @media(max-width: 560px) {
+        grid-template-columns: 100%;
+        padding: 10px;
+        overflow-x: scroll;
+
+        .nav-button {
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
+    .nav-button {
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100% - 20px);
+
+        button {
+            outline: 0;
+            border: 0;
+            background: transparent;
+            transition: ease-in 200ms color;
+            
+            &:hover {
+                color: #0d6efd;
+            }
+        }
+    }
+}
+
+.hidden {
+    opacity: 0;
+}
+
 .content {
-    max-width: 1400px;
+    //max-width: 1400px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 80px 5%;
+    //padding-left: 10%;
+
+    @media(max-width: 1500px) {
+        padding: 80px 1%;
+    }
+
+    h2.section-title {
+        font-size: 1.4rem;
+        padding-left: 120px;
+
+        @media(max-width: 560px) {
+            padding-left: 20px;
+        }
+    }
 }
 
 .meta {
@@ -20,6 +103,12 @@
             font-size: 2.3rem;
             padding: 0 20px 0 0;
             margin: 0;
+        }
+
+        @media(max-width: 560px) {
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 30px 0;
         }
     }
 

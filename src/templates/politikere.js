@@ -13,13 +13,13 @@ const PoliticiansPage = ({data, pageContext}) => {
 
   let currentPage = pageContext.currentPage + 1
   let politiciansPerPage = pageContext.perPage
-  let pageCount = Math.ceil(politicians.length / politiciansPerPage)
+  let pageCount = pageContext.numPages
 
-  let startIndex = (currentPage - 1) * politiciansPerPage
+  let startIndex = pageContext.skip
   let endIndex = currentPage * politiciansPerPage
 
-  if (endIndex > politicians.length) {
-    endIndex = politicians.length
+  if (endIndex > pageContext.numPoliticians) {
+    endIndex = pageContext.numPoliticians
   }
 
   let previousUrl = "/politikere"
@@ -40,9 +40,11 @@ const PoliticiansPage = ({data, pageContext}) => {
     }
   });
 
-  let shownPoliticians = politicians.filter((p, i) => {
+  /*let shownPoliticians = politicians.filter((p, i) => {
     return i >= startIndex && i < endIndex
-  })
+  })*/
+
+  let shownPoliticians = politicians
 
   return(
     <Layout>
@@ -63,7 +65,7 @@ const PoliticiansPage = ({data, pageContext}) => {
         ))}
       </Equalizer>
 
-      <p className={style.range}>Viser {startIndex+1}-{endIndex} ud af {politicians.length} politikere</p>
+      <p className={style.range}>Viser {startIndex+1}-{endIndex} ud af {pageContext.numPoliticians} politikere</p>
 
       <div className={style.pagination}>
         <div className={style.inner}>
@@ -109,8 +111,8 @@ export default PoliticiansPage
 
 
 export const query = graphql`
-query {
-  allPoliticians: allPolitician {
+query($limit: Int!, $skip: Int!) {
+  allPoliticians: allPolitician(limit: $limit, skip: $skip) {
     nodes {
       id
       name

@@ -155,8 +155,6 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     }
     `)
 
-    // groups: [politicalEntityGroup] @link(from: "id" by: "political_entities")
-
 
   const typeDefs = [
     "type politician implements Node",
@@ -166,16 +164,6 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
         group_memberships: {
           type: "[politicalEntityGroup]",
           resolve: (source, args, context, info) => {
-            // If you were linking by ID, you could use `getNodeById` to
-            // find the correct author:
-            // return context.nodeModel.getNodeById({
-            //   id: source.author,
-            //   type: "AuthorJson",
-            // })
-            // But since the example is using the author email as foreign key,
-            // you can use `runQuery`, or get all author nodes
-            // with `getAllNodes` and manually find the linked author
-            // node:
             return context.nodeModel
               .getAllNodes({ type: "politicalEntityGroup" })
               .filter(group => group.politicians.includes(source.id))
@@ -246,7 +234,11 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve("./src/templates/politikere.js"),
       context: {
         currentPage: i,
-        perPage: politiciansPerPage
+        perPage: politiciansPerPage,
+        numPages: numPages,
+        numPoliticians: politicians.data.allPoliticians.nodes.length,
+        skip: i * politiciansPerPage,
+        limit: politiciansPerPage
       }
     });
   });

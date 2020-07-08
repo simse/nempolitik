@@ -14,7 +14,7 @@ experience:
     from: "1991"
     to: "1994"
     type: education
-  - title: BA scient.soc
+  - title: Samfundsvidenskabelig bachelor
     place: RUC
     from: "1996"
     to: "2004"

@@ -6,9 +6,11 @@ import style from "../style/components/politician-card.module.scss"
 import PartyTag from "../components/party-tag"
 import PoliticianRole from "../page-components/politician-role"
 
-const PoliticianCard = ({ politician, entityGroupFilter }) => {
+const PoliticianCard = ({ politician, entityGroupFilter, hidden }) => {
+  let hiddenClass = hidden ? style.hidden : ""
+
   return (
-    <div className={style.politicianCard}>
+    <div className={`${style.politicianCard} ${hiddenClass}`}>
       <Link to={"/politiker/" + politician.slug}>
         <div className={style.inner}>
           <Img
