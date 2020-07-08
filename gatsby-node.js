@@ -155,6 +155,8 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     }
     `)
 
+    // groups: [politicalEntityGroup] @link(from: "id" by: "political_entities")
+
 
   const typeDefs = [
     "type politician implements Node",
@@ -215,8 +217,8 @@ exports.createPages = async ({ graphql, actions }) => {
     query {
       allPoliticians: allPolitician {
         nodes {
-          slug
           id
+          slug
         }
       }
     }

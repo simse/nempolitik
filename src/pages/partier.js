@@ -10,7 +10,7 @@ const PartiesPage = ({data}) => (
   <Layout>
     <SEO title="Partier" />
     <h1 style={{
-      marginTop: 35
+      marginTop: 100
     }}>Partier</h1>
     <p style={{
       marginBottom: 40

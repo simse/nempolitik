@@ -91,7 +91,7 @@ const politicalGroupCards = (politician) => {
     }
 
     let political_entity = membership.political_entity
-    let title = <PoliticianRole politician={politician} entityFilter={political_entity.id} />
+    let title = <PoliticianRole politician={politician} entityFilter={political_entity.id} entityUrl={true} />
 
     cards[political_entity.id] = {
       name: political_entity.name,
@@ -313,6 +313,8 @@ export const query = graphql`
           id
           group_name
           type
+          slug
+          urlPrefix
           logo {
             childImageSharp {
               fixed(height: 60) {

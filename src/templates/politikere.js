@@ -48,7 +48,7 @@ const PoliticiansPage = ({data, pageContext}) => {
     <Layout>
       <SEO title="Politikere" />
       <h1 style={{
-        marginTop: 35
+        marginTop: 100
       }}>Politikere</h1>
       <p style={{
         marginBottom: 40

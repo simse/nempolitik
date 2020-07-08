@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Navbar from "./navbar"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, width }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -22,14 +22,17 @@ const Layout = ({ children }) => {
     }
   `)
 
+  if (!width) {
+    width = 1400
+  }
+
   return (
     <>
       <Navbar siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
-          padding: "60px 20px 0 20px",
-          maxWidth: 1400
+          maxWidth: width
         }}
       >
         <main>{children}</main>

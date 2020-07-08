@@ -1,0 +1,35 @@
+.content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.meta {
+    padding: 161px 0 100px 15%;
+
+    @media(max-width: 800px) {
+        padding: 101px 0 40px 5%;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+        margin: 0 0 25px 0; 
+        font-weight: 900;
+
+        @media(max-width: 800px) {
+            font-size: 2.3rem;
+            padding: 0 20px 0 0;
+            margin: 0;
+        }
+    }
+
+    p {
+        font-size: 1.4rem;
+        max-width: 60%;
+        opacity: 0.7;
+
+        @media(max-width: 800px) {
+            display: none;
+        }
+    }
+}

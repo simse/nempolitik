@@ -1,10 +1,14 @@
 import React from "react"
+import { Link } from "gatsby"
 import moment from "moment"
 
-export default function PoliticianRole({politician, entityFilter, entityGroupFilter}) {
+export default function PoliticianRole({politician, entityFilter, entityGroupFilter, entityUrl}) {
   let role = ""
+  let entity_name = ""
+  let show_entity = true
   let highest_importance = 0
   let past = false
+  let political_entity
 
 
   if (entityGroupFilter) {
@@ -26,8 +30,7 @@ export default function PoliticianRole({politician, entityFilter, entityGroupFil
         if (membership.political_entity.id !== entityFilter) return
       }
   
-      let political_entity = membership.political_entity
-  
+      political_entity = membership.political_entity
       let membership_description = membership.political_entity_membership_type
   
       // Check if membership has ended
@@ -52,7 +55,9 @@ export default function PoliticianRole({politician, entityFilter, entityGroupFil
         
         // Cabinet and parliament positions are self-explanatory since there is only one relevant of each
         if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
-          role += " i " + political_entity.name
+          entity_name += " i " + political_entity.name
+        } else {
+          show_entity = false
         }
   
         highest_importance = membership_description.importance
@@ -60,10 +65,23 @@ export default function PoliticianRole({politician, entityFilter, entityGroupFil
     })
   }
 
+  if (entityUrl && show_entity) {
+    let url = "/" + political_entity.urlPrefix + political_entity.slug
+
+    return (
+      <>{role} <Link to={url}>{ entity_name }</Link></>
+    )
+  }
+
+  if (show_entity) {
+    return (
+      <>{role + entity_name}</>
+    )
+  }
+
+  return (<>{role}</>)
 
   
 
-    return (
-      <>{role}</>
-    )
+    
 }
