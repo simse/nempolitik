@@ -16,7 +16,7 @@
     }
 
     @media(max-width: 790px) {
-        grid-template-columns: repeat(50, 100%);
+        grid-template-columns: repeat(50, 95%);
         grid-column-gap: 2%;
     }
 }
@@ -70,7 +70,7 @@
 .content {
     //max-width: 1400px;
     margin: 0 auto;
-    padding: 80px 5%;
+    padding: 50px 5%;
     //padding-left: 10%;
 
     @media(max-width: 1500px) {
@@ -119,6 +119,22 @@
 
         @media(max-width: 800px) {
             display: none;
+        }
+    }
+
+    .tags {
+        margin: 10px 0 20px 0;
+
+        span {
+            background: #499fff;
+            color: #fbfdff;
+            padding: 5px 10px;
+            border-radius: 100px;
+            margin-right: 6px;
+
+            svg {
+                margin-bottom: 2px;
+            }
         }
     }
 }

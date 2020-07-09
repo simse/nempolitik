@@ -7,11 +7,17 @@ import Layout from "../components/layout"
 
 import style from "../style/pages/entity-group.module.scss"
 import PoliticianCard from "../page-components/politician-card"
-
+import MeetingVideo from "../components/meeting-video"
 
 export default function PoliticalPartyPage({ data, pageContext }) {
   let members = data.politicalEntityGroup.politicians
   const group = data.politicalEntityGroup
+  let meetings = data.politicalEntityGroup.meetings
+
+
+  if (meetings === null) {
+    meetings = []
+  }
 
   members.sort((firstMember, secondMember) => {
     // Put chairman first
@@ -45,14 +51,28 @@ export default function PoliticalPartyPage({ data, pageContext }) {
       </div>
       
 
-      <div className={style.members}>
-        <h2>Alle medlemmer</h2>
-        <p>{ members.length } politikere</p>
+      <div className={style.content}>
+        <div className={style.members}>
+          <h2 className={style.sectionTitle}>Alle medlemmer</h2>
+          <p>{ members.length } politikere</p>
 
-        <div className={style.cards}>
-        {members.map(member => (
-          <PoliticianCard politician={member} entityGroupFilter={pageContext.groupId} key={member} />
-        ))}
+          <div className={style.cards}>
+          {members.map(member => (
+            <PoliticianCard politician={member} entityGroupFilter={pageContext.groupId} key={member.id} />
+          ))}
+          </div>
+        </div>
+
+        <div className={style.meetings}>
+          <h2 className={style.sectionTitle}>Udvalgsmøder</h2>
+
+          <div className={style.meetingsGrid}>
+          {meetings.map(meeting => {        
+            return (
+              <MeetingVideo meeting={meeting} />
+            )
+          })}
+          </div>
         </div>
       </div>
 
@@ -66,6 +86,18 @@ export const query = graphql`
       chairman
       name
       vice_chairman
+      meetings {
+        datetime
+        name
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 720, maxHeight: 400, quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        video_url
+      }
       politicians {
         id
         name

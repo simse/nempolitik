@@ -23,7 +23,6 @@ collections:
         - {label: "Logo", name: "logo", widget: "image"}
         - {label: "Monochrome Logo", name: "monochrome_logo", widget: "image"}
 
-
     - name: "political_entity"
       label: "Political Entity"
       folder: "content/political_entities"
@@ -49,6 +48,17 @@ collections:
         - {label: "Chairman", name: "chairman", widget: "relation", collection: "politician", searchFields: ["name"], valueField: "id", displayFields: ["name"]}
         - {label: "Vice Chairman", name: "vice_chairman", widget: "relation", collection: "politician", searchFields: ["name"], valueField: "id", displayFields: ["name"], required: false}
         - {label: "Members", name: "politicians", widget: "relation", collection: "politician", searchFields: ["name"], valueField: "id", displayFields: ["name"], multiple: true}
+        - label: "Meetings"
+          name: "meetings"
+          widget: list
+          required: false
+          fields:
+            # - {label: "Place", name: "place", widget: string, required: false}
+            - {label: "Name", name: "name", widget: string}
+            - {label: "Date & time", name: "datetime", widget: datetime}
+            - {label: "Video URL", name: "video_url", widget: string}
+            - {label: "Thumbnail", name: "thumbnail", widget: image}
+            # - {label: "Type", name: "type", widget: "select", options: ["work", "education"]}
 
     - name: "political_entity_membership_type"
       label: "Political Entity Membership Type"

@@ -8,7 +8,7 @@ import PoliticianCard from "../page-components/politician-card"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-import { BsChevronRight, BsChevronLeft } from "react-icons/bs"
+import { BsChevronRight, BsChevronLeft, BsGeoAlt } from "react-icons/bs"
 import style from "../style/pages/municipality.module.scss"
 
 
@@ -113,6 +113,12 @@ export default function MunicipalityPage({ data }) {
           <div className={style.meta}>
 
             <h1>{ entity.name }</h1>
+
+
+            <div className={style.tags}>
+              <span><BsGeoAlt /> Østfyn</span>
+            </div>
+
             <p>{ entity.subtitle }</p>
             
           </div>
@@ -127,7 +133,7 @@ export default function MunicipalityPage({ data }) {
 
           <div className={style.slider}>
             <div className={style.navButton}>
-            <PreviousSlideButton />
+              <PreviousSlideButton />
             </div>
 
             <Equalizer className={style.row} style={{

@@ -53,6 +53,16 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
       )
     }
 
+    if (data.meetings) {
+      data.meetings.forEach(meeting => {
+        meeting.thumbnail = path.relative(
+          path.dirname(node.absolutePath),
+          path.join(__dirname, meeting.thumbnail)
+        )
+      })
+      
+    }
+
     let type = "entry"
 
     // Indicate type

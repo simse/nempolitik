@@ -190,68 +190,74 @@ export default function PoliticianPage({ data }) {
     <Layout>
       <SEO title={politician.name} />
 
-      <div className={style.grid}>
-        <div className={style.column}>
-          <div className={`${style.name} ${style.card}`}>
-            <Img
-              fixed={politician.photo.childImageSharp.fixed}
-              imgStyle={{
-                borderRadius: 200,
-              }}
-              style={{
-                minWidth: 150
-              }}
-            />
+      <div className={style.politicianHeader}>
 
-            <div className={style.text}>
-              <h1>{politician.name}</h1>
-              <p className={style.role}><PoliticianRole politician={politician} /></p>
-              <PartyTag party={party} />
+        <div className={style.politicianImage}>
+          <Img fluid={politician.photo.childImageSharp.fluid} />
+        </div>
+
+        <div className={style.politicianMeta}>
+          <h1 className={style.politicianName}>{politician.name}</h1>
+          <p className={style.politicianRole}><PoliticianRole politician={politician} /></p>
+          <PartyTag party={party} />
+        </div>
+      </div>
+
+      <div className={style.mainGrid}>
+
+
+        <div className={style.mainGridColumn}>
+          <div className={style.secondaryGrid}>
+
+          <div className={style.secondaryGridColumn}>
+            <div className={`${style.about} ${style.card}`}>
+              <h2 className={style.cardTitle}>Om {politician.name}</h2>
+
+              <div className={style.facts}>
+                <div className={style.fact}>
+                  <span className={style.factName}>Fødselsdag</span>
+
+                  <span className={style.factValue}>{parseBirthday(politician.birthday)}</span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className={`${style.about} ${style.card}`}>
-            <h2 className={style.cardTitle}>Om {politician.name}</h2>
+            <div className={`${style.party} ${style.card}`}>
+              <div className={style.header}>
+                <Img fixed={party.logo.childImageSharp.fixed} />
 
-            <div className={style.facts}>
-              <div className={style.fact}>
-                <span className={style.factName}>Fødselsdag</span>
-
-                <span className={style.factValue}>{parseBirthday(politician.birthday)}</span>
+                <h3>{party.name}</h3>
               </div>
             </div>
           </div>
 
-          <div className={`${style.party} ${style.card}`}>
-            <div className={style.header}>
-              <Img fixed={party.logo.childImageSharp.fixed} />
+          <div className={style.secondaryGridColumn}>
+            <div className={`${style.education} ${style.card}`}>
+              <h2 className={style.cardTitle}>Uddannelse</h2>
 
-              <h3>{party.name}</h3>
+              {politicianExperience(
+                getPoliticianExperienceOfType(politician, "education"),
+                "Ingen uddanelse registreret."
+              )}
+            </div>
+
+            <div className={`${style.education} ${style.card}`}>
+              <h2 className={style.cardTitle}>CV</h2>
+
+              {politicianExperience(
+                getPoliticianExperienceOfType(politician, "work"),
+                "Intet tidligere arbejde fundet."
+              )}
             </div>
           </div>
-        </div>
 
-        <div className={style.column}>
-          <div className={`${style.education} ${style.card}`}>
-            <h2 className={style.cardTitle}>Uddannelse</h2>
 
-            {politicianExperience(
-              getPoliticianExperienceOfType(politician, "education"),
-              "Ingen uddanelse registreret."
-            )}
-          </div>
 
-          <div className={`${style.education} ${style.card}`}>
-            <h2 className={style.cardTitle}>CV</h2>
 
-            {politicianExperience(
-              getPoliticianExperienceOfType(politician, "work"),
-              "Intet tidligere arbejde fundet."
-            )}
           </div>
         </div>
 
-        <div className={style.column}>
+        <div className={style.mainGridColumn}>
           {
             politicalGroupCards(
               politician
@@ -293,8 +299,8 @@ export const query = graphql`
       }
       photo {
         childImageSharp {
-          fixed(width: 150, height: 150, cropFocus: NORTH, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
+          fluid(maxWidth: 750, maxHeight: 750, cropFocus: NORTH, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
