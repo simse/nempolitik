@@ -38,5 +38,5 @@ meetings:
   - datetime: 2020-07-03T07:00:01.179Z
     name: Møde i Europaudvalget
     video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_obzyb16k/v/2/ev/1/flavorId/0_e7mb8ev6/fileName/VOD_03-07-2020_Europaudvalget.mp4/name/a.mp4
-    thumbnail: /static/images/adobestock_83379857.jpeg
+    thumbnail: /static/images/vlcsnap-2020-07-09-13h47m29s174.png
 ---
