@@ -21,7 +21,13 @@ export default function MunicipalityPage({ data }) {
   let members = uniqBy(data.members.nodes, "id")
 
   let cards = members.map(member => <PoliticianCard politician={member} key={member.id} />)
-  let groupCards = entity.groups.map(group => {
+  let groups = entity.groups
+
+  if (groups === null) {
+    groups = []
+  }
+
+  let groupCards = groups.map(group => {
     let url = "/" + entity.urlPrefix + entity.slug + "/udvalg/" + group.slug
 
     let photos = group.politicians.map(politician => {

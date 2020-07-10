@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import moment from "moment"
 import "moment/locale/da"
 import "../style/components/plyr.scss"
-import Plyr from 'plyr'
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -19,7 +18,10 @@ export default function PoliticalPartyPage({ pageContext }) {
   const datetime = moment(meeting.datetime).format("LLLL")
 
   useEffect(() => {
-    new Plyr('#player')
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      const Plyr = require('plyr');
+      Array.from(document.querySelectorAll('#player')).map(p => new Plyr(p));
+    }
   })
 
   return (
