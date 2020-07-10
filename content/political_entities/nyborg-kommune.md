@@ -6,4 +6,6 @@ subtitle: Nyborg Kommune er en attraktiv kommune midt i hjertet af Danmark, med 
 group_name: Udvalg
 logo: /static/images/nyborg_kommune_coa.png
 banner: /static/images/adobestock_83379857.jpeg
+location: Østfyn
+population: 31973
 ---

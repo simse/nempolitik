@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import slugify from "slugify"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -8,16 +9,25 @@ import Layout from "../components/layout"
 import style from "../style/pages/entity-group.module.scss"
 import PoliticianCard from "../page-components/politician-card"
 import MeetingVideo from "../components/meeting-video"
+import Slider from "../components/slider"
 
 export default function PoliticalPartyPage({ data, pageContext }) {
   let members = data.politicalEntityGroup.politicians
   const group = data.politicalEntityGroup
   let meetings = data.politicalEntityGroup.meetings
+  const entity = data.politicalEntity
 
 
   if (meetings === null) {
     meetings = []
   }
+
+  meetings.forEach(meeting => {
+    meeting.url = "/" + entity.urlPrefix + entity.slug + "/udvalg/" + group.slug + "/" + slugify(meeting.name, {
+      lower: true,
+      strict: true
+    }) + "-" + meeting.slug_datetime
+  })
 
   members.sort((firstMember, secondMember) => {
     // Put chairman first
@@ -37,8 +47,11 @@ export default function PoliticalPartyPage({ data, pageContext }) {
     return 0
   })
 
+  let memberCards = members.map(member => <PoliticianCard politician={member} id={member.id} entityGroupFilter={pageContext.groupId} />)
+  let meetingCards = meetings.map(meeting => <MeetingVideo meeting={meeting} url={meeting.url} />)
+
   return (
-    <Layout>
+    <Layout width={2000}>
       <SEO title={data.politicalEntityGroup.name} />
 
       <div className={style.header}>
@@ -53,27 +66,24 @@ export default function PoliticalPartyPage({ data, pageContext }) {
 
       <div className={style.content}>
         <div className={style.members}>
-          <h2 className={style.sectionTitle}>Alle medlemmer</h2>
-          <p>{ members.length } politikere</p>
-
-          <div className={style.cards}>
-          {members.map(member => (
-            <PoliticianCard politician={member} entityGroupFilter={pageContext.groupId} key={member.id} />
-          ))}
+          <div className={style.sectionHeader}>
+            <h2 className={style.sectionTitle}>Medlemmer</h2>
+            <p>{ members.length } politikere</p>
           </div>
+
+          <Slider cards={memberCards} />
         </div>
 
+        {meetings.length !== 0 &&
         <div className={style.meetings}>
-          <h2 className={style.sectionTitle}>Udvalgsmøder</h2>
-
-          <div className={style.meetingsGrid}>
-          {meetings.map(meeting => {        
-            return (
-              <MeetingVideo meeting={meeting} />
-            )
-          })}
+          <div className={style.sectionHeader}>
+            <h2 className={style.sectionTitle}>Udvalgsmøder</h2>
+            
           </div>
+
+          <Slider cards={meetingCards} />
         </div>
+        }
       </div>
 
     </Layout>
@@ -86,7 +96,9 @@ export const query = graphql`
       chairman
       name
       vice_chairman
+      slug
       meetings {
+        slug_datetime: datetime(formatString: "YYYY-MM-DD")
         datetime
         name
         thumbnail {
@@ -134,6 +146,8 @@ export const query = graphql`
     politicalEntity(id: {eq: $entityId}) {
       name
       type
+      slug
+      urlPrefix
       logo {
         childImageSharp {
           fixed(width: 80, quality: 100) {

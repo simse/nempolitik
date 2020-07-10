@@ -32,6 +32,8 @@ collections:
         - {label: "ID", name: "id", widget: "uuid"}
         - {label: "Type", name: "type", widget: "select", options: ["parliament", "cabinet", "municipality", "region"]}
         - {label: "Name", name: "name", widget: "string"}
+        - {label: "Location", name: "location", widget: "string"}
+        - {label: "Population", name: "population", widget: "number"}
         - {label: "Group Name", name: "group_name", widget: "string", required: false}
         - {label: "Logo", name: "logo", widget: "image"}
         - {label: "Banner Picture", name: "banner", widget: "image"}

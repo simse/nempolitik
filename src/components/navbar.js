@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`${style.overlay} ${navbarMenuClass}`} onClick={toggleMenu}></div>
+      <div className={`${style.overlay} ${navbarMenuClass}`} onClick={toggleMenu} onKeyDown={handleKeyPress} role="none"></div>
 
       <header className={style.navbar}>
         <div className={style.inner}>
@@ -66,12 +66,12 @@ const Navbar = () => {
           }}>
             <ul>
               <li>
-                <Link to="/partier" tabIndex={0} onClick={closeMenuOnNav}>
+                <Link to="/partier" tabIndex={0} onClick={closeMenuOnNav} onKeyDown={handleKeyPress}>
                   <BsChatDotsFill size={"1.1em"} style={{marginBottom: 2, marginRight: 5}} /> Partier
                 </Link>
               </li>
               <li>
-                <Link to="/politikere" tabIndex={0} onClick={closeMenuOnNav}>
+                <Link to="/politikere" tabIndex={0} onClick={closeMenuOnNav} onKeyDown={handleKeyPress}>
                   <BsPersonFill size={"1.3em"} style={{marginBottom: 2, marginRight: 4}} /> Politikere
                 </Link>
               </li>

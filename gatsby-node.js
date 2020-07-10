@@ -9,9 +9,6 @@ const slugify = require('slugify')
 const matter = require('gray-matter')
 const path = require(`path`)
 
-//let parties = {}
-//let politicians = []
-
 
 exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDigest }) => {
   if (node.internal.mediaType === `text/markdown`) {
@@ -20,9 +17,6 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
     const id = parsedFile.data.id
 
     let data = parsedFile.data
-
-    // console.log(data)
-
     
     // Fix image paths
 		if (data.photo) {
@@ -60,7 +54,6 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
           path.join(__dirname, meeting.thumbnail)
         )
       })
-      
     }
 
     let type = "entry"
@@ -96,11 +89,6 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
 
     if (node.relativePath.startsWith("politicians/")) {
       type = "politician"
-
-      /*// Add foreign key relationship
-      let partyId = data.party
-      data.party = null
-      data.party___NODE = partyId*/
     }
 
     // Generate slug
@@ -299,5 +287,60 @@ exports.createPages = async ({ graphql, actions }) => {
         })
       })
     }
+  })
+
+  // Create all video meeting pages
+  const group_meetings = await graphql(`
+    query {
+      allPoliticalEntity {
+        nodes {
+          urlPrefix
+          slug
+          groups {
+            slug
+            name
+            meetings {
+              slug_datetime: datetime(formatString: "YYYY-MM-DD")
+              datetime
+              name
+              video_url
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  group_meetings.data.allPoliticalEntity.nodes.forEach(entity => {
+    if (entity.groups === null) {
+      entity.groups = []
+    }
+
+    entity.groups.forEach(group => {
+      if (group.meetings === null) {
+        group.meetings = []
+      }
+
+      group.meetings.forEach(meeting => {
+        const meetingSlug = slugify(meeting.name, {
+          lower: true,
+          strict: true
+        }) + "-" + meeting.slug_datetime
+
+        const groupUrl = "/" + entity.urlPrefix + entity.slug + "/udvalg/" + group.slug
+        const url = groupUrl + "/" + meetingSlug
+
+
+        createPage({
+          path: url,
+          component: path.resolve("./src/templates/group_meeting.js"),
+          context: {
+            meeting: meeting,
+            groupUrl: groupUrl,
+            groupName: group.name
+          }
+        })
+      })
+    })
   })
 }

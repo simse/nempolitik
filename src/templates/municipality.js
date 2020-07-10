@@ -1,109 +1,39 @@
-import React, { useState, useLayoutEffect, useEffect } from "react"
-import { graphql } from "gatsby"
+import React from "react"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { uniqBy } from "lodash"
 
-import Equalizer from "react-equalizer"
+import Slider from "../components/slider"
 import PoliticianCard from "../page-components/politician-card"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-import { BsChevronRight, BsChevronLeft, BsGeoAlt } from "react-icons/bs"
+import { BsGeoAlt, BsFillPeopleFill } from "react-icons/bs"
 import style from "../style/pages/municipality.module.scss"
 
-
-function useWindowSize() {
-  const [size, setSize] = useState([0, 0]);
-  useLayoutEffect(() => {
-    function updateSize() {
-      setSize([window.innerWidth, window.innerHeight]);
-    }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
-  return size;
+const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 export default function MunicipalityPage({ data }) {
   const entity = data.politicalEntity
+  const population =  numberWithCommas(entity.population)
   let members = uniqBy(data.members.nodes, "id")
 
-  // Create slider offset state
-  const [sliderOffset, setSliderOffset] = useState(0)
-  const [shownCardCount, setShownCardCount] = useState(1)
-  const [width] = useWindowSize()
-
-  useEffect(() => {
-    if (width < 580) {
-      setShownCardCount(members.length)
-      setSliderOffset(0)
-    } else if (width < 790) {
-      setShownCardCount(1)
-    } else if(width < 980) {
-      setShownCardCount(2)
-    } else if (width < 1240) {
-      setShownCardCount(3)
-    } else {
-      setShownCardCount(4)
-    }
-  }, [width, members.length])
-
-  const politicianCard = (politician, index) => {
-    let beginIndex = sliderOffset * shownCardCount
-    let endIndex = beginIndex + (shownCardCount - 1)
-    let hidden = false
-
-    if (index >= beginIndex && index <= endIndex) {
-      hidden = false
-    } else {
-      hidden = true
-    }
+  let cards = members.map(member => <PoliticianCard politician={member} key={member.id} />)
+  let groupCards = entity.groups.map(group => {
+    let url = "/" + entity.urlPrefix + entity.slug + "/udvalg/" + group.slug
 
 
     return (
-      <PoliticianCard
-        politician={politician}
-        key={politician.id}
-        hidden={hidden}
-      />
+      <Link to={url}>
+        <div className={style.entityGroupCard}>
+          <h3>{group.name}</h3>
+        </div>
+      </Link>
     )
-  }
+  })
 
-  let maxOffset = Math.floor(members.length / shownCardCount)
-
-  const NextSlideButton = () => {
-    if (sliderOffset + 1 <= maxOffset) {
-      return (
-        <button onClick={nextSliderPage} aria-label="Naviger frem"><BsChevronRight size="2.6em" /></button>
-      )
-    }
-
-    return <></>
-  }
-
-  const PreviousSlideButton = () => {
-    if (sliderOffset > 0) {
-      return (
-        <button onClick={previousSliderPage} aria-label="Naviger tilbage"><BsChevronLeft size="2.6em" /></button>
-      )
-    }
-
-    return <></>
-  }
-
-
-  const nextSliderPage = () => {
-    if (sliderOffset < maxOffset) {
-      setSliderOffset(sliderOffset + 1)
-    }
-  }
-
-  const previousSliderPage = () => {
-    if (sliderOffset > 0) {
-      setSliderOffset(sliderOffset - 1)
-    }
-  }
 
   return (
     <Layout width={2000}>
@@ -116,7 +46,9 @@ export default function MunicipalityPage({ data }) {
 
 
             <div className={style.tags}>
-              <span><BsGeoAlt /> Østfyn</span>
+              <span><BsGeoAlt /> { entity.location }</span>
+
+              <span><BsFillPeopleFill /> { population } indbyggere</span>
             </div>
 
             <p>{ entity.subtitle }</p>
@@ -129,23 +61,15 @@ export default function MunicipalityPage({ data }) {
         </div>
 
         <div className={style.content}>
-          <h2 className={style.sectionTitle}>Byrådet</h2>
+          <h2 className={style.sectionTitle}>Byrådet</h2> 
 
-          <div className={style.slider}>
-            <div className={style.navButton}>
-              <PreviousSlideButton />
-            </div>
+          <Slider cards={cards} />
+        </div>
 
-            <Equalizer className={style.row} style={{
-              transform: `translateX(-${sliderOffset * 102}%)`
-            }}>
-              {members.map((value, index) => politicianCard(value, index))}
-            </Equalizer>
+        <div className={style.content}>
+          <h2 className={style.sectionTitle}>{entity.group_name}</h2> 
 
-            <div className={style.navButton}>
-              <NextSlideButton />
-            </div>
-          </div>
+          <Slider cards={groupCards} />
         </div>
       </div>
 
@@ -159,6 +83,10 @@ export const query = graphql`
       name
       subtitle
       group_name
+      location
+      population
+      urlPrefix
+      slug
       logo {
         childImageSharp {
           fixed(height: 140, quality: 100) {
@@ -172,6 +100,10 @@ export const query = graphql`
             ...GatsbyImageSharpFluid_withWebp
           }
         }
+      }
+      groups {
+        slug
+        name
       }
     }
     members: allPolitician(filter: {memberships: {elemMatch: {political_entity: {id: {eq: $id}}}}}) {
