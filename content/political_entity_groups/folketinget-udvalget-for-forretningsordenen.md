@@ -1,6 +1,16 @@
 ---
 chairman: ea376e75-6b6d-4311-9f11-21203ab035b0
 id: 10c68c44-0837-4523-a9ee-e39205e9cd10
+meetings:
+- datetime: '2020-06-09T13:00:00Z'
+  name: Åbent samråd i Udvalget for Forretningsordenen om regeringens beslutning om
+    at lukke Danmark ned
+  thumbnail: /static/images/abent-samrad-i-udvalget-for-forretningsordenen-om-regeringens-beslutning-om-at-lukke-danmark-ned2020-06-09t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_z0ajilqb/v/2/ev/1/flavorId/0_bqxymfee/fileName/abent-samrad-i-udvalget-for-forretningsordenen-om-regeringens-beslutning-om-at-lukke-danmark-ned2020-06-09t130000z.mp4/name/a.mp4
+- datetime: '2020-01-10T08:30:00Z'
+  name: Afholdes af Grænseforeningen
+  thumbnail: /static/images/afholdes-af-grnseforeningen2020-01-10t083000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_3ncr29c9/v/2/ev/1/flavorId/0_ikwhl8x2/fileName/afholdes-af-grnseforeningen2020-01-10t083000z.mp4/name/a.mp4
 name: Udvalget for Forretningsordenen
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

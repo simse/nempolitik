@@ -1,6 +1,11 @@
 ---
 chairman: bb90fcee-f593-42bf-8ff9-ed747e6327df
 id: 792cbf18-bf98-4d0a-bdbc-c0ad2816e3c2
+meetings:
+- datetime: '2020-02-18T13:00:00Z'
+  name: Åbent samråd i Uddannelses- og Forskningsudvalget om SU til vandrende arbejdstagere
+  thumbnail: /static/images/abent-samrad-i-uddannelses-og-forskningsudvalget-om-su-til-vandrende-arbejdstagere2020-02-18t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_z1yw6r3x/v/1/ev/1/flavorId/1_avlljkks/fileName/abent-samrad-i-uddannelses-og-forskningsudvalget-om-su-til-vandrende-arbejdstagere2020-02-18t130000z.mp4/name/a.mp4
 name: Uddannelses- og Forskningsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

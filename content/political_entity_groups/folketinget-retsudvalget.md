@@ -1,6 +1,68 @@
 ---
 chairman: 544cf6ce-40b1-4d0c-bc9a-0d719c52fdf2
 id: 1442587d-54e3-4e90-aea6-3a23c9bf24a3
+meetings:
+- datetime: '2020-06-30T11:00:00Z'
+  name: Åbent samråd i Indfødsretsudvalget om sagsbehandlingen af indfødsretssager
+  thumbnail: /static/images/abent-samrad-i-indfdsretsudvalget-om-sagsbehandlingen-af-indfdsretssager2020-06-30t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ikd4naij/v/1/ev/1/flavorId/1_h8l3fa05/fileName/abent-samrad-i-indfdsretsudvalget-om-sagsbehandlingen-af-indfdsretssager2020-06-30t110000z.mp4/name/a.mp4
+- datetime: '2020-06-25T10:00:00Z'
+  name: Åbent samråd i Retsudvalget om Erik Solbakke-sagen
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-erik-solbakke-sagen2020-06-25t100000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_oj6jsoia/v/2/ev/1/flavorId/0_y9kws795/fileName/abent-samrad-i-retsudvalget-om-erik-solbakke-sagen2020-06-25t100000z.mp4/name/a.mp4
+- datetime: '2020-06-16T13:00:00Z'
+  name: Åbent samråd i Retsudvalget om Kammeradvokaten
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-kammeradvokaten2020-06-16t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_t3e305gx/v/1/ev/2/flavorId/1_6h5fs2ak/fileName/abent-samrad-i-retsudvalget-om-kammeradvokaten2020-06-16t130000z.mp4/name/a.mp4
+- datetime: '2020-06-04T13:00:00Z'
+  name: Åbent samråd i Retsudvalget om genåbning af grænsen mellem Danmark og Tyskland
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-genabning-af-grnsen-mellem-danmark-og-tyskland2020-06-04t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_qb9sy2cq/v/2/ev/1/flavorId/0_2g0qe5lt/fileName/abent-samrad-i-retsudvalget-om-genabning-af-grnsen-mellem-danmark-og-tyskland2020-06-04t130000z.mp4/name/a.mp4
+- datetime: '2020-05-28T08:15:00Z'
+  name: Åbent samråd i Retsudvalget om Ungdomskriminalitetsnævnet
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-ungdomskriminalitetsnvnet2020-05-28t081500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_cgqrq6jd/v/2/ev/1/flavorId/0_un8zkput/fileName/abent-samrad-i-retsudvalget-om-ungdomskriminalitetsnvnet2020-05-28t081500z.mp4/name/a.mp4
+- datetime: '2020-05-14T08:15:00Z'
+  name: Åbent samråd i Retsudvalget om vanvidskørsel
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-vanvidskrsel2020-05-14t081500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_lu4mbfr2/v/2/ev/1/flavorId/0_pfh9xdt7/fileName/abent-samrad-i-retsudvalget-om-vanvidskrsel2020-05-14t081500z.mp4/name/a.mp4
+- datetime: '2020-01-16T09:15:00Z'
+  name: Åbent samråd i Retsudvalget om teledata-sagen
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-teledata-sagen2020-01-16t091500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_984sy4ps/v/12/ev/2/flavorId/0_yq934e76/fileName/abent-samrad-i-retsudvalget-om-teledata-sagen2020-01-16t091500z.mp4/name/a.mp4
+- datetime: '2019-12-12T12:30:00Z'
+  name: Åbent samråd i Retsudvalget om den såkaldte stikkerlinje og SETA rapporten
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-den-sakaldte-stikkerlinje-og-seta-rapporten2019-12-12t123000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_9m3777li/v/2/ev/1/flavorId/0_hn2f9n3v/fileName/abent-samrad-i-retsudvalget-om-den-sakaldte-stikkerlinje-og-seta-rapporten2019-12-12t123000z.mp4/name/a.mp4
+- datetime: '2019-12-05T08:00:00Z'
+  name: Høring i Retsudvalget
+  thumbnail: /static/images/hring-i-retsudvalget2019-12-05t080000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_uq1aod3r/v/2/ev/1/flavorId/0_3vtqja27/fileName/hring-i-retsudvalget2019-12-05t080000z.mp4/name/a.mp4
+- datetime: '2019-11-28T09:15:00Z'
+  name: Åbent samråd i Retsudvalget om teledata-sagen
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-teledata-sagen2019-11-28t091500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_3lhkl1fx/v/2/ev/1/flavorId/0_xcdbfjsy/fileName/abent-samrad-i-retsudvalget-om-teledata-sagen2019-11-28t091500z.mp4/name/a.mp4
+- datetime: '2019-11-21T09:15:00Z'
+  name: Åbent samråd i Retsudvalget om efterforskning af økonomisk kriminalitet
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-efterforskning-af-konomisk-kriminalitet2019-11-21t091500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_699pcg2j/v/2/ev/1/flavorId/0_20vlq63q/fileName/abent-samrad-i-retsudvalget-om-efterforskning-af-konomisk-kriminalitet2019-11-21t091500z.mp4/name/a.mp4
+- datetime: '2019-11-19T13:00:00Z'
+  name: Åbent samråd i Retsudvalget om situationen i København
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-situationen-i-kbenhavn2019-11-19t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_w319r7bx/v/2/ev/1/flavorId/0_ofqtcyfw/fileName/abent-samrad-i-retsudvalget-om-situationen-i-kbenhavn2019-11-19t130000z.mp4/name/a.mp4
+- datetime: '2019-10-23T12:00:00Z'
+  name: Åbent samråd i Retsudvalget om status og redegørelse for seneste udvikling
+    i Dan Bunkeringsagen
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-status-og-redegrelse-for-seneste-udvikling-i-dan-bunkeringsagen2019-10-23t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_g442fliu/v/2/ev/1/flavorId/0_3t7ju4s7/fileName/abent-samrad-i-retsudvalget-om-status-og-redegrelse-for-seneste-udvikling-i-dan-bunkeringsagen2019-10-23t120000z.mp4/name/a.mp4
+- datetime: '2019-10-22T12:00:00Z'
+  name: Åbent samråd i Retsudvalget om Easy translate
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-easy-translate2019-10-22t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_c4ewc8ba/v/2/ev/1/flavorId/0_kqg2xqeo/fileName/abent-samrad-i-retsudvalget-om-easy-translate2019-10-22t120000z.mp4/name/a.mp4
+- datetime: '2019-09-12T08:15:00Z'
+  name: Åbent samråd i Retsudvalget om Easy Translate
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-easy-translate2019-09-12t081500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_tyi05442/v/2/ev/1/flavorId/0_6n8nje2g/fileName/abent-samrad-i-retsudvalget-om-easy-translate2019-09-12t081500z.mp4/name/a.mp4
 name: Retsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

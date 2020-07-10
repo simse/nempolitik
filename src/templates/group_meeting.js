@@ -1,8 +1,10 @@
-import React from "react"
+/* eslint-disable jsx-a11y/media-has-caption */
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
-import ReactPlayer from 'react-player'
 import moment from "moment"
 import "moment/locale/da"
+import "../style/components/plyr.scss"
+import Plyr from 'plyr'
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -16,16 +18,28 @@ export default function PoliticalPartyPage({ pageContext }) {
   moment.locale("da")
   const datetime = moment(meeting.datetime).format("LLLL")
 
+  useEffect(() => {
+    new Plyr('#player')
+  })
+
   return (
     <Layout width={3000}>
       <SEO title={meeting.name} />
 
       <div className={style.videoContainer}>
-        <Link to={pageContext.groupUrl}><BsArrowLeftShort size="1.4em" style={{
-          marginBottom: 3
-        }} /> Tilbage til {pageContext.groupName}</Link>
+        <div style={{
+          marginBottom: 20
+        }}>
+          <Link to={pageContext.groupUrl}><BsArrowLeftShort size="1.4em" style={{
+            marginBottom: 3
+          }} /> Tilbage til {pageContext.groupName}</Link>
+        </div>
 
-        <ReactPlayer url={meeting.video_url} controls={true} width="100%" height="100%"/>
+        
+        <video id="player" playsinline controls>
+          <source src={meeting.video_url} type="video/mp4" />
+        </video>
+        
 
         <h1>{meeting.name}</h1>
         <span>{datetime}</span>

@@ -1,6 +1,12 @@
 ---
 chairman: 2bfb8621-4193-44eb-836d-75a92514b32a
 id: 0ba089db-5bf9-4c35-a2a6-b1f60bcab4dd
+meetings:
+- datetime: '2019-09-12T09:00:00Z'
+  name: Åbent samråd i Grønlandsudvalget om forsvarets ønske om fortsat anvendelse
+    af Kangerlussuaq
+  thumbnail: /static/images/abent-samrad-i-grnlandsudvalget-om-forsvarets-nske-om-fortsat-anvendelse-af-kangerlussuaq2019-09-12t090000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_4qdm6xq0/v/1/ev/1/flavorId/1_zw0kbmoy/fileName/abent-samrad-i-grnlandsudvalget-om-forsvarets-nske-om-fortsat-anvendelse-af-kangerlussuaq2019-09-12t090000z.mp4/name/a.mp4
 name: Grønlandsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

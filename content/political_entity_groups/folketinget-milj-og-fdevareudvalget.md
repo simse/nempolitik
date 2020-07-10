@@ -1,6 +1,99 @@
 ---
 chairman: c61e9010-cb52-41a3-b335-9f4a75778510
 id: d9743838-8fe3-4cfb-879b-c836d318aba4
+meetings:
+- datetime: '2020-06-25T11:00:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om udledning af urenset spildevand
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-udledning-af-urenset-spildevand2020-06-25t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ha6mjv1v/v/2/ev/1/flavorId/0_uqdpwmtt/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-udledning-af-urenset-spildevand2020-06-25t110000z.mp4/name/a.mp4
+- datetime: '2020-06-23T06:00:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om vilkårene for fremtidens fødevaresektor
+    og landbrug i Danmark
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-vilkarene-for-fremtidens-fdevaresektor-og-landbrug-i-danmark2020-06-23t060000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ivw6kkql/v/2/ev/1/flavorId/0_9zejra36/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-vilkarene-for-fremtidens-fdevaresektor-og-landbrug-i-danmark2020-06-23t060000z.mp4/name/a.mp4
+- datetime: '2020-06-17T11:00:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget2020-06-17t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_75zkanpi/v/12/ev/2/flavorId/0_5h94cvgn/fileName/abent-samrad-i-milj-og-fdevareudvalget2020-06-17t110000z.mp4/name/a.mp4
+- datetime: '2020-05-27T11:00:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget2020-05-27t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_t0nsfwq6/v/2/ev/1/flavorId/0_avglnzis/fileName/abent-samrad-i-milj-og-fdevareudvalget2020-05-27t110000z.mp4/name/a.mp4
+- datetime: '2020-05-20T11:00:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om kvælstofudledninger og fejl fra
+    Aarhus Universitet
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-kvlstofudledninger-og-fejl-fra-aarhus-universitet2020-05-20t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_j5hkrpwh/v/2/ev/1/flavorId/0_fw3jfgf0/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-kvlstofudledninger-og-fejl-fra-aarhus-universitet2020-05-20t110000z.mp4/name/a.mp4
+- datetime: '2020-05-13T11:45:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om L 164, og om L 112
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-l-164-og-om-l-1122020-05-13t114500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_93xzfulo/v/2/ev/1/flavorId/0_yyc7bdg7/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-l-164-og-om-l-1122020-05-13t114500z.mp4/name/a.mp4
+- datetime: '2020-05-06T12:00:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om initiativer til at sikre danskerne
+    og danske husdyr mod ulveangreb
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-initiativer-til-at-sikre-danskerne-og-danske-husdyr-mod-ulveangreb2020-05-06t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_vh4jbc53/v/2/ev/1/flavorId/0_y4x1lek2/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-initiativer-til-at-sikre-danskerne-og-danske-husdyr-mod-ulveangreb2020-05-06t120000z.mp4/name/a.mp4
+- datetime: '2020-02-27T09:15:00Z'
+  name: Åbent samråd i Børne- og Undervisningsudv. om tegn på psykisk sygdom hos børn
+    og unge, og om reglerne for deltagerbetaling på uddannelserne
+  thumbnail: /static/images/abent-samrad-i-brne-og-undervisningsudv-om-tegn-pa-psykisk-sygdom-hos-brn-og-unge-og-om-reglerne-for-deltagerbetaling-pa-uddannelserne2020-02-27t091500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ide7umdu/v/2/ev/1/flavorId/0_mh9fws9c/fileName/abent-samrad-i-brne-og-undervisningsudv-om-tegn-pa-psykisk-sygdom-hos-brn-og-unge-og-om-reglerne-for-deltagerbetaling-pa-uddannelserne2020-02-27t091500z.mp4/name/a.mp4
+- datetime: '2020-02-20T09:30:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om rødlistearterne
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-rdlistearterne2020-02-20t093000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_rtocrtee/v/2/ev/1/flavorId/0_9nh6zxq8/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-rdlistearterne2020-02-20t093000z.mp4/name/a.mp4
+- datetime: '2020-02-20T09:15:00Z'
+  name: Åbent samråd i Retsudvalget om affyring af fyrværkeri imod redningsfolk og
+    tilfældigt forbipasserende
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-affyring-af-fyrvrkeri-imod-redningsfolk-og-tilfldigt-forbipasserende2020-02-20t091500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_60d58fg2/v/22/ev/8/flavorId/0_jg3dxkii/fileName/abent-samrad-i-retsudvalget-om-affyring-af-fyrvrkeri-imod-redningsfolk-og-tilfldigt-forbipasserende2020-02-20t091500z.mp4/name/a.mp4
+- datetime: '2020-02-06T12:00:00Z'
+  name: Høring i Miljø- og Fødevareudvalget om bioøkonomi
+  thumbnail: /static/images/hring-i-milj-og-fdevareudvalget-om-biokonomi2020-02-06t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_k2d3edx8/v/2/ev/1/flavorId/0_53896j2g/fileName/hring-i-milj-og-fdevareudvalget-om-biokonomi2020-02-06t120000z.mp4/name/a.mp4
+- datetime: '2020-01-15T12:00:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om manglende prioritering af generationsforureninger
+    i regeringens finanslov
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-manglende-prioritering-af-generationsforureninger-i-regeringens-finanslov2020-01-15t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_hex8ak4j/v/2/ev/1/flavorId/0_167yxqrt/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-manglende-prioritering-af-generationsforureninger-i-regeringens-finanslov2020-01-15t120000z.mp4/name/a.mp4
+- datetime: '2020-01-09T09:30:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om ministerens kendskab til den
+    regnefejl, der gjorde, at de hidtidige opgørelser af lavbundsjorde var stærkt
+    undervurderede
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-ministerens-kendskab-til-den-regnefejl-der-gjorde-at-de-hidtidige-opgrelser-af-lavbundsjorde-var-strkt-undervurderede2020-01-09t093000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_vqc8a069/v/2/ev/1/flavorId/0_nno7jp3y/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-ministerens-kendskab-til-den-regnefejl-der-gjorde-at-de-hidtidige-opgrelser-af-lavbundsjorde-var-strkt-undervurderede2020-01-09t093000z.mp4/name/a.mp4
+- datetime: '2020-01-08T12:15:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om vandløb i vandplanerne og vandafledningskapacitet
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-vandlb-i-vandplanerne-og-vandafledningskapacitet2020-01-08t121500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_u4qzoafa/v/2/ev/1/flavorId/0_n5tbxbfz/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-vandlb-i-vandplanerne-og-vandafledningskapacitet2020-01-08t121500z.mp4/name/a.mp4
+- datetime: '2019-12-12T09:30:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om L 62 (Gødskningslov)
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-l-62-gdskningslov2019-12-12t093000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_o1a8y3we/v/2/ev/1/flavorId/0_9jqxejz3/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-l-62-gdskningslov2019-12-12t093000z.mp4/name/a.mp4
+- datetime: '2019-12-04T12:00:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget om indsatsen for at styrke biodiversiteten
+    i Danmark
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-om-indsatsen-for-at-styrke-biodiversiteten-i-danmark2019-12-04t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ocz28odh/v/2/ev/1/flavorId/0_nhxrbcae/fileName/abent-samrad-i-milj-og-fdevareudvalget-om-indsatsen-for-at-styrke-biodiversiteten-i-danmark2019-12-04t120000z.mp4/name/a.mp4
+- datetime: '2019-10-31T09:30:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget med miljøministeren om indsatsen
+    for oprensning af generationsforureninger
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget-med-miljministeren-om-indsatsen-for-oprensning-af-generationsforureninger2019-10-31t093000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/215821100/serveFlavor/entryId/0_b0zpjn96/v/1/ev/14/flavorId/1_igak51xf/fileName/abent-samrad-i-milj-og-fdevareudvalget-med-miljministeren-om-indsatsen-for-oprensning-af-generationsforureninger2019-10-31t093000z.mp4/name/a.mp4
+- datetime: '2019-09-12T11:00:00Z'
+  name: Åbent samråd i Social-, og Indenrigsudvalget om at sikre plejeforældres ytringsfrihed
+    og mulighed for deltagelse i den offentlige debat
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget-om-at-sikre-plejeforldres-ytringsfrihed-og-mulighed-for-deltagelse-i-den-offentlige-debat2019-09-12t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_bnhabid0/v/2/ev/1/flavorId/0_nbzukfze/fileName/abent-samrad-i-social-og-indenrigsudvalget-om-at-sikre-plejeforldres-ytringsfrihed-og-mulighed-for-deltagelse-i-den-offentlige-debat2019-09-12t110000z.mp4/name/a.mp4
+- datetime: '2019-09-11T12:00:00Z'
+  name: Åbent samråd i Miljø- og Fødevareudvalget
+  thumbnail: /static/images/abent-samrad-i-milj-og-fdevareudvalget2019-09-11t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_lt2wm5x5/v/2/ev/1/flavorId/0_j42s9e4n/fileName/abent-samrad-i-milj-og-fdevareudvalget2019-09-11t120000z.mp4/name/a.mp4
+- datetime: '2019-08-27T11:30:00Z'
+  name: Åbent samråd i Retsudvalget om Dan-Bunkerings sagen og åbent samråd om sagsbehandlingstider
+    i voldtægtssager
+  thumbnail: /static/images/abent-samrad-i-retsudvalget-om-dan-bunkerings-sagen-og-abent-samrad-om-sagsbehandlingstider-i-voldtgtssager2019-08-27t113000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_9763c2vc/v/2/ev/1/flavorId/0_498c5tju/fileName/abent-samrad-i-retsudvalget-om-dan-bunkerings-sagen-og-abent-samrad-om-sagsbehandlingstider-i-voldtgtssager2019-08-27t113000z.mp4/name/a.mp4
 name: Miljø- og Fødevareudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

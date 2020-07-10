@@ -1,6 +1,12 @@
 ---
 chairman: e55d80fc-7c52-4c9a-b1a9-6871c784c8d5
 id: 737f3146-84e8-490a-8bc6-cc72b7e47950
+meetings:
+- datetime: '2019-09-27T12:00:00Z'
+  name: Åbent samråd i Udvalget for forretningsorden om etableringen af et nyt politisk
+    sekretariat i Statsministeriet
+  thumbnail: /static/images/abent-samrad-i-udvalget-for-forretningsorden-om-etableringen-af-et-nyt-politisk-sekretariat-i-statsministeriet2019-09-27t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_qnaxv39s/v/2/ev/1/flavorId/0_w97y1s9r/fileName/abent-samrad-i-udvalget-for-forretningsorden-om-etableringen-af-et-nyt-politisk-sekretariat-i-statsministeriet2019-09-27t120000z.mp4/name/a.mp4
 name: Udvalget vedrørende Det Etiske Råd
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

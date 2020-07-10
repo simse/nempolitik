@@ -1,6 +1,45 @@
 ---
 chairman: fefb75ec-9be8-4177-b509-bb443df42319
 id: 477aaf61-2c7c-4605-b0e6-3a974dc37ec4
+meetings:
+- datetime: '2020-06-24T13:00:00Z'
+  name: Åbent samråd i Social- og Indenrigsudvalget
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget2020-06-24t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_xhjz6f18/v/2/ev/1/flavorId/0_lwm5qhwx/fileName/abent-samrad-i-social-og-indenrigsudvalget2020-06-24t130000z.mp4/name/a.mp4
+- datetime: '2020-06-18T11:00:00Z'
+  name: Åbent samråd i Social- og Indenrigsudvalget
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget2020-06-18t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_yoepw21s/v/2/ev/1/flavorId/0_tpnh5nwo/fileName/abent-samrad-i-social-og-indenrigsudvalget2020-06-18t110000z.mp4/name/a.mp4
+- datetime: '2020-06-16T13:30:00Z'
+  name: Åbent samråd i Social- og Indenrigsudvalget om psykologbehandling til kvinder,
+    der får ophold på krisecenter
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget-om-psykologbehandling-til-kvinder-der-far-ophold-pa-krisecenter2020-06-16t133000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_5c6c1fi0/v/2/ev/1/flavorId/0_n7k7h7j6/fileName/abent-samrad-i-social-og-indenrigsudvalget-om-psykologbehandling-til-kvinder-der-far-ophold-pa-krisecenter2020-06-16t133000z.mp4/name/a.mp4
+- datetime: '2020-05-14T11:00:00Z'
+  name: Åbent samråd i Social- og Indenrigsudvalget om herbergs- og krisecenterområdet
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget-om-herbergs-og-krisecenteromradet2020-05-14t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_5j12k2rj/v/2/ev/1/flavorId/0_u34nynhe/fileName/abent-samrad-i-social-og-indenrigsudvalget-om-herbergs-og-krisecenteromradet2020-05-14t110000z.mp4/name/a.mp4
+- datetime: '2020-01-07T13:30:00Z'
+  name: Åbent samråd i Social- og Indenrigsudvalget om hjemløshed
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget-om-hjemlshed2020-01-07t133000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_nbmatfdh/v/2/ev/1/flavorId/0_i8ysirw3/fileName/abent-samrad-i-social-og-indenrigsudvalget-om-hjemlshed2020-01-07t133000z.mp4/name/a.mp4
+- datetime: '2019-12-19T12:00:00Z'
+  name: Åbent samråd i Social- og Indenrigsudvalget om autorisering af psykologer
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget-om-autorisering-af-psykologer2019-12-19t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_m2xzt0ou/v/2/ev/1/flavorId/0_xvvhtsr6/fileName/abent-samrad-i-social-og-indenrigsudvalget-om-autorisering-af-psykologer2019-12-19t120000z.mp4/name/a.mp4
+- datetime: '2019-12-17T16:00:00Z'
+  name: Åbent samråd i Social- og Indenrigsudvalget om definition af ny fattigdomsgrænse
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget-om-definition-af-ny-fattigdomsgrnse2019-12-17t160000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ozfwzo2a/v/2/ev/1/flavorId/0_6rlg677f/fileName/abent-samrad-i-social-og-indenrigsudvalget-om-definition-af-ny-fattigdomsgrnse2019-12-17t160000z.mp4/name/a.mp4
+- datetime: '2019-11-21T12:00:00Z'
+  name: Åbent samråd i Social- og Indenrigsudvalget om ansættelse af ny kommunikationschef
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget-om-ansttelse-af-ny-kommunikationschef2019-11-21t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_nj960826/v/2/ev/1/flavorId/0_h63w559k/fileName/abent-samrad-i-social-og-indenrigsudvalget-om-ansttelse-af-ny-kommunikationschef2019-11-21t120000z.mp4/name/a.mp4
+- datetime: '2019-11-05T13:30:00Z'
+  name: Åbent samråd i Social- og Indenrigsudvalget om handicapområdet og åbent samråd
+    om hjælp til udsatte borgere
+  thumbnail: /static/images/abent-samrad-i-social-og-indenrigsudvalget-om-handicapomradet-og-abent-samrad-om-hjlp-til-udsatte-borgere2019-11-05t133000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_6thq66lc/v/12/ev/2/flavorId/0_qtxxyw0x/fileName/abent-samrad-i-social-og-indenrigsudvalget-om-handicapomradet-og-abent-samrad-om-hjlp-til-udsatte-borgere2019-11-05t133000z.mp4/name/a.mp4
 name: Social- og Indenrigsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

@@ -261,10 +261,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
   entities.data.allPoliticalEntity.nodes.forEach(entity => {
-    if (entity.type === "municipality") {
+    if (entity.type === "municipality" || entity.type === "region") {
       createPage({
         path: "/" + entity.urlPrefix + entity.slug,
-        component: path.resolve("./src/templates/municipality.js"),
+        component: path.resolve("./src/templates/entity.js"),
         context: {
           id: entity.id
         }
@@ -304,6 +304,9 @@ exports.createPages = async ({ graphql, actions }) => {
               datetime
               name
               video_url
+              thumbnail {
+                publicURL
+              }
             }
           }
         }

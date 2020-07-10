@@ -1,6 +1,54 @@
 ---
 chairman: 6e40adef-1346-4956-a2a0-09f97beb1334
 id: 51476d0a-d214-4f51-b223-752288759561
+meetings:
+- datetime: '2020-06-25T12:00:00Z'
+  name: Åbent samråd i Klima-, Energi- og Forsyningsudvalget om alternative drivmidler
+    og iblandingskravene for biobrændstoffer
+  thumbnail: /static/images/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-alternative-drivmidler-og-iblandingskravene-for-biobrndstoffer2020-06-25t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_yzma3eiz/v/2/ev/1/flavorId/0_ll73w2u8/fileName/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-alternative-drivmidler-og-iblandingskravene-for-biobrndstoffer2020-06-25t120000z.mp4/name/a.mp4
+- datetime: '2020-05-28T12:00:00Z'
+  name: Åbent samråd i Klima-, Energi- og Forsyningsudvalget
+  thumbnail: /static/images/abent-samrad-i-klima-energi-og-forsyningsudvalget2020-05-28t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_yinfiizv/v/2/ev/1/flavorId/0_u94z0c9a/fileName/abent-samrad-i-klima-energi-og-forsyningsudvalget2020-05-28t120000z.mp4/name/a.mp4
+- datetime: '2020-02-06T09:30:00Z'
+  name: Høring i Klima-, Energi- og Forsyningsudvalget om biomasse
+  thumbnail: /static/images/hring-i-klima-energi-og-forsyningsudvalget-om-biomasse2020-02-06t093000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_2luabozw/v/2/ev/1/flavorId/0_0nbfgghf/fileName/hring-i-klima-energi-og-forsyningsudvalget-om-biomasse2020-02-06t093000z.mp4/name/a.mp4
+- datetime: '2020-01-30T13:00:00Z'
+  name: Høring i Klima-, Energi- og Forsyningsudvalget om Power-to-X
+  thumbnail: /static/images/hring-i-klima-energi-og-forsyningsudvalget-om-power-to-x2020-01-30t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_taufip4s/v/2/ev/1/flavorId/0_qn4spy36/fileName/hring-i-klima-energi-og-forsyningsudvalget-om-power-to-x2020-01-30t130000z.mp4/name/a.mp4
+- datetime: '2019-12-19T13:00:00Z'
+  name: Åbent samråd i Klima-, Energi- og Forsyningsudvalget om ansættelse af en ny
+    kommunikationschef i Klima-, Energi- og Forsyningsministeriet
+  thumbnail: /static/images/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-ansttelse-af-en-ny-kommunikationschef-i-klima-energi-og-forsyningsministeriet2019-12-19t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_2abvohd0/v/2/ev/1/flavorId/0_523stnie/fileName/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-ansttelse-af-en-ny-kommunikationschef-i-klima-energi-og-forsyningsministeriet2019-12-19t130000z.mp4/name/a.mp4
+- datetime: '2019-11-28T12:00:00Z'
+  name: Åbent samråd i Klima-, Energi- og Forsyningsudvalget om kabellægning af højspændingsforbindelser
+    i Vestjylland
+  thumbnail: /static/images/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-kabellgning-af-hjspndingsforbindelser-i-vestjylland2019-11-28t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_0dykhji8/v/2/ev/1/flavorId/0_rmomamdn/fileName/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-kabellgning-af-hjspndingsforbindelser-i-vestjylland2019-11-28t120000z.mp4/name/a.mp4
+- datetime: '2019-11-21T13:00:00Z'
+  name: Åbent samråd i Klima-, Energi- og Forsyningsudvalget om arbejdet i Udvalget
+    for Grøn Omstilling
+  thumbnail: /static/images/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-arbejdet-i-udvalget-for-grn-omstilling2019-11-21t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_7z17hbgt/v/2/ev/1/flavorId/0_lkgo17d8/fileName/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-arbejdet-i-udvalget-for-grn-omstilling2019-11-21t130000z.mp4/name/a.mp4
+- datetime: '2019-11-21T09:00:00Z'
+  name: Høring i Klima-, Energi- og Forsyningsudvalget om kabellægning af højspændingsforbindelse
+    i Vestjylland
+  thumbnail: /static/images/hring-i-klima-energi-og-forsyningsudvalget-om-kabellgning-af-hjspndingsforbindelse-i-vestjylland2019-11-21t090000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_g9d7zv74/v/2/ev/1/flavorId/0_q9uv8qtq/fileName/hring-i-klima-energi-og-forsyningsudvalget-om-kabellgning-af-hjspndingsforbindelse-i-vestjylland2019-11-21t090000z.mp4/name/a.mp4
+- datetime: '2019-10-24T12:00:00Z'
+  name: Åbent samråd i Klima-, Energi- og Forsyningsudvalget om indvinding af olie-
+    og gas i Nordsøen
+  thumbnail: /static/images/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-indvinding-af-olie-og-gas-i-nordsen2019-10-24t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_bzatz57t/v/2/ev/1/flavorId/0_a9uu8tej/fileName/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-indvinding-af-olie-og-gas-i-nordsen2019-10-24t120000z.mp4/name/a.mp4
+- datetime: '2019-09-05T13:00:00Z'
+  name: Åbent samråd i Klima-, Energi- og Forsyningsudvalget om nye beregningsforudsætninger
+    for Viking Link-projektet
+  thumbnail: /static/images/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-nye-beregningsforudstninger-for-viking-link-projektet2019-09-05t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_hm6z3mho/v/2/ev/1/flavorId/0_dy64pje8/fileName/abent-samrad-i-klima-energi-og-forsyningsudvalget-om-nye-beregningsforudstninger-for-viking-link-projektet2019-09-05t130000z.mp4/name/a.mp4
 name: Klima-, Energi- og Forsyningsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

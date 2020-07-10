@@ -1,6 +1,11 @@
 ---
 chairman: bf3ef049-257d-4d1a-845e-15052da27ea8
 id: 40a0b635-bce3-45a8-8222-7fc89eae924f
+meetings:
+- datetime: '2020-01-14T08:00:00Z'
+  name: Høring om ansvarligt forbrug
+  thumbnail: /static/images/hring-om-ansvarligt-forbrug2020-01-14t080000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_kbj9j36w/v/2/ev/1/flavorId/0_bnkhad4k/fileName/hring-om-ansvarligt-forbrug2020-01-14t080000z.mp4/name/a.mp4
 name: Udvalget for Småøer
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

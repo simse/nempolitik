@@ -1,6 +1,16 @@
 ---
 chairman: f8c4288b-0645-47b1-ae36-0cdfa58b161c
 id: 44853506-24d2-4ebf-86ef-36f25b0cbf31
+meetings:
+- datetime: '2020-02-27T10:00:00Z'
+  name: Åbent samråd i Indfødsretsudvalget om statsløsekonventionen
+  thumbnail: /static/images/abent-samrad-i-indfdsretsudvalget-om-statslsekonventionen2020-02-27t100000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_9eaey7p7/v/2/ev/1/flavorId/0_2fh5pplh/fileName/abent-samrad-i-indfdsretsudvalget-om-statslsekonventionen2020-02-27t100000z.mp4/name/a.mp4
+- datetime: '2019-11-14T10:00:00Z'
+  name: Åbent samråd i Indfødsretsudvalget om krav til oplysninger om udlandsophold
+    ifbm. ansøgning om dansk statsborgerskab
+  thumbnail: /static/images/abent-samrad-i-indfdsretsudvalget-om-krav-til-oplysninger-om-udlandsophold-ifbm-ansgning-om-dansk-statsborgerskab2019-11-14t100000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_32wryezr/v/2/ev/1/flavorId/0_apl2mz53/fileName/abent-samrad-i-indfdsretsudvalget-om-krav-til-oplysninger-om-udlandsophold-ifbm-ansgning-om-dansk-statsborgerskab2019-11-14t100000z.mp4/name/a.mp4
 name: Indfødsretsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

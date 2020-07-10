@@ -1,6 +1,36 @@
 ---
 chairman: 8d056b1f-7260-4048-8bb2-f4604d4c267b
 id: be0ce654-ae9f-4665-96ed-f31b2446747e
+meetings:
+- datetime: '2020-07-01T08:00:00Z'
+  name: Åbent samråd i Erhvervsudvalget
+  thumbnail: /static/images/abent-samrad-i-erhvervsudvalget2020-07-01t080000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_4y75f2uq/v/2/ev/1/flavorId/0_ebknjof6/fileName/abent-samrad-i-erhvervsudvalget2020-07-01t080000z.mp4/name/a.mp4
+- datetime: '2020-05-26T07:00:00Z'
+  name: Åbent samråd i Erhvervsudvalget om IKEA
+  thumbnail: /static/images/abent-samrad-i-erhvervsudvalget-om-ikea2020-05-26t070000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_86dn6y8a/v/1/ev/1/flavorId/1_nj2sr245/fileName/abent-samrad-i-erhvervsudvalget-om-ikea2020-05-26t070000z.mp4/name/a.mp4
+- datetime: '2020-05-05T07:00:00Z'
+  name: Åbent samråd i Erhvervsudvalget vedr. L 181 (hastelovforslag)
+  thumbnail: /static/images/abent-samrad-i-erhvervsudvalget-vedr-l-181-hastelovforslag2020-05-05t070000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_1yehatcd/v/2/ev/1/flavorId/0_dpuq1kcz/fileName/abent-samrad-i-erhvervsudvalget-vedr-l-181-hastelovforslag2020-05-05t070000z.mp4/name/a.mp4
+- datetime: '2020-05-04T10:00:00Z'
+  name: Erhvervsudvalget - Åbent ekspertmøde vedr. L 181 (rejsegarantifonden)
+  thumbnail: /static/images/erhvervsudvalget-abent-ekspertmde-vedr-l-181-rejsegarantifonden2020-05-04t100000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_8bm67hum/v/2/ev/1/flavorId/0_db1hrzn0/fileName/erhvervsudvalget-abent-ekspertmde-vedr-l-181-rejsegarantifonden2020-05-04t100000z.mp4/name/a.mp4
+- datetime: '2020-02-28T09:00:00Z'
+  name: Åbent samråd i Erhvervsudvalget om erstatningssagen mod den krakkede EBH bank
+  thumbnail: /static/images/abent-samrad-i-erhvervsudvalget-om-erstatningssagen-mod-den-krakkede-ebh-bank2020-02-28t090000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_zoa86tll/v/1/ev/1/flavorId/1_pohn9lwk/fileName/abent-samrad-i-erhvervsudvalget-om-erstatningssagen-mod-den-krakkede-ebh-bank2020-02-28t090000z.mp4/name/a.mp4
+- datetime: '2020-01-16T12:30:00Z'
+  name: Åbent samråd i Erhvervsudvalget om speciallægeerklæringer
+  thumbnail: /static/images/abent-samrad-i-erhvervsudvalget-om-speciallgeerklringer2020-01-16t123000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_s4udnacv/v/2/ev/1/flavorId/0_idssg5r4/fileName/abent-samrad-i-erhvervsudvalget-om-speciallgeerklringer2020-01-16t123000z.mp4/name/a.mp4
+- datetime: '2019-11-19T12:30:00Z'
+  name: Åbent samråd i Erhvervsudvalget om ”Delaftale om fair og lige konkurrence
+    mellem offentlige og private aktører” af 5. april 2018
+  thumbnail: /static/images/abent-samrad-i-erhvervsudvalget-om-delaftale-om-fair-og-lige-konkurrence-mellem-offentlige-og-private-aktrer-af-5-april-20182019-11-19t123000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ajp1k8fk/v/2/ev/1/flavorId/0_exi4hb1l/fileName/abent-samrad-i-erhvervsudvalget-om-delaftale-om-fair-og-lige-konkurrence-mellem-offentlige-og-private-aktrer-af-5-april-20182019-11-19t123000z.mp4/name/a.mp4
 name: Erhvervsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

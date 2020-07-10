@@ -1,6 +1,40 @@
 ---
 chairman: 15db9d20-970f-43b2-9b7a-7f494ad88920
 id: d05c0ba1-4ffe-4ae9-b3da-8a32d0e30e27
+meetings:
+- datetime: '2020-06-11T06:00:00Z'
+  name: Åbent samråd i Udlændinge- og Integrationsudvalget om religiøse bønnekald
+  thumbnail: /static/images/abent-samrad-i-udlndinge-og-integrationsudvalget-om-religise-bnnekald2020-06-11t060000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_hbd9n3h0/v/2/ev/1/flavorId/0_0ovw1975/fileName/abent-samrad-i-udlndinge-og-integrationsudvalget-om-religise-bnnekald2020-06-11t060000z.mp4/name/a.mp4
+- datetime: '2020-05-26T13:00:00Z'
+  name: Åbent samråd i Udlændinge- og Integrationsudvalget om bopælspligt og om repatrieringsordningen
+  thumbnail: /static/images/abent-samrad-i-udlndinge-og-integrationsudvalget-om-boplspligt-og-om-repatrieringsordningen2020-05-26t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_xktye5hs/v/22/ev/8/flavorId/0_nqtorzjk/fileName/abent-samrad-i-udlndinge-og-integrationsudvalget-om-boplspligt-og-om-repatrieringsordningen2020-05-26t130000z.mp4/name/a.mp4
+- datetime: '2020-02-18T14:00:00Z'
+  name: Åbent samråd i Udlændinge- og Integrationsudvalget om nedlæggelsen af Udlændinge
+    Center Nordsjælland
+  thumbnail: /static/images/abent-samrad-i-udlndinge-og-integrationsudvalget-om-nedlggelsen-af-udlndinge-center-nordsjlland2020-02-18t140000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_l4n1ktw8/v/2/ev/1/flavorId/0_twx69j0q/fileName/abent-samrad-i-udlndinge-og-integrationsudvalget-om-nedlggelsen-af-udlndinge-center-nordsjlland2020-02-18t140000z.mp4/name/a.mp4
+- datetime: '2020-02-06T09:00:00Z'
+  name: Åbent samråd i Udlændinge- og Integrationsudvalget om problematikken vedr.
+    afviste asylansøgere, som går under jorden
+  thumbnail: /static/images/abent-samrad-i-udlndinge-og-integrationsudvalget-om-problematikken-vedr-afviste-asylansgere-som-gar-under-jorden2020-02-06t090000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_2z58hyme/v/2/ev/1/flavorId/0_jwjh0ff0/fileName/abent-samrad-i-udlndinge-og-integrationsudvalget-om-problematikken-vedr-afviste-asylansgere-som-gar-under-jorden2020-02-06t090000z.mp4/name/a.mp4
+- datetime: '2019-11-26T14:00:00Z'
+  name: Åbent samråd i Udlændinge- og Integrationsudvalget om den seneste udvikling
+    i sagerne om Tyrkiets tilbagesendelse af IS-krigere/terrorister til Danmark
+  thumbnail: /static/images/abent-samrad-i-udlndinge-og-integrationsudvalget-om-den-seneste-udvikling-i-sagerne-om-tyrkiets-tilbagesendelse-af-is-krigereterrorister-til-danmark2019-11-26t140000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_b1to6lcv/v/2/ev/1/flavorId/0_8vht1mf0/fileName/abent-samrad-i-udlndinge-og-integrationsudvalget-om-den-seneste-udvikling-i-sagerne-om-tyrkiets-tilbagesendelse-af-is-krigereterrorister-til-danmark2019-11-26t140000z.mp4/name/a.mp4
+- datetime: '2019-11-19T14:00:00Z'
+  name: Åbent samråd i Udlændinge- og Integrationsudvalget om børn af afviste asylansøgere
+    og åbent samråd om IS-krigere/terrorister
+  thumbnail: /static/images/abent-samrad-i-udlndinge-og-integrationsudvalget-om-brn-af-afviste-asylansgere-og-abent-samrad-om-is-krigereterrorister2019-11-19t140000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_aqm193xu/v/12/ev/2/flavorId/0_lmxmcdt0/fileName/abent-samrad-i-udlndinge-og-integrationsudvalget-om-brn-af-afviste-asylansgere-og-abent-samrad-om-is-krigereterrorister2019-11-19t140000z.mp4/name/a.mp4
+- datetime: '2019-10-10T10:00:00Z'
+  name: Åbent samråd i Udlændinge- og Integrationsudvalget om hvilken betydning niveauet
+    af de offentlige ydelser har for asyltilstrømningen
+  thumbnail: /static/images/abent-samrad-i-udlndinge-og-integrationsudvalget-om-hvilken-betydning-niveauet-af-de-offentlige-ydelser-har-for-asyltilstrmningen2019-10-10t100000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_y6l8hd0j/v/2/ev/1/flavorId/0_2tscw07h/fileName/abent-samrad-i-udlndinge-og-integrationsudvalget-om-hvilken-betydning-niveauet-af-de-offentlige-ydelser-har-for-asyltilstrmningen2019-10-10t100000z.mp4/name/a.mp4
 name: Udlændinge- og Integrationsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

@@ -1,6 +1,44 @@
 ---
 chairman: cb07d834-e4d0-4298-b12e-6f93f0266f85
 id: b4cfc0bd-de7a-46b1-a3b2-d33d6a0a1604
+meetings:
+- datetime: '2020-06-24T04:30:00Z'
+  name: Åbent samråd i Transportudvalget
+  thumbnail: /static/images/abent-samrad-i-transportudvalget2020-06-24t043000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_9mndf2lg/v/1/ev/1/flavorId/1_40jfx3ly/fileName/abent-samrad-i-transportudvalget2020-06-24t043000z.mp4/name/a.mp4
+- datetime: '2020-06-23T17:15:00Z'
+  name: Åbent samråd i Transportudvalget om L 151 (godkendelse og syn af køretøjer)
+  thumbnail: /static/images/abent-samrad-i-transportudvalget-om-l-151-godkendelse-og-syn-af-kretjer2020-06-23t171500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_nczbqfh9/v/2/ev/1/flavorId/0_kq2pnhnm/fileName/abent-samrad-i-transportudvalget-om-l-151-godkendelse-og-syn-af-kretjer2020-06-23t171500z.mp4/name/a.mp4
+- datetime: '2020-06-02T12:00:00Z'
+  name: Åbent samråd i Transportudvalget
+  thumbnail: /static/images/abent-samrad-i-transportudvalget2020-06-02t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_lyrxca5f/v/2/ev/1/flavorId/0_u4me1139/fileName/abent-samrad-i-transportudvalget2020-06-02t120000z.mp4/name/a.mp4
+- datetime: '2020-03-10T14:30:00Z'
+  name: Åbent samråd i Transportudvalget om den fremtidige flybetjening af Bornholm
+  thumbnail: /static/images/abent-samrad-i-transportudvalget-om-den-fremtidige-flybetjening-af-bornholm2020-03-10t143000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_t6pc9qh5/v/2/ev/1/flavorId/0_h67j2tn8/fileName/abent-samrad-i-transportudvalget-om-den-fremtidige-flybetjening-af-bornholm2020-03-10t143000z.mp4/name/a.mp4
+- datetime: '2020-03-10T08:00:00Z'
+  name: Åbent samråd i Transportudvalget om forbikørsler ved Langeskov Station
+  thumbnail: /static/images/abent-samrad-i-transportudvalget-om-forbikrsler-ved-langeskov-station2020-03-10t080000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_lin7ilt1/v/2/ev/1/flavorId/0_20daf4iv/fileName/abent-samrad-i-transportudvalget-om-forbikrsler-ved-langeskov-station2020-03-10t080000z.mp4/name/a.mp4
+- datetime: '2020-01-29T08:00:00Z'
+  name: Høring i Transportudvalget om infrastruktur og vejstøj
+  thumbnail: /static/images/hring-i-transportudvalget-om-infrastruktur-og-vejstj2020-01-29t080000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ro50lttz/v/2/ev/1/flavorId/0_shncjsvy/fileName/hring-i-transportudvalget-om-infrastruktur-og-vejstj2020-01-29t080000z.mp4/name/a.mp4
+- datetime: '2019-11-12T14:30:00Z'
+  name: Åbent samråd i Transportudvalget om stop for overførsel af opgaver med afvikling
+    af køreprøver
+  thumbnail: /static/images/abent-samrad-i-transportudvalget-om-stop-for-overfrsel-af-opgaver-med-afvikling-af-kreprver2019-11-12t143000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_t1h051ut/v/2/ev/1/flavorId/0_mlvhgp9z/fileName/abent-samrad-i-transportudvalget-om-stop-for-overfrsel-af-opgaver-med-afvikling-af-kreprver2019-11-12t143000z.mp4/name/a.mp4
+- datetime: '2019-10-29T13:15:00Z'
+  name: Åbent samråd i Transportudvalget om fortsat byggeri af S-togsstation i Vinge
+  thumbnail: /static/images/abent-samrad-i-transportudvalget-om-fortsat-byggeri-af-s-togsstation-i-vinge2019-10-29t131500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/215821100/serveFlavor/entryId/0_a84xjmgt/v/1/ev/7/flavorId/1_8rmsttzg/fileName/abent-samrad-i-transportudvalget-om-fortsat-byggeri-af-s-togsstation-i-vinge2019-10-29t131500z.mp4/name/a.mp4
+- datetime: '2019-10-08T14:00:00Z'
+  name: Åbent samråd i Transportudvalget om gennemførelse vejprojekter
+  thumbnail: /static/images/abent-samrad-i-transportudvalget-om-gennemfrelse-vejprojekter2019-10-08t140000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_u4rh5417/v/2/ev/1/flavorId/0_qojtx7o6/fileName/abent-samrad-i-transportudvalget-om-gennemfrelse-vejprojekter2019-10-08t140000z.mp4/name/a.mp4
 name: Transportudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

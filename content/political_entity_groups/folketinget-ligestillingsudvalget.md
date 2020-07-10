@@ -1,6 +1,11 @@
 ---
 chairman: 1760c8ca-1da6-460b-8ca1-652577d71947
 id: 233d49d5-8bcd-4d3e-bd3a-460204f01ef0
+meetings:
+- datetime: '2019-11-27T13:00:00Z'
+  name: Åbent samråd i Ligestillingsudvalget om prostitution
+  thumbnail: /static/images/abent-samrad-i-ligestillingsudvalget-om-prostitution2019-11-27t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_zbidx3yc/v/2/ev/1/flavorId/0_tyo84qvi/fileName/abent-samrad-i-ligestillingsudvalget-om-prostitution2019-11-27t130000z.mp4/name/a.mp4
 name: Ligestillingsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

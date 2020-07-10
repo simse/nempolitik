@@ -1,6 +1,37 @@
 ---
 chairman: 2ea99d62-97e2-42a5-9bf4-f911e2f5c0f2
 id: 0ded12d9-686b-457d-9314-5fb701aa0764
+meetings:
+- datetime: '2020-07-07T13:00:00Z'
+  name: Åbent samråd i Kulturudvalget om tilskueradgang til superligaen i fodbold
+  thumbnail: /static/images/abent-samrad-i-kulturudvalget-om-tilskueradgang-til-superligaen-i-fodbold2020-07-07t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_qsncfar1/v/2/ev/1/flavorId/0_g2rrfdhp/fileName/abent-samrad-i-kulturudvalget-om-tilskueradgang-til-superligaen-i-fodbold2020-07-07t130000z.mp4/name/a.mp4
+- datetime: '2020-06-23T06:30:00Z'
+  name: Åbent samråd i Kulturudvalget om hjemsendelse af medarbejdere på DR og TV2
+  thumbnail: /static/images/abent-samrad-i-kulturudvalget-om-hjemsendelse-af-medarbejdere-pa-dr-og-tv22020-06-23t063000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_4rypy53f/v/2/ev/1/flavorId/0_xiny6cil/fileName/abent-samrad-i-kulturudvalget-om-hjemsendelse-af-medarbejdere-pa-dr-og-tv22020-06-23t063000z.mp4/name/a.mp4
+- datetime: '2020-06-10T08:00:00Z'
+  name: Åbent samråd i Kulturudvalget om regeringens holdning til fortsat forventet
+    driftsstøtte til Regan Vest
+  thumbnail: /static/images/abent-samrad-i-kulturudvalget-om-regeringens-holdning-til-fortsat-forventet-driftssttte-til-regan-vest2020-06-10t080000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_gqmbf3f2/v/12/ev/6/flavorId/1_u7b1g1gt/fileName/abent-samrad-i-kulturudvalget-om-regeringens-holdning-til-fortsat-forventet-driftssttte-til-regan-vest2020-06-10t080000z.mp4/name/a.mp4
+- datetime: '2020-05-27T09:45:00Z'
+  name: Åbent samråd i Kulturudvalget om udbuddet af en ny digital public service-radiokanal
+  thumbnail: /static/images/abent-samrad-i-kulturudvalget-om-udbuddet-af-en-ny-digital-public-service-radiokanal2020-05-27t094500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_q2zmmjj9/v/2/ev/1/flavorId/0_vbtnhh08/fileName/abent-samrad-i-kulturudvalget-om-udbuddet-af-en-ny-digital-public-service-radiokanal2020-05-27t094500z.mp4/name/a.mp4
+- datetime: '2020-03-11T09:45:00Z'
+  name: Åbent samråd i Kulturudvalget om forløbet omkring udbuddet af en ny digital
+    public service-radiokanal
+  thumbnail: /static/images/abent-samrad-i-kulturudvalget-om-forlbet-omkring-udbuddet-af-en-ny-digital-public-service-radiokanal2020-03-11t094500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_g8wrcoe9/v/2/ev/1/flavorId/0_vi6ah839/fileName/abent-samrad-i-kulturudvalget-om-forlbet-omkring-udbuddet-af-en-ny-digital-public-service-radiokanal2020-03-11t094500z.mp4/name/a.mp4
+- datetime: '2019-12-11T13:00:00Z'
+  name: Åbent samråd i Kulturudvalget om sagen om tyverier på Rigsarkivet
+  thumbnail: /static/images/abent-samrad-i-kulturudvalget-om-sagen-om-tyverier-pa-rigsarkivet2019-12-11t130000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_1h0h8ts4/v/2/ev/1/flavorId/0_1cqbv49j/fileName/abent-samrad-i-kulturudvalget-om-sagen-om-tyverier-pa-rigsarkivet2019-12-11t130000z.mp4/name/a.mp4
+- datetime: '2019-11-06T09:00:00Z'
+  name: Åbent samråd i Kulturudvalget om Facebooks begrænsninger af ytringsfriheden
+  thumbnail: /static/images/abent-samrad-i-kulturudvalget-om-facebooks-begrnsninger-af-ytringsfriheden2019-11-06t090000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_2a2a2s27/v/2/ev/1/flavorId/0_tg1qapy7/fileName/abent-samrad-i-kulturudvalget-om-facebooks-begrnsninger-af-ytringsfriheden2019-11-06t090000z.mp4/name/a.mp4
 name: Kulturudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

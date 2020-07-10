@@ -1,6 +1,10 @@
 .video-container {
     margin: 100px 0;
-    padding: 0 20%;
+    padding: 20px 20%;
+
+    // Plyr variables
+    --plyr-color-main: #197aff;
+    --plyr-font-smoothing: true;
 
     @media(max-width: 1480px) {
         padding: 0 10%;
@@ -16,7 +20,7 @@
 
     h1 {
         font-weight: 900;
-        margin-top: 20px;
+        margin-top: 40px;
         font-size: 2.2rem;
     }
 
@@ -24,11 +28,8 @@
         font-size: 1.2rem;
         opacity: 0.7;
     }
-    
-    video {
-        border-radius: 4px;
-        margin-top: 20px
-    }
+
+
 
     a {
         color: #197aff;

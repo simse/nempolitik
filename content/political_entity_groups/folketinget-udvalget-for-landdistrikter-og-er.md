@@ -1,6 +1,31 @@
 ---
 chairman: 4a46ecb3-0510-4057-ac74-b99a7bd6986b
 id: dd8a6afc-b344-4d3f-ac55-867b95ba91a6
+meetings:
+- datetime: '2020-06-11T11:30:00Z'
+  name: Åbent samråd i Udvalget for Landdistrikter og Øer
+  thumbnail: /static/images/abent-samrad-i-udvalget-for-landdistrikter-og-er2020-06-11t113000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ctk4232k/v/2/ev/1/flavorId/0_qml8jtro/fileName/abent-samrad-i-udvalget-for-landdistrikter-og-er2020-06-11t113000z.mp4/name/a.mp4
+- datetime: '2020-02-06T12:00:00Z'
+  name: Åbent samråd i Udvalget for Landdistrikter og Øer om flytningen af Ankestyrelsen
+    fra Ringsted til København
+  thumbnail: /static/images/abent-samrad-i-udvalget-for-landdistrikter-og-er-om-flytningen-af-ankestyrelsen-fra-ringsted-til-kbenhavn2020-02-06t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_56whpftl/v/2/ev/1/flavorId/0_4lnpiwip/fileName/abent-samrad-i-udvalget-for-landdistrikter-og-er-om-flytningen-af-ankestyrelsen-fra-ringsted-til-kbenhavn2020-02-06t120000z.mp4/name/a.mp4
+- datetime: '2020-01-22T09:30:00Z'
+  name: Åbent samråd i Udvalget for Landdistrikter og Øer om nærværende ledelse i
+    det offentlige
+  thumbnail: /static/images/abent-samrad-i-udvalget-for-landdistrikter-og-er-om-nrvrende-ledelse-i-det-offentlige2020-01-22t093000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_uzm5its8/v/2/ev/1/flavorId/0_11n21ho2/fileName/abent-samrad-i-udvalget-for-landdistrikter-og-er-om-nrvrende-ledelse-i-det-offentlige2020-01-22t093000z.mp4/name/a.mp4
+- datetime: '2020-01-15T09:00:00Z'
+  name: Åbent samråd i Udvalget for Landdistrikter og Øer om en ledende stilling i
+    Landbrugsstyrelsen
+  thumbnail: /static/images/abent-samrad-i-udvalget-for-landdistrikter-og-er-om-en-ledende-stilling-i-landbrugsstyrelsen2020-01-15t090000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_1n7ofwpe/v/2/ev/1/flavorId/0_1rcqq1h6/fileName/abent-samrad-i-udvalget-for-landdistrikter-og-er-om-en-ledende-stilling-i-landbrugsstyrelsen2020-01-15t090000z.mp4/name/a.mp4
+- datetime: '2019-11-07T09:30:00Z'
+  name: Åbent samråd i Udvalget for Landdistrikter og Øer om bedre bredbånd til alle
+    dele af landet
+  thumbnail: /static/images/abent-samrad-i-udvalget-for-landdistrikter-og-er-om-bedre-bredband-til-alle-dele-af-landet2019-11-07t093000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_c83qjj3y/v/22/ev/8/flavorId/0_i5ctg2hg/fileName/abent-samrad-i-udvalget-for-landdistrikter-og-er-om-bedre-bredband-til-alle-dele-af-landet2019-11-07t093000z.mp4/name/a.mp4
 name: Udvalget for Landdistrikter og Øer
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:

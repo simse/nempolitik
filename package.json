@@ -21,6 +21,7 @@
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-source-strapi": "^0.0.12",
+    "gatsby-transformer-cloudinary": "^0.3.5",
     "gatsby-transformer-remark": "^2.8.23",
     "gatsby-transformer-sharp": "^2.5.7",
     "gray-matter": "^4.0.2",
@@ -40,6 +41,7 @@
     "react-icons": "^3.10.0",
     "react-instantsearch-dom": "^6.6.0",
     "react-player": "^2.5.0",
+    "react-plyr": "^2.2.0",
     "sass": "^1.26.9",
     "slugify": "^1.4.4",
     "strapi-exporter": "^1.1.0"

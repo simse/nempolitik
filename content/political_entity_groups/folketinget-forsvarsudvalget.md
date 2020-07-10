@@ -1,6 +1,59 @@
 ---
 chairman: 19ec1e1d-9550-4dd0-a077-f8dd1132ce69
 id: 1726b5a1-81aa-4979-af5d-7221e6e1a765
+meetings:
+- datetime: '2020-06-24T11:00:00Z'
+  name: Åbent samråd i Forsvarsudvalget om ministerens forhold til Forsvaret og dets
+    ledelse
+  thumbnail: /static/images/abent-samrad-i-forsvarsudvalget-om-ministerens-forhold-til-forsvaret-og-dets-ledelse2020-06-24t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_7qkqb1jq/v/12/ev/2/flavorId/0_882z12lk/fileName/abent-samrad-i-forsvarsudvalget-om-ministerens-forhold-til-forsvaret-og-dets-ledelse2020-06-24t110000z.mp4/name/a.mp4
+- datetime: '2020-06-10T09:00:00Z'
+  name: Åbent samråd i Forsvarsudvalget om L 166 (Flyvestation Skrydstrup)
+  thumbnail: /static/images/abent-samrad-i-forsvarsudvalget-om-l-166-flyvestation-skrydstrup2020-06-10t090000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/215821100/serveFlavor/entryId/0_hvenxnk3/v/2/ev/6/flavorId/0_qy11a842/fileName/abent-samrad-i-forsvarsudvalget-om-l-166-flyvestation-skrydstrup2020-06-10t090000z.mp4/name/a.mp4
+- datetime: '2020-05-28T08:30:00Z'
+  name: Åbent samråd i Forsvarsudvalget
+  thumbnail: /static/images/abent-samrad-i-forsvarsudvalget2020-05-28t083000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_m67qtx4o/v/2/ev/1/flavorId/0_y0xfn9pz/fileName/abent-samrad-i-forsvarsudvalget2020-05-28t083000z.mp4/name/a.mp4
+- datetime: '2020-05-07T11:45:00Z'
+  name: Åbent samråd i Forsvarsudvalget om støjbelastning af naboerne til Flyvestation
+    Skrydstrup
+  thumbnail: /static/images/abent-samrad-i-forsvarsudvalget-om-stjbelastning-af-naboerne-til-flyvestation-skrydstrup2020-05-07t114500z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_jmaayjzf/v/2/ev/1/flavorId/0_4ioyjv9d/fileName/abent-samrad-i-forsvarsudvalget-om-stjbelastning-af-naboerne-til-flyvestation-skrydstrup2020-05-07t114500z.mp4/name/a.mp4
+- datetime: '2020-02-20T12:00:00Z'
+  name: Åbent samråd i Forsvarsudvalget om regeringens holdning til forsvarsforbeholdet
+  thumbnail: /static/images/abent-samrad-i-forsvarsudvalget-om-regeringens-holdning-til-forsvarsforbeholdet2020-02-20t120000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_b99l1gl1/v/2/ev/1/flavorId/0_mo4p3q49/fileName/abent-samrad-i-forsvarsudvalget-om-regeringens-holdning-til-forsvarsforbeholdet2020-02-20t120000z.mp4/name/a.mp4
+- datetime: '2020-02-19T08:00:00Z'
+  name: Høring i Forsvarsudvalget om det nordiske forsvarssamarbejde i NORDEFCO
+  thumbnail: /static/images/hring-i-forsvarsudvalget-om-det-nordiske-forsvarssamarbejde-i-nordefco2020-02-19t080000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_b8z0h2le/v/2/ev/1/flavorId/0_215avgsh/fileName/hring-i-forsvarsudvalget-om-det-nordiske-forsvarssamarbejde-i-nordefco2020-02-19t080000z.mp4/name/a.mp4
+- datetime: '2020-01-30T12:30:00Z'
+  name: Åbent samråd i Forsvarsudvalget om støjkompensation ved Flyvestation Skrydstrup
+  thumbnail: /static/images/abent-samrad-i-forsvarsudvalget-om-stjkompensation-ved-flyvestation-skrydstrup2020-01-30t123000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_uh2o38a0/v/2/ev/1/flavorId/0_0rekttz7/fileName/abent-samrad-i-forsvarsudvalget-om-stjkompensation-ved-flyvestation-skrydstrup2020-01-30t123000z.mp4/name/a.mp4
+- datetime: '2019-12-12T07:30:00Z'
+  name: Åbent samråd i Forsvarsudvalget om indkøbs- og regnskabsforholdene i Forsvarsministeriets
+    Ejendomsstyrelse
+  thumbnail: /static/images/abent-samrad-i-forsvarsudvalget-om-indkbs-og-regnskabsforholdene-i-forsvarsministeriets-ejendomsstyrelse2019-12-12t073000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_k4txm8t9/v/2/ev/1/flavorId/0_uzpzwupm/fileName/abent-samrad-i-forsvarsudvalget-om-indkbs-og-regnskabsforholdene-i-forsvarsministeriets-ejendomsstyrelse2019-12-12t073000z.mp4/name/a.mp4
+- datetime: '2019-11-15T09:00:00Z'
+  name: Høring i Forsvarsudvalget om kapløbet om Arktis - Den nye verdens kampplads
+  thumbnail: /static/images/hring-i-forsvarsudvalget-om-kaplbet-om-arktis-den-nye-verdens-kampplads2019-11-15t090000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_gd43k5h3/v/2/ev/1/flavorId/0_p8wczepe/fileName/hring-i-forsvarsudvalget-om-kaplbet-om-arktis-den-nye-verdens-kampplads2019-11-15t090000z.mp4/name/a.mp4
+- datetime: '2019-10-24T07:00:00Z'
+  name: Ungdomspolitisk sikkerhedskonference i Forsvarsudvalget
+  thumbnail: /static/images/ungdomspolitisk-sikkerhedskonference-i-forsvarsudvalget2019-10-24t070000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_rvayhj7v/v/12/ev/4/flavorId/0_44t11k2u/fileName/ungdomspolitisk-sikkerhedskonference-i-forsvarsudvalget2019-10-24t070000z.mp4/name/a.mp4
+- datetime: '2019-09-11T10:00:00Z'
+  name: Høring i Forsvarsudvalget om cybervåben i militære operationer
+  thumbnail: /static/images/hring-i-forsvarsudvalget-om-cybervaben-i-militre-operationer2019-09-11t100000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_y7iowsbv/v/2/ev/1/flavorId/0_znloo05k/fileName/hring-i-forsvarsudvalget-om-cybervaben-i-militre-operationer2019-09-11t100000z.mp4/name/a.mp4
+- datetime: '2019-08-23T11:00:00Z'
+  name: Åbent samråd i Forsvarsudvalget om udflytning af Networks Operations Center
+    (NOC)
+  thumbnail: /static/images/abent-samrad-i-forsvarsudvalget-om-udflytning-af-networks-operations-center-noc2019-08-23t110000z.jpg
+  video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_fwgqqnf8/v/2/ev/1/flavorId/0_z3kqc6zh/fileName/abent-samrad-i-forsvarsudvalget-om-udflytning-af-networks-operations-center-noc2019-08-23t110000z.mp4/name/a.mp4
 name: Forsvarsudvalget
 political_entities: 779a159a-ba3c-4c24-8eaf-547790b15872
 politicians:
