@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-import style from "../style/components/politician-card.module.scss"
 import PartyTag from "../components/party-tag"
 import PoliticianRole from "../page-components/politician-role"
+import style from "../style/components/politician-card.module.scss"
 
 const PoliticianCard = ({ politician, entityGroupFilter, hidden }) => {
   let hiddenClass = hidden ? style.hidden : ""

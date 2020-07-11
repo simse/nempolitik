@@ -7,12 +7,12 @@ import 'moment/locale/da'
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
-import style from "../style/pages/politician.module.scss"
 import {
   getPoliticianExperienceOfType, 
 } from "../util.js"
 import PartyTag from "../components/party-tag"
 import PoliticianRole from "../page-components/politician-role"
+import style from "../style/pages/politician.module.scss"
 
 
 const politicianExperience = (educations, emptyMessage) => {

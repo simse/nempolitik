@@ -1,8 +1,5 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import moment from "moment"
-import "moment/locale/da"
-
 
 import style from "../style/components/footer.module.scss"
 
@@ -34,12 +31,14 @@ const Footer = () => {
           slug
           name
         }
+      },
+      currentBuildDate {
+        currentDate
       }
     }
   `)
 
-  moment.locale("da")
-  const currentTime = moment().format("LLLL")
+  const currentTime = data.currentBuildDate.currentDate
 
   return (
     <div className={style.footer}>

@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useEffect } from "react"
 import { Link } from "gatsby"
-import moment from "moment"
-import "moment/locale/da"
+/*import moment from "moment"
+import "moment/locale/da"*/
 import "../style/components/plyr.scss"
 
 import SEO from "../components/seo"
@@ -15,8 +15,7 @@ import style from "../style/pages/group-meeting.module.scss"
 export default function PoliticalPartyPage({ pageContext }) {
   const meeting = pageContext.meeting
 
-  moment.locale("da")
-  const datetime = moment(meeting.datetime).format("LLLL")
+  const datetime = meeting.datetime
 
   useEffect(() => {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {

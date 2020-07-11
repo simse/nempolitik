@@ -3,11 +3,11 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { uniqBy } from "lodash"
 
-import Slider from "../components/slider"
-import PoliticianCard from "../page-components/politician-card"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
+import Slider from "../components/slider"
+import PoliticianCard from "../page-components/politician-card"
 
 import { BsGeoAlt, BsFillPeopleFill } from "react-icons/bs"
 import style from "../style/pages/entity.module.scss"
