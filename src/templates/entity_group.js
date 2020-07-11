@@ -5,7 +5,7 @@ import slugify from "slugify"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-
+import Footer from "../components/footer"
 import style from "../style/pages/entity-group.module.scss"
 import PoliticianCard from "../page-components/politician-card"
 import MeetingVideo from "../components/meeting-video"
@@ -86,6 +86,7 @@ export default function PoliticalPartyPage({ data, pageContext }) {
         }
       </div>
 
+      <Footer />
     </Layout>
   )
 }

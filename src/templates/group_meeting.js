@@ -7,6 +7,7 @@ import "../style/components/plyr.scss"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import Footer from "../components/footer"
 
 import { BsArrowLeftShort } from "react-icons/bs"
 import style from "../style/pages/group-meeting.module.scss"
@@ -20,7 +21,9 @@ export default function PoliticalPartyPage({ pageContext }) {
   useEffect(() => {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       const Plyr = require('plyr');
-      Array.from(document.querySelectorAll('#player')).map(p => new Plyr(p));
+      Array.from(document.querySelectorAll('#player')).map(p => new Plyr(p/*, {
+        previewThumbnails: { enabled: true, src: '/thumbnails/thumbnails.vtt' }
+      }*/));
     }
   })
 
@@ -46,6 +49,8 @@ export default function PoliticalPartyPage({ pageContext }) {
         <h1>{meeting.name}</h1>
         <span>{datetime}</span>
       </div>
+
+      <Footer />
     </Layout>
   )
 }

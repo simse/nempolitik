@@ -7,6 +7,7 @@ import Slider from "../components/slider"
 import PoliticianCard from "../page-components/politician-card"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import Footer from "../components/footer"
 
 import { BsGeoAlt, BsFillPeopleFill } from "react-icons/bs"
 import style from "../style/pages/entity.module.scss"
@@ -39,9 +40,9 @@ export default function MunicipalityPage({ data }) {
         textDecoration: "none",
         color: "#000"
       }}>
-        <div className={style.entityGroupCard}>
+        <div className={style.entityGroupCard} key={group.id}>
           {photos.map(photo => (
-            <Img fixed={photo} style={{
+            <Img key={photo.originalName} fixed={photo} style={{
               borderRadius: 100,
               marginRight: 5
             }} />
@@ -53,6 +54,12 @@ export default function MunicipalityPage({ data }) {
     )
   })
 
+  let membersTitle = ""
+  if (entity.type === "municipality") {
+    membersTitle = "Byrådet"
+  } else if(entity.type === "region") {
+    membersTitle = "Regionsrådet"
+  }
 
   return (
     <Layout width={2000}>
@@ -60,6 +67,9 @@ export default function MunicipalityPage({ data }) {
       <div className={style.municipality}>
         <div className={style.header}>
           <div className={style.meta}>
+            <Img fixed={entity.logo.childImageSharp.fixed} style={{
+              marginBottom: 40
+            }} />
 
             <h1>{ entity.name }</h1>
 
@@ -80,18 +90,20 @@ export default function MunicipalityPage({ data }) {
         </div>
 
         <div className={style.content}>
-          <h2 className={style.sectionTitle}>Byrådet</h2> 
+          <h2 className={style.sectionTitle}>{membersTitle}</h2> 
 
           <Slider cards={cards} />
         </div>
 
+        {groups.length > 0 &&
         <div className={style.content}>
           <h2 className={style.sectionTitle}>{entity.group_name}</h2> 
 
           <Slider cards={groupCards} />
-        </div>
+        </div>}
       </div>
 
+      <Footer />
     </Layout>
   )
 }
@@ -106,9 +118,10 @@ export const query = graphql`
       population
       urlPrefix
       slug
+      type
       logo {
         childImageSharp {
-          fixed(height: 140, quality: 100) {
+          fixed(height: 100, quality: 100) {
             ...GatsbyImageSharpFixed_withWebp
           }
         }
@@ -121,12 +134,14 @@ export const query = graphql`
         }
       }
       groups {
+        id
         slug
         name
         politicians {
           tiny_photo: photo {
             childImageSharp {
               fixed(width: 32, height: 32, cropFocus: NORTH, quality: 100) {
+                originalName
                 ...GatsbyImageSharpFixed_withWebp
               }
             }

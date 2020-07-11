@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Equalizer from "react-equalizer"
 
+import Footer from "../components/footer"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PoliticianCard from "../page-components/politician-card"
@@ -103,6 +104,8 @@ const PoliticiansPage = ({data, pageContext}) => {
           </div>}
         </div>
       </div>
+
+      <Footer />
     </Layout>
   )
 }

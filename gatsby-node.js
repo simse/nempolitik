@@ -70,6 +70,8 @@ exports.onCreateNode = async ({ node, actions, loadNodeContent, createContentDig
         data.urlPrefix = "regering/"
       } else if (data.type === "municipality") {
         data.urlPrefix = "kommune/"
+      } else if (data.type === "region") {
+        data.urlPrefix = "region/"
       } else {
         data.urlPrefix = ""
       }

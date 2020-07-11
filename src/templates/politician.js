@@ -6,7 +6,7 @@ import 'moment/locale/da'
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-
+import Footer from "../components/footer"
 import style from "../style/pages/politician.module.scss"
 import {
   getPoliticianExperienceOfType, 
@@ -265,6 +265,8 @@ export default function PoliticianPage({ data }) {
           }
         </div>
       </div>
+
+      <Footer />
     </Layout>
   )
 }

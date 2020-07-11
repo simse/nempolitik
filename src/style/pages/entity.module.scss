@@ -18,6 +18,7 @@
     }
 
     .entity-group-card {
+        margin-bottom: 10px;
         padding: 20px;
         background: #fff;
         border-radius: 6px;
@@ -33,6 +34,7 @@
             0 8px 15.7px -8px rgba(0, 0, 0, 0.021),
             0 12.4px 24.2px -8px rgba(0, 0, 0, 0.024),
             0 22px 43px -8px rgba(0, 0, 0, 0.03);
+        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms box-shadow;
 
         h3 {
             font-size: 1.2rem;
@@ -44,7 +46,7 @@
 }
 
 .meta {
-    padding: 161px 0 100px 15%;
+    padding: 121px 0 100px 15%;
 
     @media(max-width: 800px) {
         padding: 101px 0 40px 5%;

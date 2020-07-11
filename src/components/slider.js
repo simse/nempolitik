@@ -49,16 +49,16 @@ const Slider = ({ cards }) => {
     }
 
     return (
-      <div className={className}>
+      <div className={className} key={index}>
         {card}
       </div>
     )
   }
 
-  let maxOffset = Math.floor(cards.length / shownCardCount)
+  let maxOffset = Math.ceil(cards.length / shownCardCount)
 
   const NextSlideButton = () => {
-    if (sliderOffset + 1 <= maxOffset) {
+    if (sliderOffset + 1 < maxOffset) {
       return (
         <button onClick={nextSliderPage} aria-label="Naviger frem"><BsChevronRight size="2.6em" /></button>
       )
