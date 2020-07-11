@@ -20,9 +20,9 @@ export default function PoliticalPartyPage({ pageContext }) {
   useEffect(() => {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       const Plyr = require('plyr');
-      Array.from(document.querySelectorAll('#player')).map(p => new Plyr(p/*, {
-        previewThumbnails: { enabled: true, src: '/thumbnails/thumbnails.vtt' }
-      }*/));
+      Array.from(document.querySelectorAll('#player')).map(p => new Plyr(p, {
+        previewThumbnails: { enabled: true, src: meeting.thumbnail_stream }
+      }));
     }
   })
 

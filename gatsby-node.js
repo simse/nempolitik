@@ -309,6 +309,7 @@ exports.createPages = async ({ graphql, actions }) => {
               thumbnail {
                 publicURL
               }
+              thumbnail_stream
             }
           }
         }

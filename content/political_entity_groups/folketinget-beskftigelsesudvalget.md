@@ -6,6 +6,7 @@ meetings:
   name: Åbent samråd i Beskæftigelsesudvalget
   thumbnail: /static/images/abent-samrad-i-beskftigelsesudvalget2020-06-26t070000z.jpg
   video_url: https://cfvod.kaltura.com/pd/p/2158211/sp/0/serveFlavor/entryId/0_ctnyei0n/v/1/ev/1/flavorId/1_m63g34u1/fileName/abent-samrad-i-beskftigelsesudvalget2020-06-26t070000z.mp4/name/a.mp4
+  thumbnail_stream: /thumbnails/abent-samrad-i-beskftigelsesudvalget2020-06-26t070000z_thumbnails.vtt
 - datetime: '2020-05-20T10:00:00Z'
   name: Åbent samråd i Beskæftigelsesudvalget om overskridelser af grænseværdien for
     isocyanater på BIO4-byggeriet
