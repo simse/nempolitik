@@ -303,7 +303,7 @@ exports.createPages = async ({ graphql, actions }) => {
             name
             meetings {
               slug_datetime: datetime(formatString: "YYYY-MM-DD")
-              datetime(formatString: "DD MMMM YYYY", locale: "dk")
+              datetime(formatString: "LLL", locale: "da")
               name
               video_url
               thumbnail {

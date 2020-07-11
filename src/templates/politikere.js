@@ -51,12 +51,10 @@ const PoliticiansPage = ({data, pageContext}) => {
   return(
     <Layout>
       <SEO title="Politikere" />
-      <h1 style={{
-        marginTop: 100
-      }}>Politikere</h1>
-      <p style={{
-        marginBottom: 40
-      }}>Alle politikere i Danmark.</p>
+      <div className={style.pageHeader}>
+        <h1>Politikere</h1>
+        <p>Alle politikere i Danmark, plus nogle fra Grønland og Færøerne.</p>
+      </div>
 
       <Equalizer byRow={true} className={style.row}>
         {shownPoliticians.map(value => (

@@ -121,7 +121,7 @@ $grid-gap: 8px;
         0 8px 15.7px -8px rgba(0, 0, 0, 0.021),
         0 12.4px 24.2px -8px rgba(0, 0, 0, 0.024),
         0 22px 43px -8px rgba(0, 0, 0, 0.03);
-    background: #fff;
+    background: lighten(#fffbf5, 1.5%);
     padding: 24px 0;
     border-radius: 12px;
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms box-shadow;

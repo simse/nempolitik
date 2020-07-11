@@ -101,7 +101,7 @@ export const query = graphql`
       slug
       meetings {
         slug_datetime: datetime(formatString: "YYYY-MM-DD")
-        datetime
+        datetime(formatString: "LLL", locale: "da")
         name
         thumbnail {
           childImageSharp {
