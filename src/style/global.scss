@@ -15,6 +15,13 @@ html { font-family: "Inter", "system-ui", sans-serif, "Apple Color Emoji", "Sego
   html { font-family: "Inter var", "system-ui", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
 }
 
+@font-face {
+  font-family: 'Recoleta';
+  src: url('../../static/fonts/Recoleta-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
 *::before,
 *::after,
 * {
