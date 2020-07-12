@@ -62,7 +62,7 @@ export default function MunicipalityPage({ data }) {
   }
 
   return (
-    <Layout width={2000}>
+    <Layout width={3000}>
       <SEO title={ entity.name } />
       <div className={style.municipality}>
         <div className={style.header}>
@@ -128,7 +128,7 @@ export const query = graphql`
       }
       banner {
         childImageSharp {
-          fluid(maxWidth: 2000, maxHeight: 1500, quality: 100) {
+          fluid(maxWidth: 3000, maxHeight: 1500, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

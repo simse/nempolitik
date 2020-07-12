@@ -146,6 +146,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     type politicalEntity implements Node {
       id: ID!
       groups: [politicalEntityGroup] @link(from: "id" by: "political_entities")
+
     }
 
     type politicalEntityGroup implements Node {
@@ -154,8 +155,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       politicians: [politician] @link(from: "politicians" by: "id")
     }
     `)
-
-
+    
   const typeDefs = [
     "type politician implements Node",
     schema.buildObjectType({
