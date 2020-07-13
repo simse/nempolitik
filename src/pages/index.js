@@ -8,7 +8,7 @@ const IndexPage = ({data}) => (
     <SEO title="Forside" />
     <h1 style={{
       marginTop: 100
-    }}>Hej...</h1>
+    }}>Hej med dig, jeg heder Kaj...</h1>
     <p>Denne hjemmeside er ikke heeelt færdig. Tjek tilbage om en måneds tid.</p>
     
   </Layout>
