@@ -13,8 +13,10 @@ deploy:
   endpoint: s3.eu-central-003.backblazeb2.com
   edge: true
   local_dir: ./public
+  skip_cleanup: true
   on:
     branch: master
 before_script:
   - "yarn global add gatsby-cli"
   - "yarn"
+  - "gatsby build"
