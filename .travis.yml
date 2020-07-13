@@ -9,8 +9,6 @@ cache:
   - .cache
 deploy:
   provider: s3
-  access_key_id: <encrypted access_key_id>
-  secret_access_key: <encrypted secret_access_key>
   bucket: "nempolitik"
   endpoint: s3.eu-central-003.backblazeb2.com
   edge: true
