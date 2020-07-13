@@ -8,4 +8,5 @@ color: "#a20000"
 dark_text: false
 logo: /static/images/sf.png
 monochrome_logo: /static/images/sf_-_socialistiske_folkeparti_white.png
+theme: red
 ---

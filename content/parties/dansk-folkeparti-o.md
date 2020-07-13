@@ -8,4 +8,5 @@ color: "#f6e200"
 dark_text: true
 logo: /static/images/dansk_folkeparti_logo.png
 monochrome_logo: /static/images/dansk_folkeparti_logo_white.png
+theme: yellow
 ---

@@ -8,4 +8,5 @@ color: "#00355f"
 dark_text: false
 logo: /static/images/venstre_-dk-_logo.png
 monochrome_logo: /static/images/venstre_-dk-_logo_white.png
+theme: blue
 ---

@@ -8,4 +8,5 @@ color: "#c82a2f"
 dark_text: false
 logo: /static/images/inuit_ataqatigiit_logo.png
 monochrome_logo: /static/images/inuit_white.png
+theme: red
 ---

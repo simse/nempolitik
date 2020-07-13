@@ -8,4 +8,5 @@ color: "#6a2f6a"
 dark_text: false
 logo: /static/images/fremad_logo_color.png
 monochrome_logo: /static/images/fremad_white.png
+theme: purple
 ---

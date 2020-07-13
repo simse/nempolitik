@@ -11,4 +11,5 @@ slug: socialdemokratiet
 dark_text: false
 monochrome_logo: /static/images/social_democrats_logo_white.png
 established: 1870
+theme: red
 ---

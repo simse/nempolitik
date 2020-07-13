@@ -8,4 +8,5 @@ color: "#222222"
 dark_text: false
 logo: /static/images/løsgængere.png
 monochrome_logo: /static/images/løsgænger_white.png
+theme: null
 ---

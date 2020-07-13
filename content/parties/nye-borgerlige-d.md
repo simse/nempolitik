@@ -8,4 +8,5 @@ color: "#004851"
 dark_text: false
 logo: /static/images/nye_borgerlige.png
 monochrome_logo: /static/images/nye_borgerlige-white.png
+theme: green
 ---

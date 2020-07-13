@@ -8,4 +8,5 @@ color: "#e4047c"
 dark_text: false
 logo: /static/images/radikale_venstre.png
 monochrome_logo: /static/images/radikale_venstre_white.png
+theme: pink
 ---

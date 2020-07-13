@@ -8,4 +8,5 @@ color: "#006689"
 dark_text: false
 logo: /static/images/samband_logo_twitter_200_400x400-1-.png
 monochrome_logo: /static/images/samband_logo_twitter_200_400x400-1-.png
+theme: teal
 ---

@@ -1,6 +1,8 @@
 .navbar {
     $navbar-background: #fffbf5;
 
+    //
+
     background: transparentize($color: $navbar-background, $amount: 0.2);
     z-index: 10;
     position: fixed;
@@ -9,7 +11,7 @@
     max-width: 100vw;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid darken($navbar-background, 5%);
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms background;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1000ms background, cubic-bezier(0.175, 0.885, 0.32, 1.275) 1000ms border-color;
 
     // Navbar shadow
     box-shadow:
@@ -23,6 +25,42 @@
         0 8px 15.7px -8px rgba(0, 0, 0, 0.021),
         0 12.4px 24.2px -8px rgba(0, 0, 0, 0.024),
         0 22px 43px -8px rgba(0, 0, 0, 0.03);
+
+    &.red {
+        $navbar-background: #ffebeb;
+        background: transparentize($color: $navbar-background, $amount: 0.2);
+        border-color: darken($navbar-background, 5%);
+    }
+
+    &.blue {
+        $navbar-background: #f5f7ff;
+        background: transparentize($color: $navbar-background, $amount: 0.2);
+        border-color: darken($navbar-background, 5%);
+    }
+
+    &.pink {
+        $navbar-background: #fff5fa;
+        background: transparentize($color: $navbar-background, $amount: 0.2);
+        border-color: darken($navbar-background, 5%);
+    }
+
+    &.green {
+        $navbar-background: #f5fff7;
+        background: transparentize($color: $navbar-background, $amount: 0.2);
+        border-color: darken($navbar-background, 5%);
+    }
+
+    &.teal {
+        $navbar-background: #f5fdff;
+        background: transparentize($color: $navbar-background, $amount: 0.2);
+        border-color: darken($navbar-background, 5%);
+    }
+
+    &.purple {
+        $navbar-background: #faf5ff;
+        background: transparentize($color: $navbar-background, $amount: 0.2);
+        border-color: darken($navbar-background, 5%);
+    }
 
 
     @media(max-width: 650px) {

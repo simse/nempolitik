@@ -8,4 +8,5 @@ color: "#122140"
 dark_text: false
 logo: /static/images/liberal_alliance.png
 monochrome_logo: /static/images/liberal_alliance_white.png
+theme: blue
 ---

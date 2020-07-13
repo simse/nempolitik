@@ -8,4 +8,5 @@ color: "#dc0453"
 dark_text: false
 logo: /static/images/enhedslisten.jpg
 monochrome_logo: /static/images/enhedslisten_white.png
+theme: pink
 ---

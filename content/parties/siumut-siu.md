@@ -8,4 +8,5 @@ color: "#e52321"
 dark_text: false
 logo: /static/images/siumut.png
 monochrome_logo: /static/images/siumut_white.png
+theme: red
 ---

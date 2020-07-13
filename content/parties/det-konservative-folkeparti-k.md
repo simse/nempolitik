@@ -8,4 +8,5 @@ color: "#004223"
 dark_text: false
 logo: /static/images/det_konservative_folkeparti.png
 monochrome_logo: /static/images/det_konservative_folkeparti_white.png
+theme: green
 ---

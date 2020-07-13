@@ -8,4 +8,5 @@ color: "#0CE84A"
 dark_text: true
 logo: /static/images/alternativet.png
 monochrome_logo: /static/images/alternativet_white.png
+theme: green
 ---

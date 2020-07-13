@@ -187,7 +187,7 @@ export default function PoliticianPage({ data }) {
   const party = politician.party
 
   return (
-    <Layout>
+    <Layout theme={politician.party.theme}>
       <SEO title={politician.name} />
 
       <div className={style.politicianHeader}>
@@ -284,6 +284,7 @@ export const query = graphql`
         slug
         color
         dark_text
+        theme
         monochrome_logo {
           childImageSharp {
             fixed(height: 24) {

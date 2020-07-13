@@ -1,12 +1,12 @@
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import { BsPersonFill, BsChatDotsFill, BsSearch, BsList } from "react-icons/bs"
 
 import style from "../style/components/navbar.module.scss"
 
-const Navbar = () => {
+const Navbar = ({theme}) => {
   const { logo_full } = useStaticQuery(graphql`
     query {
       logo_full: file(relativePath: {eq: "logo_full.png"}) {
@@ -20,6 +20,7 @@ const Navbar = () => {
   `)
 
   const [ navbarMenuClass, setNavbarMenuClass ] = useState(style.closed)
+  const [ navbarTheme, setNavbarTheme ] = useState(null)
 
   const toggleMenu = () => {
     if (!navbarMenuClass) {
@@ -41,11 +42,15 @@ const Navbar = () => {
     }
   }
 
+  useEffect(() => {
+    setNavbarTheme(style[theme])
+  }, [theme])
+
   return (
     <>
       <div className={`${style.overlay} ${navbarMenuClass}`} onClick={toggleMenu} onKeyDown={handleKeyPress} role="none"></div>
 
-      <header className={style.navbar}>
+      <header className={`${style.navbar} ${navbarTheme}`}>
         <div className={style.inner}>
           <div className={style.logo}>
             <div className={style.mobileButton}>

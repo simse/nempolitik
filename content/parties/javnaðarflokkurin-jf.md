@@ -8,4 +8,5 @@ color: "#b31f2d"
 dark_text: false
 logo: /static/images/image2vector-6-.png
 monochrome_logo: /static/images/jf_white.png
+theme: red
 ---

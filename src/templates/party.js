@@ -11,7 +11,7 @@ export default function PoliticalPartyPage({ data }) {
   const party = data.politicalParty
 
   return (
-    <Layout>
+    <Layout theme={party.theme}>
       <SEO title={ party.name } />
       <div className={style.party}>
         <div className={style.header}>
@@ -34,6 +34,7 @@ export const query = graphql`
       political_leaning
       symbol
       name
+      theme
       logo {
         childImageSharp {
           fixed(width: 70, quality: 100) {
