@@ -1,6 +1,6 @@
 ---
-chairman: ec457168-f8ff-4bbf-a28e-7edac0983d47
-id: d016952f-a571-43cb-8409-5d252cd8eff8
+chairman: 1ca34644-09d7-4f12-b2bc-b70ce15b1602
+id: 3c2e6f99-cc08-4c3b-8019-2c1a05d6efef
 name: Præhospitaludvalget
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:

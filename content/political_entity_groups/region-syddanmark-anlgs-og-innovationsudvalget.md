@@ -1,6 +1,6 @@
 ---
-chairman: 1e0da761-d9b9-4f90-a75e-d3f14009954a
-id: 828a6784-a621-422c-9d6b-4ec8836e27d0
+chairman: a071bab6-eb62-40fd-b517-731d8d765886
+id: 53ff2e66-5f2d-4fd4-9d7b-8e905d3dd007
 name: Anlægs- og innovationsudvalget
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:

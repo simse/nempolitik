@@ -59,7 +59,7 @@ def parse_group(URL):
         if "næstformand" in member.text:
             vice_chairman = member_id
 
-        if "formand" in member.text:
+        elif "formand" in member.text:
             chairman = member_id
 
         members.append(member_id)

@@ -1,6 +1,6 @@
 ---
-chairman: 0d79b33b-7186-445c-a848-722ff93f2e2a
-id: 8e2cf031-7a78-4eae-9595-d03baffa1b92
+chairman: e55db002-f121-442e-a136-e1918e9337ec
+id: f11eb463-a1ed-4d4a-a15b-7c5d3828c5bb
 name: Miljøudvalget
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:

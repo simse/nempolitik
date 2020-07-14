@@ -1,6 +1,6 @@
 ---
-chairman: b377196f-bf44-4ee4-b4f9-02efa72a24f0
-id: 49605e5f-290a-4157-a9a0-01c3ec5dab0c
+chairman: a5326624-5c5c-4572-b08e-9771d416f887
+id: 3875526b-8392-40ae-a0ee-ef05239e0155
 name: Forretningsudvalget
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:

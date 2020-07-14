@@ -1,6 +1,6 @@
 ---
-chairman: 320206da-d951-497b-8d81-06ddeb508d83
-id: c8e210af-4425-4dcf-8886-cf1d6cf7b02d
+chairman: 7c145cdd-2672-4ff8-a574-607e66e533c4
+id: 644671bf-5a14-42c7-bf1e-acb51ed64765
 name: Digitaliseringsudvalget
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:

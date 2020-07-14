@@ -1,6 +1,6 @@
 ---
-chairman: 8866ee66-c630-46ec-a41a-ca5c57b41185
-id: b58df182-7692-4d7a-8624-0d04fd9c9ef8
+chairman: 302868c2-0d82-4796-b3e2-786d210da504
+id: f5debf0d-5551-4ed7-92f1-1087d2bbb33d
 name: Udvalget for uddannelse og arbejdskraft
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:

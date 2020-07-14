@@ -1,6 +1,6 @@
 ---
-chairman: ad09568b-429f-4f19-8e32-e2df1a097efb
-id: dd192d0a-d4cd-4b99-a010-3452cb3217a5
+chairman: 96d97c8c-8884-47b6-aa28-884c978404e6
+id: b925cb86-e7b1-4a15-971e-3cc5bad92085
 name: Udvalget for det nære sundhedsvæsen
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:

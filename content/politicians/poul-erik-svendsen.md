@@ -1,5 +1,5 @@
 ---
-id: "b377196f-bf44-4ee4-b4f9-02efa72a24f0"
+id: b377196f-bf44-4ee4-b4f9-02efa72a24f0
 name: "Poul-Erik Svendsen"
 birthday: 
 party: "f07a876a-64af-4f30-8056-e28ec39a7ca3"

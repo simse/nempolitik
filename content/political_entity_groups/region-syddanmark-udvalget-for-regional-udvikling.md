@@ -1,6 +1,6 @@
 ---
-chairman: ccd13a1b-eda1-44a3-8628-14727bd6aef3
-id: b839e0d6-da47-4deb-b0ff-8442c435ddab
+chairman: bf4405ad-ec7f-4a3a-a724-e88998101d5c
+id: 4c1e1ad2-fd7b-4aee-969a-afb02d00b3a9
 name: Udvalget for regional udvikling
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:

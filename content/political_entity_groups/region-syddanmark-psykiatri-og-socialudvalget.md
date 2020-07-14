@@ -1,6 +1,6 @@
 ---
-chairman: 2e4ddd02-8d44-4a1f-909b-07fddc4fdb73
-id: 1f005160-1a49-4146-97ee-3a2357a55f1d
+chairman: 9491872d-c788-45e6-854e-e72d4391797e
+id: 6a899c07-6f33-4ddf-a3c2-2d5709f70270
 name: Psykiatri- og socialudvalget
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:

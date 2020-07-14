@@ -1,6 +1,6 @@
 ---
-chairman: 777a924e-1bbe-448e-adeb-bcb712e7ce00
-id: 2fbb8090-9078-44cf-951d-5bb40c82d66e
+chairman: b377196f-bf44-4ee4-b4f9-02efa72a24f0
+id: e30dd3a8-4cf7-4ca8-96bd-c0509244d643
 name: Sundhedsudvalget
 political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
 politicians:
