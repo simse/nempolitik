@@ -55,7 +55,7 @@ export default function PoliticianRole({politician, entityFilter, entityGroupFil
         
         // Cabinet and parliament positions are self-explanatory since there is only one relevant of each
         if (political_entity.type !== "cabinet" && political_entity.type !== "parliament") {
-          entity_name += " i " + political_entity.name
+          entity_name = " i " + political_entity.name
         } else {
           show_entity = false
         }

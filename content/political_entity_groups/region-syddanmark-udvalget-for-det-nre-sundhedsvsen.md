@@ -1,0 +1,19 @@
+---
+chairman: ad09568b-429f-4f19-8e32-e2df1a097efb
+id: dd192d0a-d4cd-4b99-a010-3452cb3217a5
+name: Udvalget for det nære sundhedsvæsen
+political_entities: c38f015c-ffgg-44rd-54fd-d96f41578453
+politicians:
+- 96d97c8c-8884-47b6-aa28-884c978404e6
+- ad09568b-429f-4f19-8e32-e2df1a097efb
+- 01ed4f95-10c3-4936-a751-33914723c525
+- e55db002-f121-442e-a136-e1918e9337ec
+- 320206da-d951-497b-8d81-06ddeb508d83
+- 2e4ddd02-8d44-4a1f-909b-07fddc4fdb73
+- a8655982-3b92-4be9-bc3e-e3d1cdd82b6f
+- 9491872d-c788-45e6-854e-e72d4391797e
+- 1e0da761-d9b9-4f90-a75e-d3f14009954a
+- 93eda250-26ee-4445-b47a-1cae3bc0f07f
+- 633083a0-8d94-452e-ada1-90fe25540075
+vice_chairman: ad09568b-429f-4f19-8e32-e2df1a097efb
+---

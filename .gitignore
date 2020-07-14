@@ -71,4 +71,5 @@ yarn-error.log
 demo_cache.*
 folketinget/
 nyborg_kommune/
+region_syddanmark
 .venv
