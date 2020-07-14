@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import React, { useState, useEffect } from "react"
@@ -6,7 +7,7 @@ import { BsPersonFill, BsChatDotsFill, BsSearch, BsList } from "react-icons/bs"
 
 import style from "../style/components/navbar.module.scss"
 
-const Navbar = ({theme}) => {
+const Navbar = ({theme, toggleSearch}) => {
   const { logo_full } = useStaticQuery(graphql`
     query {
       logo_full: file(relativePath: {eq: "logo_full.png"}) {
@@ -53,7 +54,7 @@ const Navbar = ({theme}) => {
       <header className={`${style.navbar} ${navbarTheme}`}>
         <div className={style.inner}>
           <div className={style.logo}>
-            <div className={style.mobileButton}>
+            <div className={style.mobileButton} onClick={toggleSearch}>
               <BsSearch size={"1.2em"} style={{marginBottom: 3, marginRight: 4}} /> Søg
             </div>
 
@@ -69,16 +70,21 @@ const Navbar = ({theme}) => {
           <div className={`${style.items} ${navbarMenuClass}`} style={{
             maxHeight: 145
           }}>
-            <ul>
+            <ul className={style.itemsList}>
               <li>
-                <Link to="/partier" tabIndex={0} onClick={closeMenuOnNav} onKeyDown={handleKeyPress}>
+                <Link className={style.navItem} to="/partier" tabIndex={0} onClick={closeMenuOnNav} onKeyDown={handleKeyPress}>
                   <BsChatDotsFill size={"1.1em"} style={{marginBottom: 2, marginRight: 5}} /> Partier
                 </Link>
               </li>
               <li>
-                <Link to="/politikere" tabIndex={0} onClick={closeMenuOnNav} onKeyDown={handleKeyPress}>
+                <Link className={style.navItem} to="/politikere" tabIndex={0} onClick={closeMenuOnNav} onKeyDown={handleKeyPress}>
                   <BsPersonFill size={"1.3em"} style={{marginBottom: 2, marginRight: 4}} /> Politikere
                 </Link>
+              </li>
+              <li>
+                <button className={style.navItem} onClick={toggleSearch}>
+                  <BsSearch size={"1.2em"} style={{marginBottom: 3, marginRight: 4}} /> Søg
+                </button>
               </li>
             </ul>
           </div>

@@ -1,0 +1,166 @@
+.search {
+    //background: rgba(0, 0, 0, 0.8);
+    margin: 50px auto 0 auto;
+    //height: 100vh;
+    width: 500px;
+    padding: 20px;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms opacity;
+    z-index: 30;
+
+    @media(max-width: 500px) {
+        width: 100%;
+        padding: 10px;
+    }
+
+    &.closed {
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    &:hover {
+        cursor: default;
+    }
+}
+
+.overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.85);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 20;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms opacity;
+    
+
+    &.closed {
+        pointer-events: none;
+        opacity: 0;
+    }
+}
+
+.search-box {
+    font-size: 1.6rem;
+    border: 0;
+    outline: 0;
+    padding: 10px 16px;
+    border-radius: 4px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    
+    @media(max-width: 500px) {
+        font-size: 1.3rem;
+    }
+}
+
+.results {
+    background: #fff;
+    width: 100%;
+    margin: 15px auto 0 auto;
+    border-radius: 4px;
+    max-height: 60vh;
+    overflow-y: scroll;
+    opacity: 0;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms opacity;
+    pointer-events: none;
+
+    &.shown {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    span.no-results {
+        padding: 20px;
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 400;
+        opacity: 0.7;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    header {
+        // background: lightgrey;
+        text-align: left;
+        padding: 18px;
+
+        h3 {
+            font-size: 1.4rem;
+            // text-transform: uppercase;
+            font-weight: 900;
+            font-family: "Recoleta", serif;
+        }
+
+        span {
+            opacity: 0.7;
+        }
+    }
+}
+
+/*.ais-Hits {
+    
+}*/
+
+.ais-Hits-list {
+    padding: 0;
+    margin: 0;
+}
+
+.ais-Hits-item {
+    &::last-child {
+        .politician-hit {
+            border: 0;
+        }
+    }
+}
+
+.politician-hit {
+    text-align: left;
+    padding: 22px 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms background;
+
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.03);
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    mark {
+        padding: 0;
+    }
+    
+    h4 {
+        font-size: 1.3rem;
+        margin: 0 0 4px 0;
+    }
+
+    span.politician-role {
+        font-weight: 500;
+        opacity: 0.7;
+    }
+
+    .politician-inner {
+        display: flex;
+        align-items: center;
+
+        .politician-image {
+            margin-right: 20px;
+
+            img {
+                border-radius: 100px;
+                background: rgba(0, 0, 0, 0.1);
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
+}

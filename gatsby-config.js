@@ -1,4 +1,4 @@
-const { isNil } = require('lodash')
+const queries = require("./src/utils/algolia")
 
 module.exports = {
   siteMetadata: {
@@ -22,6 +22,15 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: "QVZ9XEBSIY",
+        apiKey: "716a167289e2ab62bbe3abe41c37e3f2",
+        queries,
+        chunkSize: 10000, // default: 1000
       },
     },
     `gatsby-plugin-react-helmet`,
