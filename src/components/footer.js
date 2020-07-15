@@ -8,6 +8,7 @@ const Footer = () => {
     query {
       regions: allPoliticalEntity(filter: {type: {eq: "region"}}) {
         nodes {
+          id
           name
           urlPrefix
           slug
@@ -15,6 +16,7 @@ const Footer = () => {
       }
       municipalities: allPoliticalEntity(limit: 5, filter: {type: {eq: "municipality"}}) {
         nodes {
+          id
           name
           urlPrefix
           slug
@@ -22,12 +24,14 @@ const Footer = () => {
       }
       politicians: allPolitician(limit: 5) {
         nodes {
+          id
           name
           slug
         }
       }
       parties: allPoliticalParty(limit: 5) {
         nodes {
+          id
           slug
           name
         }
@@ -51,7 +55,7 @@ const Footer = () => {
               let url = "/politiker/" + politician.slug
 
               return (
-                <li>
+                <li key={politician.id}>
                   <Link to={url}>{politician.name}</Link>
                 </li>
               )
@@ -71,7 +75,7 @@ const Footer = () => {
               let url = "/parti/" + party.slug
 
               return (
-                <li>
+                <li key={party.id}>
                   <Link to={url}>{party.name}</Link>
                 </li>
               )
@@ -91,7 +95,7 @@ const Footer = () => {
               let url = "/" + municipality.urlPrefix + municipality.slug
 
               return (
-                <li>
+                <li key={municipality.id}>
                   <Link to={url}>{municipality.name}</Link>
                 </li>
               )
@@ -107,7 +111,7 @@ const Footer = () => {
               let url = "/" + region.urlPrefix + region.slug
 
               return (
-                <li>
+                <li key={region.id}>
                   <Link to={url}>{region.name}</Link>
                 </li>
               )

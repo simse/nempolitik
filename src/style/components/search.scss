@@ -31,7 +31,7 @@
     width: 100vw;
     z-index: 20;
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms opacity;
-    
+    backdrop-filter: blur(8px);
 
     &.closed {
         pointer-events: none;
@@ -39,18 +39,25 @@
     }
 }
 
-.search-box {
-    font-size: 1.6rem;
-    border: 0;
-    outline: 0;
-    padding: 10px 16px;
-    border-radius: 4px;
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    
-    @media(max-width: 500px) {
-        font-size: 1.3rem;
+
+.ais-SearchBox-form {
+    button {
+        display: none;
+    }
+
+    input {
+        font-size: 1.6rem;
+        border: 0;
+        outline: 0;
+        padding: 10px 16px;
+        border-radius: 4px;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        
+        @media(max-width: 500px) {
+            font-size: 1.3rem;
+        }
     }
 }
 
@@ -117,7 +124,10 @@
     }
 }
 
-.politician-hit {
+.politician-hit,
+.entity-hit,
+.party-hit,
+.group-hit {
     text-align: left;
     padding: 22px 14px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);

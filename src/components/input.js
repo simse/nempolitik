@@ -3,8 +3,14 @@ import { connectSearchBox } from "react-instantsearch-dom"
 
 import "../style/components/search.scss"
 
-export default connectSearchBox(({ refine, ...rest }) => (
-  <div>
+/*export default connectSearchBox(({ refine, ref, ...rest }) => (
+  
+))*/
+
+
+
+export default connectSearchBox(React.forwardRef((props, ref) => {
+  return (
     <input
       className="search-box"
       type="text"
@@ -12,8 +18,8 @@ export default connectSearchBox(({ refine, ...rest }) => (
       aria-label="Søg"
       spellCheck="false"
       autoComplete="false"
-      onChange={e => refine(e.target.value)}
-      {...rest}
+      onChange={e => props.refine(e.target.value)}
+      ref={ref}
     />
-  </div>
-))
+  )
+}))

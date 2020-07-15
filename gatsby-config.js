@@ -1,4 +1,5 @@
 const queries = require("./src/utils/algolia")
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
@@ -27,8 +28,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: "QVZ9XEBSIY",
-        apiKey: "716a167289e2ab62bbe3abe41c37e3f2",
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_APP_ADMIN_KEY,
         queries,
         chunkSize: 10000, // default: 1000
       },

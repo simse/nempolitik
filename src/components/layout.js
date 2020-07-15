@@ -6,6 +6,7 @@ import {
   Index,
   Hits,
   connectStateResults,
+  SearchBox
 } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
 import Input from "./input"
@@ -31,14 +32,14 @@ const Layout = ({ children, width, theme }) => {
   }
 
   const indices = [
-    { name: `Politicians`, title: `Politicians`, hitComp: `PoliticianHit` }
+    { name: `Everything`, title: `Everything`, hitComp: `Hit` }
   ]
 
   const [query, setQuery] = useState(``)
   const [open, setSearchOpen] = useState(false)
   const searchClient = algoliasearch(
-    "QVZ9XEBSIY",
-    "716a167289e2ab62bbe3abe41c37e3f2"
+    process.env.GATSBY_ALGOLIA_APP_ID,
+    process.env.GATSBY_ALGOLIA_APP_SEARCH_KEY
   )
 
   const handleOverlayClick = event => {
@@ -52,8 +53,20 @@ const Layout = ({ children, width, theme }) => {
       setSearchOpen(false)
     } else {
       setSearchOpen(true)
+      if (searchBox) {
+        searchBox.focus()
+      } 
     }
   }
+
+  const handleSearchBoxKey = (key) => {
+      if (key.keyCode === 27) {
+      toggleSearch()
+    }
+  }
+
+  const [searchBox, setSearchBox] = useState(null)
+
 
   return (
     <>
@@ -67,15 +80,19 @@ const Layout = ({ children, width, theme }) => {
           onClick={event => handleOverlayClick(event)}
         >
           <div className={`search${!open ? " closed" : ""}`}>
-            <Input />
+            <SearchBox 
+              inputRef={input => {setSearchBox(input)}}
+              submit={<></>}
+              reset={<></>}
+              onKeyDown={handleSearchBoxKey}
+              tabindex="0"
+              translations={{
+                placeholder: 'Søg her...',
+              }}/>
 
             <div className={`results ${query.length > 0 && "shown"}`}>
-              {indices.map(({ name, title, hitComp }) => (
+              {indices.map(({ name, hitComp }) => (
                 <Index key={name} indexName={name}>
-                  {/*<header>
-                              <h3>{title}</h3>
-                              <Stats />
-                          </header>*/}
                   <Results>
                     <Hits hitComponent={hitComps[hitComp]()} />
                   </Results>
