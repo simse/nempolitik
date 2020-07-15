@@ -1,110 +1,124 @@
 .search {
-    //background: rgba(0, 0, 0, 0.8);
-    margin: 50px auto 0 auto;
-    //height: 100vh;
-    width: 500px;
-    padding: 20px;
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms opacity;
-    z-index: 30;
+  //background: rgba(0, 0, 0, 0.8);
+  margin: 50px auto 0 auto;
+  //height: 100vh;
+  width: 540px;
+  padding: 20px;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms opacity;
+  z-index: 30;
 
-    @media(max-width: 500px) {
-        width: 100%;
-        padding: 10px;
-    }
+  @media (max-width: 500px) {
+    width: 100%;
+    padding: 10px;
+  }
 
-    &.closed {
-        pointer-events: none;
-        opacity: 0;
-    }
+  &.closed {
+    pointer-events: none;
+    opacity: 0;
+  }
 
-    &:hover {
-        cursor: default;
-    }
+  &:hover {
+    cursor: default;
+  }
 }
 
 .overlay {
-    position: fixed;
-    background: rgba(0, 0, 0, 0.85);
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: 20;
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms opacity;
-    backdrop-filter: blur(8px);
+  position: fixed;
+  background: transparentize($color: #fffbf5, $amount: 0.1);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 20;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms opacity;
+  backdrop-filter: blur(12px);
 
-    &.closed {
-        pointer-events: none;
-        opacity: 0;
-    }
+  &.closed {
+    pointer-events: none;
+    opacity: 0;
+  }
 }
 
-
 .ais-SearchBox-form {
-    button {
-        display: none;
-    }
+  padding: 0 20px;
 
-    input {
-        font-size: 1.6rem;
-        border: 0;
-        outline: 0;
-        padding: 10px 16px;
-        border-radius: 4px;
-        width: 100%;
-        margin: 0 auto;
-        display: block;
-        
-        @media(max-width: 500px) {
-            font-size: 1.3rem;
-        }
+  button {
+    display: none;
+  }
+
+  input {
+    font-size: 1.6rem;
+    border: 0;
+    outline: 0;
+    padding: 10px 16px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    font-family: "Recoleta";
+    background: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    @media (max-width: 500px) {
+      font-size: 1.3rem;
     }
+  }
 }
 
 .results {
-    background: #fff;
-    width: 100%;
-    margin: 15px auto 0 auto;
-    border-radius: 4px;
-    max-height: 60vh;
-    overflow-y: scroll;
-    opacity: 0;
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms opacity;
-    pointer-events: none;
+  width: 100%;
+  margin: 15px auto 0 auto;
+  max-height: 60vh;
+  overflow-y: auto;
+  opacity: 0;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms opacity;
+  pointer-events: none;
+  padding: 20px;
 
-    &.shown {
-        opacity: 1;
-        pointer-events: all;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(104, 71, 71, 0.2);
+  }
+
+  &.shown {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  span.no-results {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.8;
+    text-align: center;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  header {
+    // background: lightgrey;
+    text-align: left;
+    padding: 18px;
+
+    h3 {
+      font-size: 1.4rem;
+      // text-transform: uppercase;
+      font-weight: 900;
+      font-family: "Recoleta", serif;
     }
 
-    span.no-results {
-        padding: 20px;
-        display: block;
-        font-size: 1.3rem;
-        font-weight: 400;
-        opacity: 0.7;
-
-        &:hover {
-            color: #000;
-        }
+    span {
+      opacity: 0.7;
     }
-
-    header {
-        // background: lightgrey;
-        text-align: left;
-        padding: 18px;
-
-        h3 {
-            font-size: 1.4rem;
-            // text-transform: uppercase;
-            font-weight: 900;
-            font-family: "Recoleta", serif;
-        }
-
-        span {
-            opacity: 0.7;
-        }
-    }
+  }
 }
 
 /*.ais-Hits {
@@ -112,65 +126,100 @@
 }*/
 
 .ais-Hits-list {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .ais-Hits-item {
-    &::last-child {
-        .politician-hit {
-            border: 0;
-        }
+  &::last-child {
+    .politician-hit {
+      border: 0;
     }
+  }
 }
 
 .politician-hit,
 .entity-hit,
 .party-hit,
 .group-hit {
-    text-align: left;
-    padding: 22px 14px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms background;
+  text-align: left;
+  padding: 22px 14px;
+  //border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms background;
+  margin-bottom: 15px;
+  background: lighten(#fffbf5, 1.5%);
+  box-shadow: 0 0.3px 0.7px -8px rgba(0, 0, 0, 0.006),
+    0 0.8px 1.5px -8px rgba(0, 0, 0, 0.009),
+    0 1.3px 2.5px -8px rgba(0, 0, 0, 0.011),
+    0 1.9px 3.7px -8px rgba(0, 0, 0, 0.013),
+    0 2.8px 5.4px -8px rgba(0, 0, 0, 0.015),
+    0 3.9px 7.6px -8px rgba(0, 0, 0, 0.017),
+    0 5.5px 10.8px -8px rgba(0, 0, 0, 0.019),
+    0 8px 15.7px -8px rgba(0, 0, 0, 0.021),
+    0 12.4px 24.2px -8px rgba(0, 0, 0, 0.024),
+    0 22px 43px -8px rgba(0, 0, 0, 0.03);
 
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms box-shadow,
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) 350ms transform,
+    opacity 500ms ease-in-out;
 
-    &:hover {
-        background: rgba(0, 0, 0, 0.03);
-        cursor: pointer;
+  &:hover {
+    box-shadow: 0 0.3px 0.7px -8px rgba(0, 0, 0, 0.011),
+      0 0.8px 1.5px -8px rgba(0, 0, 0, 0.016),
+      0 1.3px 2.5px -8px rgba(0, 0, 0, 0.019),
+      0 1.9px 3.7px -8px rgba(0, 0, 0, 0.022),
+      0 2.8px 5.4px -8px rgba(0, 0, 0, 0.025),
+      0 3.9px 7.6px -8px rgba(0, 0, 0, 0.028),
+      0 5.5px 10.8px -8px rgba(0, 0, 0, 0.031),
+      0 8px 15.7px -8px rgba(0, 0, 0, 0.034),
+      0 12.4px 24.2px -8px rgba(0, 0, 0, 0.039),
+      0 22px 43px -8px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  mark {
+    padding: 0;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    margin: 0 0 4px 0;
+  }
+
+  span.politician-role,
+  .party-role {
+    font-weight: 500;
+    opacity: 0.7;
+  }
+
+  .politician-inner,
+  .party-inner {
+    display: flex;
+    align-items: center;
+
+    .politician-image {
+      margin-right: 20px;
+
+      img {
+        border-radius: 100px;
+        background: rgba(0, 0, 0, 0.1);
+        width: 80px;
+        height: 80px;
+      }
     }
 
-    a {
-        text-decoration: none;
-        color: #000;
+    .party-image {
+        margin-right: 20px;
+        padding: 25px;
+        border-radius: 100px;
+        height: 100px;
+        width: 100px;
     }
-
-    mark {
-        padding: 0;
-    }
-    
-    h4 {
-        font-size: 1.3rem;
-        margin: 0 0 4px 0;
-    }
-
-    span.politician-role {
-        font-weight: 500;
-        opacity: 0.7;
-    }
-
-    .politician-inner {
-        display: flex;
-        align-items: center;
-
-        .politician-image {
-            margin-right: 20px;
-
-            img {
-                border-radius: 100px;
-                background: rgba(0, 0, 0, 0.1);
-                width: 80px;
-                height: 80px;
-            }
-        }
-    }
+  }
 }

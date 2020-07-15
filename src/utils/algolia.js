@@ -19,8 +19,14 @@ query {
       slug
       photo {
         childImageSharp {
-          resize(width: 80, height: 80, cropFocus: NORTH) {
+          fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
+            base64
+            height
             src
+            srcSet
+            srcSetWebp
+            srcWebp
+            width
           }
         }
       }
@@ -62,8 +68,14 @@ query {
       slug
       monochrome_logo {
         childImageSharp {
-          resize(width: 65, height: 65) {
+          fixed(width: 50, height: 50, quality: 100) {
+            base64
+            height
             src
+            srcSet
+            srcSetWebp
+            srcWebp
+            width
           }
         }
       }
@@ -79,7 +91,7 @@ const handleData = (data) => {
         name: politician.name,
         id: politician.id,
         url: "/politiker/" + politician.slug,
-        photo: politician.photo.childImageSharp.resize.src,
+        photo: politician.photo.childImageSharp.fixed,
         party: politician.party.name,
         type: "politician"
     }
@@ -130,7 +142,7 @@ const handleData = (data) => {
     records.push({
       name: party.name,
       color: party.color,
-      logo: party.monochrome_logo.childImageSharp.resize.src,
+      logo: party.monochrome_logo.childImageSharp.fixed,
       type: "party",
       importance: 16,
       url: "/parti/" + party.slug
