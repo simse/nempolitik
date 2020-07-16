@@ -32,7 +32,7 @@ export default function MunicipalityPage({ data }) {
     let url = "/" + entity.urlPrefix + entity.slug + "/udvalg/" + group.slug
 
     let photos = group.politicians.map(politician => {
-      return politician.tiny_photo.childImageSharp.fixed
+      return politician.tiny_photo.childCloudinaryAsset.fixed
     })
 
     return (
@@ -140,10 +140,9 @@ export const query = graphql`
         name
         politicians {
           tiny_photo: photo {
-            childImageSharp {
-              fixed(width: 32, height: 32, cropFocus: NORTH, quality: 100) {
-                originalName
-                ...GatsbyImageSharpFixed
+            childCloudinaryAsset {
+              fixed(width: 32) {
+                ...CloudinaryAssetFixed
               }
             }
           }

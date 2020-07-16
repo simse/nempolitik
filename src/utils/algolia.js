@@ -67,15 +67,15 @@ query {
       color
       slug
       monochrome_logo {
-        childImageSharp {
-          fixed(width: 50, height: 50, quality: 100) {
-            base64
-            height
-            src
-            srcSet
-            srcSetWebp
-            srcWebp
+        childCloudinaryAsset {
+          fixed(width: 50) {
             width
+            srcSet
+            src
+            presentationWidth
+            presentationHeight
+            height
+            base64
           }
         }
       }
@@ -142,7 +142,7 @@ const handleData = (data) => {
     records.push({
       name: party.name,
       color: party.color,
-      logo: party.monochrome_logo.childImageSharp.fixed,
+      logo: party.monochrome_logo.childCloudinaryAsset.fixed,
       type: "party",
       importance: 16,
       url: "/parti/" + party.slug

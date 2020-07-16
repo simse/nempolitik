@@ -56,7 +56,7 @@ export default function PoliticalPartyPage({ data, pageContext }) {
       <SEO title={data.politicalEntityGroup.name} />
 
       <div className={style.header}>
-        <Img fixed={data.politicalEntity.logo.childImageSharp.fixed} style={{
+        <Img fixed={data.politicalEntity.logo.childCloudinaryAsset.fixed} style={{
           margin: "0 auto 30px auto",
           display: "block"
         }} />
@@ -104,9 +104,9 @@ export const query = graphql`
         datetime(formatString: "LLL", locale: "da")
         name
         thumbnail {
-          childImageSharp {
-            fluid(maxWidth: 720, maxHeight: 400, quality: 100) {
-              ...GatsbyImageSharpFluid
+          childCloudinaryAsset {
+            fluid(maxWidth: 720) {
+              ...CloudinaryAssetFluid
             }
           }
         }
@@ -151,9 +151,9 @@ export const query = graphql`
       slug
       urlPrefix
       logo {
-        childImageSharp {
-          fixed(width: 80, quality: 100) {
-            ...GatsbyImageSharpFixed_tracedSVG
+        childCloudinaryAsset {
+          fixed(width: 80) {
+            ...CloudinaryAssetFixed
           }
         }
       }

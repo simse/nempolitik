@@ -47,9 +47,9 @@ query {
       slug
       symbol
       logo {
-        childImageSharp {
-          fixed(width: 60, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+        childCloudinaryAsset {
+          fixed(width: 60) {
+            ...CloudinaryAssetFixed
           }
         }
       }

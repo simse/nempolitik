@@ -85,7 +85,7 @@ const PoliticalPartyCard = ({ politicalParty }) => (
     <Link to={"/parti/" + politicalParty.slug}>
       <div className={style.logo}>
         <Img
-          fixed={ politicalParty.logo.childImageSharp.fixed }
+          fixed={ politicalParty.logo.childCloudinaryAsset.fixed }
           alt={ politicalParty.name + "'s logo" }/>
       </div>
 

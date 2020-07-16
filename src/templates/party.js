@@ -15,7 +15,7 @@ export default function PoliticalPartyPage({ data }) {
       <SEO title={ party.name } />
       <div className={style.party}>
         <div className={style.header}>
-          <Img fixed={party.logo.childImageSharp.fixed} alt={party.name + "'s logo"} />
+          <Img fixed={party.logo.childCloudinaryAsset.fixed} alt={party.name + "'s logo"} />
 
           <h1>{party.name}</h1>
         </div>
@@ -36,9 +36,9 @@ export const query = graphql`
       name
       theme
       logo {
-        childImageSharp {
-          fixed(width: 70, quality: 100) {
-            ...GatsbyImageSharpFixed_tracedSVG
+        childCloudinaryAsset {
+          fixed(width: 70) {
+            ...CloudinaryAssetFixed
           }
         }
       }

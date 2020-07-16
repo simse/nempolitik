@@ -11,7 +11,7 @@ const MeetingVideo = ({ meeting, url }) => {
       textDecoration: "none"
     }}>
       <div className={style.meeting}>
-        <Img fluid={meeting.thumbnail.childImageSharp.fluid} className={style.image} style={{
+        <Img fluid={meeting.thumbnail.childCloudinaryAsset.fluid} className={style.image} style={{
           marginBottom: 20,
           borderRadius: 4
         }} />
