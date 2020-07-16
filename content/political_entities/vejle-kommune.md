@@ -4,7 +4,7 @@ type: municipality
 name: Vejle Kommune
 subtitle: ""
 group_name: Udvalg
-logo: /static/images/1200px-Vejle_Kommune_coa.svg.png
+logo: /static/images/1200px-Vejle_Kommune_coa.png
 banner: /static/images/AdobeStock_269221605.jpeg
 location: Sydøstjylland
 population: 116120
