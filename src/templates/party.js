@@ -38,7 +38,7 @@ export const query = graphql`
       logo {
         childImageSharp {
           fixed(width: 70, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }

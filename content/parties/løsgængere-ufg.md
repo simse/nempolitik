@@ -6,7 +6,7 @@ headquarters: Planeten Jorden
 political_leaning: 0
 color: "#222222"
 dark_text: false
-logo: /static/images/løsgængere.png
-monochrome_logo: /static/images/løsgænger_white.png
+logo: /static/images/nye_borgerlige.png
+monochrome_logo: /static/images/nye_borgerlige.png
 theme: null
 ---

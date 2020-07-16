@@ -67,7 +67,7 @@ export default function MunicipalityPage({ data }) {
       <div className={style.municipality}>
         <div className={style.header}>
           <div className={style.meta}>
-            <Img fixed={entity.logo.childImageSharp.fixed} style={{
+            <Img fixed={entity.logo.childCloudinaryAsset.fixed} style={{
               marginBottom: 40
             }} />
 
@@ -84,8 +84,9 @@ export default function MunicipalityPage({ data }) {
             
           </div>
 
-          <Img className={style.banner} fluid={entity.banner.childImageSharp.fluid} style={{
-            maxHeight: "90vh"
+          <Img className={style.banner} fluid={entity.banner.childCloudinaryAsset.fluid} style={{
+            maxHeight: "90vh",
+            overflow: "hidden"
           }} />
         </div>
 
@@ -120,16 +121,16 @@ export const query = graphql`
       slug
       type
       logo {
-        childImageSharp {
-          fixed(height: 100, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
+        childCloudinaryAsset {
+          fixed(width: 100) {
+            ...CloudinaryAssetFixed
           }
         }
       }
       banner {
-        childImageSharp {
-          fluid(maxWidth: 3000, maxHeight: 1500, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+        childCloudinaryAsset {
+          fluid(maxWidth: 3000) {
+            ...CloudinaryAssetFluid
           }
         }
       }
@@ -142,7 +143,7 @@ export const query = graphql`
             childImageSharp {
               fixed(width: 32, height: 32, cropFocus: NORTH, quality: 100) {
                 originalName
-                ...GatsbyImageSharpFixed_withWebp
+                ...GatsbyImageSharpFixed
               }
             }
           }
@@ -155,9 +156,9 @@ export const query = graphql`
         name
         slug
         photo {
-          childImageSharp {
-            fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
+          childCloudinaryAsset {
+            fixed(width: 100) {
+              ...CloudinaryAssetFixed
             }
           }
         }
@@ -168,9 +169,9 @@ export const query = graphql`
           color
           dark_text
           monochrome_logo {
-            childImageSharp {
-              fixed(height: 24) {
-                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            childCloudinaryAsset {
+              fixed(width: 24) {
+                ...CloudinaryAssetFixed
               }
             }
           }

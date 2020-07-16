@@ -18,15 +18,15 @@ query {
       id
       slug
       photo {
-        childImageSharp {
-          fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
-            base64
-            height
-            src
-            srcSet
-            srcSetWebp
-            srcWebp
+        childCloudinaryAsset {
+          fixed(width: 100) {
             width
+            srcSet
+            src
+            presentationWidth
+            presentationHeight
+            height
+            base64
           }
         }
       }
@@ -91,7 +91,7 @@ const handleData = (data) => {
         name: politician.name,
         id: politician.id,
         url: "/politiker/" + politician.slug,
-        photo: politician.photo.childImageSharp.fixed,
+        photo: politician.photo.childCloudinaryAsset.fixed,
         party: politician.party.name,
         type: "politician"
     }

@@ -14,11 +14,12 @@ const PoliticianCard = ({ politician, entityGroupFilter, hidden }) => {
       <Link to={"/politiker/" + politician.slug}>
         <div className={style.inner}>
           <Img
-            fixed={politician.photo.childImageSharp.fixed}
+            fixed={politician.photo.childCloudinaryAsset.fixed}
             alt={"Billede af " + politician.name}
             style={{
               margin: "0 auto 18px auto",
               display: "block",
+              maxHeight: 100
             }}
             imgStyle={{
               borderRadius: "100px",

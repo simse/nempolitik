@@ -120,9 +120,9 @@ query($limit: Int!, $skip: Int!) {
       name
       slug
       photo {
-        childImageSharp {
-          fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
+        childCloudinaryAsset {
+          fixed(width: 100) {
+            ...CloudinaryAssetFixed
           }
         }
       }
@@ -133,9 +133,9 @@ query($limit: Int!, $skip: Int!) {
         color
         dark_text
         monochrome_logo {
-          childImageSharp {
-            fixed(height: 24) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          childCloudinaryAsset {
+            fixed(width: 24) {
+              ...CloudinaryAssetFixed
             }
           }
         }

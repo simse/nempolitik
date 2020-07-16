@@ -164,7 +164,7 @@ const politicalGroupCards = (politician) => {
     return (
       <div className={`${style.card} ${style.politicalGroup}`} key={card.name}>
         <div className={style.header}>
-          <Img fixed={card.logo.childImageSharp.fixed} />
+          <Img fixed={card.logo.childCloudinaryAsset.fixed} />
 
 
           <h2 className={style.groupTitle}>{card.name}</h2>
@@ -193,7 +193,7 @@ export default function PoliticianPage({ data }) {
       <div className={style.politicianHeader}>
 
         <div className={style.politicianImage}>
-          <Img fluid={politician.photo.childImageSharp.fluid} />
+          <Img fluid={politician.photo.childCloudinaryAsset.fluid} />
         </div>
 
         <div className={style.politicianMeta}>
@@ -224,7 +224,7 @@ export default function PoliticianPage({ data }) {
 
             <div className={`${style.party} ${style.card}`}>
               <div className={style.header}>
-                <Img fixed={party.logo.childImageSharp.fixed} />
+                <Img fixed={party.logo.childCloudinaryAsset.fixed} />
 
                 <h3>{party.name}</h3>
               </div>
@@ -286,24 +286,24 @@ export const query = graphql`
         dark_text
         theme
         monochrome_logo {
-          childImageSharp {
-            fixed(height: 24) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          childCloudinaryAsset {
+            fixed(width: 24) {
+              ...CloudinaryAssetFixed
             }
           }
         }
         logo {
-          childImageSharp {
-            fixed(height: 60) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          childCloudinaryAsset {
+            fixed(width: 70) {
+              ...CloudinaryAssetFixed
             }
           }
         }
       }
       photo {
-        childImageSharp {
-          fluid(maxWidth: 750, maxHeight: 750, cropFocus: NORTH, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+        childCloudinaryAsset {
+          fluid(maxWidth: 800) {
+            ...CloudinaryAssetFluid
           }
         }
       }
@@ -325,9 +325,9 @@ export const query = graphql`
           slug
           urlPrefix
           logo {
-            childImageSharp {
-              fixed(height: 60) {
-                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            childCloudinaryAsset {
+              fixed(width: 60) {
+                ...CloudinaryAssetFixed
               }
             }
           }

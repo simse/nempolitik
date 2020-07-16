@@ -106,7 +106,7 @@ export const query = graphql`
         thumbnail {
           childImageSharp {
             fluid(maxWidth: 720, maxHeight: 400, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -117,9 +117,9 @@ export const query = graphql`
         name
         slug
         photo {
-          childImageSharp {
-            fixed(width: 100, height: 100, cropFocus: NORTH, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
+          childCloudinaryAsset {
+            fixed(width: 100) {
+              ...CloudinaryAssetFixed
             }
           }
         }
@@ -136,9 +136,9 @@ export const query = graphql`
           color
           dark_text
           monochrome_logo {
-            childImageSharp {
-              fixed(height: 24) {
-                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            childCloudinaryAsset {
+              fixed(width: 24) {
+                ...CloudinaryAssetFixed
               }
             }
           }
@@ -153,7 +153,7 @@ export const query = graphql`
       logo {
         childImageSharp {
           fixed(width: 80, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }

@@ -17,7 +17,7 @@ const PartyTag = ({ party }) => {
         height: 24
       }}>
         <Img
-          fixed={party.monochrome_logo.childImageSharp.fixed}
+          fixed={party.monochrome_logo.childCloudinaryAsset.fixed}
           alt={party.name + "'s logo"}
         />
       </div>
